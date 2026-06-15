@@ -1,4 +1,5 @@
 <script lang="ts">
+  import SocialIcons from './SocialIcons.svelte';
 </script>
 
 <footer class="bg-navy-600 pt-16 pb-8">
@@ -40,17 +41,7 @@
           <li class="text-white/40 text-sm">info@optik-t.com</li>
           <li class="text-white/40 text-sm">CC Plaza Mayor, Nivel 2</li>
         </ul>
-        <div class="flex gap-3 mt-6">
-          <a href="#" class="text-white/30 hover:text-accent-yellow transition-colors" aria-label="Instagram">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
-          </a>
-          <a href="#" class="text-white/30 hover:text-accent-yellow transition-colors" aria-label="Facebook">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="#" class="text-white/30 hover:text-accent-yellow transition-colors" aria-label="Twitter">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"/></svg>
-          </a>
-        </div>
+        <SocialIcons variant="text" />
       </div>
     </div>
     <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">

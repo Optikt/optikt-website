@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { MapPin, Clock, Phone, MessageCircle } from '@lucide/svelte';
+  import { MapPin, Clock, Phone } from '@lucide/svelte';
+  import SocialIcons from './SocialIcons.svelte';
   import { fadeIn } from '$lib/utils/animations';
 </script>
 
@@ -30,18 +31,7 @@
         </div>
         <div class="mt-10">
           <p class="text-white/30 text-xs font-semibold tracking-widest uppercase mb-4">Síguenos</p>
-          <div class="flex gap-3">
-            <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-accent-yellow hover:text-navy-600 hover:border-accent-yellow transition-all duration-300">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
-            </a>
-            <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-accent-yellow hover:text-navy-600 hover:border-accent-yellow transition-all duration-300">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-accent-yellow hover:text-navy-600 hover:border-accent-yellow transition-all duration-300">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"/></svg>
-            </a>
-            <a href="https://wa.me/584249593318" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300"><MessageCircle class="w-4 h-4" /></a>
-          </div>
+          <SocialIcons variant="circles" />
         </div>
       </div>
 
