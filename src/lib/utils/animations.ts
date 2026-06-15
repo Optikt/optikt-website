@@ -11,23 +11,13 @@ export function fadeIn(
   };
 
   node.classList.add(classMap[type]);
-  node.style.transitionDelay = `${delay}s`;
-  node.style.opacity = '0';
 
-  if (type === 'up') node.style.transform = 'translateY(40px)';
-  else if (type === 'left') node.style.transform = 'translateX(-40px)';
-  else node.style.transform = 'translateX(40px)';
+  if (delay) node.style.transitionDelay = `${delay}s`;
 
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
-        node.style.opacity = '1';
-        node.style.transform = 'translateY(0) translateX(0)';
-
-        if (options.type === 'up') node.classList.remove('fade-up');
-        else if (options.type === 'left') node.classList.remove('fade-left');
-        else node.classList.remove('fade-right');
-
+        node.classList.add('visible');
         observer.disconnect();
       }
     },
