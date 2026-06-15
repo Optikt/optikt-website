@@ -18,7 +18,7 @@
           <img src="https://picsum.photos/seed/prescription-glasses-display/800/600.jpg" alt="Monturas Graduadas" class="w-full h-80 lg:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700" />
           <div class="absolute inset-0 bg-gradient-to-r from-navy-600/50 to-transparent"></div>
           <div class="absolute bottom-6 left-6">
-            <span class="bg-accent-yellow text-navy-600 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">01 — Monturas Graduadas</span>
+            <span class="bg-accent-yellow text-navy-600 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">01 - Monturas Graduadas</span>
           </div>
         </div>
         <div class="lg:pl-8">
@@ -43,7 +43,7 @@
           <img src="https://picsum.photos/seed/sunglasses-beach-style/800/600.jpg" alt="Gafas de Sol" class="w-full h-80 lg:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700" />
           <div class="absolute inset-0 bg-gradient-to-l from-navy-600/50 to-transparent"></div>
           <div class="absolute bottom-6 right-6">
-            <span class="bg-accent-yellow text-navy-600 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">02 — Gafas de Sol</span>
+            <span class="bg-accent-yellow text-navy-600 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">02 - Gafas de Sol</span>
           </div>
         </div>
         <div class="lg:pr-8 lg:order-1">
@@ -68,7 +68,7 @@
           <img src="https://picsum.photos/seed/contact-lens-eye-closeup/800/600.jpg" alt="Lentes de Contacto" class="w-full h-80 lg:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700" />
           <div class="absolute inset-0 bg-gradient-to-r from-navy-600/50 to-transparent"></div>
           <div class="absolute bottom-6 left-6">
-            <span class="bg-accent-yellow text-navy-600 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">03 — Lentes de Contacto</span>
+            <span class="bg-accent-yellow text-navy-600 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">03 - Lentes de Contacto</span>
           </div>
         </div>
         <div class="lg:pl-8">

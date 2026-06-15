@@ -59,7 +59,7 @@
             <div class="absolute bottom-4 left-4 right-4">
               <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 flex items-center gap-3">
                 <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <span class="text-white text-sm font-medium">Abierto ahora — Cerramos a las 7:00 PM</span>
+                <span class="text-white text-sm font-medium">Abierto ahora - Cerramos a las 7:00 PM</span>
               </div>
             </div>
           </div>
