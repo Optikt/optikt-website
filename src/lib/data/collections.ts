@@ -14,12 +14,12 @@ export interface Collection {
 
 export const collections: Collection[] = [
   {
-    badge: '01 - Monturas Graduadas',
+    badge: '01 - Lentes Graduados',
     title: 'Monturas que Definen tu Mirada',
     description:
       'Desde las clásicas hasta las más vanguardistas monturas de diseñador. Cada pieza es seleccionada por su calidad, comodidad y estilo.',
     imageSrc: 'https://picsum.photos/seed/prescription-glasses-display/800/600.jpg',
-    imageAlt: 'Monturas Graduadas',
+    imageAlt: 'Lentes Graduados',
     thumbnails: [
       { src: 'https://picsum.photos/seed/frame-cat-eye-opt/300/200.jpg', alt: 'Cat Eye' },
       { src: 'https://picsum.photos/seed/frame-round-opt/300/200.jpg', alt: 'Redondas' },
