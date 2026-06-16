@@ -30,7 +30,7 @@ export const collections: Collection[] = [
     badge: '02 - Lentes de Sol',
     title: 'Protección con Personalidad',
     description:
-      'Lentes polarizados, espejados y fotocromáticos. Cada par combina protección UV 400 con el diseño que te define bajo el sol.',
+      'Lentes polarizados, espejados y fotocromáticos. Cada par combina protección UV con el diseño que te define bajo el sol.',
     imageSrc: 'https://picsum.photos/seed/sunglasses-beach-style/800/600.jpg',
     imageAlt: 'Lentes de Sol',
     thumbnails: [
