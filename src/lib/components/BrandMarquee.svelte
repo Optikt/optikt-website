@@ -11,7 +11,7 @@
       <span class="text-accent-yellow/30">◆</span>
       <span class="text-white/20 text-sm font-semibold tracking-[.3em] uppercase">Lentes de Contacto</span>
       <span class="text-accent-yellow/30">◆</span>
-      <span class="text-white/20 text-sm font-semibold tracking-[.3em] uppercase">Gafas de Sol</span>
+      <span class="text-white/20 text-sm font-semibold tracking-[.3em] uppercase">Lentes de Sol</span>
       <span class="text-accent-yellow/30">◆</span>
     {/each}
   </div>

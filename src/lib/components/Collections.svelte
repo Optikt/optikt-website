@@ -40,10 +40,10 @@
     <div use:fadeIn={{}} class="mb-20">
       <div class="grid lg:grid-cols-2 gap-8 items-center">
         <div class="lg:order-2 relative rounded-2xl overflow-hidden group">
-          <img src="https://picsum.photos/seed/sunglasses-beach-style/800/600.jpg" alt="Gafas de Sol" class="w-full h-80 lg:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700" />
+          <img src="https://picsum.photos/seed/sunglasses-beach-style/800/600.jpg" alt="Lentes de Sol" class="w-full h-80 lg:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700" />
           <div class="absolute inset-0 bg-gradient-to-l from-navy-600/50 to-transparent"></div>
           <div class="absolute bottom-6 right-6">
-            <span class="bg-accent-yellow text-navy-600 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">02 - Gafas de Sol</span>
+            <span class="bg-accent-yellow text-navy-600 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">02 - Lentes de Sol</span>
           </div>
         </div>
         <div class="lg:pr-8 lg:order-1">

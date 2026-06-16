@@ -12,7 +12,7 @@
       <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-yellow/10 mb-8">
         <Sparkles class="w-7 h-7 text-accent-yellow" />
       </div>
-      <h2 class="text-4xl md:text-6xl font-bold text-navy-600 tracking-tight leading-tight">Tu Próximo Par de Gafas<br />Te Está Esperando</h2>
+      <h2 class="text-4xl md:text-6xl font-bold text-navy-600 tracking-tight leading-tight">Tu Próximo Par de Lentes<br />Te Está Esperando</h2>
       <p class="text-navy-300 mt-6 max-w-xl mx-auto leading-relaxed">Agenda tu examen visual o visita nuestra tienda. Nuestro equipo está listo para ayudarte a ver mejor y verte increíble.</p>
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
         <button onclick={onOpenModal} class="bg-accent-yellow text-navy-600 px-10 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-xl hover:shadow-accent-yellow/20 animate-pulse-glow inline-flex items-center gap-2">

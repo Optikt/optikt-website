@@ -42,7 +42,7 @@
   <div class="absolute right-[5%] bottom-[15%] hidden lg:block animate-float">
     <div class="relative">
       <div class="w-48 h-32 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine rotate-3">
-        <img src="https://picsum.photos/seed/sunglasses-hero-float/400/250.jpg" alt="Gafas de Sol" class="w-full h-full object-cover" />
+        <img src="https://picsum.photos/seed/sunglasses-hero-float/400/250.jpg" alt="Lentes de Sol" class="w-full h-full object-cover" />
       </div>
       <div class="absolute -bottom-2 -right-2 bg-accent-yellow text-navy-600 text-[10px] font-bold px-3 py-1 rounded-full">Nuevo</div>
     </div>

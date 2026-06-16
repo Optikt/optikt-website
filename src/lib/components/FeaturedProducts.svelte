@@ -4,9 +4,9 @@
 
   const products = [
     { name: 'Cat-Eye Sofia', type: 'Montura Acetato', price: 189, seed: 'optik-cat-eye-tortoise', badge: 'Nuevo', badgeClass: 'bg-accent-yellow text-navy-600' },
-    { name: 'Aviator Clásico', type: 'Gafas de Sol', price: 245, seed: 'optik-aviator-gold', badge: null, badgeClass: '' },
+    { name: 'Aviator Clásico', type: 'Lentes de Sol', price: 245, seed: 'optik-aviator-gold', badge: null, badgeClass: '' },
     { name: 'Redondo Titanio', type: 'Montura Metal', price: 210, seed: 'optik-round-titanium', badge: 'Popular', badgeClass: 'bg-navy-600 text-white' },
-    { name: 'Oversized Elegance', type: 'Gafas de Sol', price: 275, seed: 'optik-oversized-black', badge: null, badgeClass: '' },
+    { name: 'Oversized Elegance', type: 'Lentes de Sol', price: 275, seed: 'optik-oversized-black', badge: null, badgeClass: '' },
     { name: 'Browline Retro', type: 'Montura Mixta', price: 195, seed: 'optik-browline-retro', badge: null, badgeClass: '' },
     { name: 'Sport Wrap', type: 'Sol Deportivo', price: 230, seed: 'optik-sport-wrap', badge: 'Deporte', badgeClass: 'bg-green-500 text-white' },
     { name: 'Geometric Hex', type: 'Montura Acetato', price: 265, seed: 'optik-geometric-hex', badge: 'Exclusivo', badgeClass: 'bg-accent-yellow text-navy-600' },
