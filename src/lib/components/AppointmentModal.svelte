@@ -81,8 +81,8 @@
           <label for="modal-time" class="text-navy-600 text-sm font-semibold block mb-2">Horario</label>
           <select id="modal-time" required class="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-3 text-navy-600 text-sm focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:border-transparent transition-all appearance-none cursor-pointer">
             <option value="" disabled selected>Selecciona</option>
-            <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
-            <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
+            <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+            <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option>
           </select>
         </div>
       </div>
