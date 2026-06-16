@@ -1,18 +1,13 @@
 <script lang="ts">
   import SocialIcons from './SocialIcons.svelte';
+  import { ImagotipoHorizontal } from '$lib/components/branding';
 </script>
 
 <footer class="bg-navy-600 pt-16 pb-8">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div class="grid md:grid-cols-4 gap-12 mb-12">
       <div class="md:col-span-1">
-        <a href="#" class="flex items-center gap-2 mb-4">
-          <div class="relative w-8 h-8 flex items-center justify-center">
-            <div class="absolute inset-0 border-2 border-accent-yellow rounded-full"></div>
-            <div class="w-1.5 h-1.5 bg-accent-yellow rounded-full"></div>
-          </div>
-          <div><span class="text-lg font-bold text-white tracking-wider">OPTIK</span><span class="text-lg font-bold text-accent-yellow tracking-wider">-T</span></div>
-        </a>
+        <ImagotipoHorizontal theme="light" class="h-9 w-auto mb-4" ariaLabel="OPTIK-T" />
         <p class="text-white/40 text-sm leading-relaxed">Visión con estilo. Cuidado profesional para tus ojos desde 2009.</p>
         <p class="text-white/20 text-xs mt-4">Diseñado por @dpino.visual</p>
       </div>
