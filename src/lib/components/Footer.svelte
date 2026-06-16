@@ -32,8 +32,8 @@
       <div>
         <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Contacto</h4>
         <ul class="space-y-3">
-          <li class="text-white/40 text-sm">+58 424 959 3318</li>
-          <li class="text-white/40 text-sm">info@optik-t.com</li>
+          <li class="text-white/40 text-sm">+58 412 114 5790</li>
+          <li class="text-white/40 text-sm">optikt.vision@gmail.com</li>
           <li class="text-white/40 text-sm">CC Plaza Mayor, Nivel 2</li>
         </ul>
         <SocialIcons variant="text" />

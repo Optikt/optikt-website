@@ -26,7 +26,7 @@
           </div>
           <div class="flex gap-4 items-start">
             <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0"><Phone class="w-5 h-5 text-accent-yellow" /></div>
-            <div><h4 class="text-white font-semibold">Contacto</h4><p class="text-white/50 text-sm mt-1">+58 424 959 3318</p><p class="text-white/50 text-sm">info@optik-t.com</p></div>
+            <div><h4 class="text-white font-semibold">Contacto</h4><p class="text-white/50 text-sm mt-1">+58 412 114 5790</p><p class="text-white/50 text-sm">optikt.vision@gmail.com</p></div>
           </div>
         </div>
         <div class="mt-10">
