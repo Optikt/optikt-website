@@ -58,7 +58,7 @@
     <div use:fadeIn={{}}>
       <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2 mb-8">
         <div class="w-2 h-2 bg-accent-yellow rounded-full animate-pulse"></div>
-        <span class="text-white/80 text-xs font-semibold tracking-widest uppercase">Optometría Profesional</span>
+        <span class="text-white/80 text-xs font-semibold tracking-widest uppercase">Óptica Personalizda</span>
       </div>
     </div>
     <h1 use:fadeIn={{ delay: 0.15 }} class="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6">
