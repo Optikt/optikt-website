@@ -69,7 +69,7 @@
     </p>
     <div use:fadeIn={{ delay: 0.45 }} class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="#colecciones" class="bg-accent-yellow text-navy-600 px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-xl hover:shadow-accent-yellow/20 animate-pulse-glow">Explorar Colecciones</a>
-      <button onclick={onOpenModal} class="border-2 border-white/20 text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-white/10 hover:border-white/40 transition-all duration-300">Agendar Examen Visual</button>
+      <button onclick={onOpenModal} class="border-2 border-white/20 text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-white/10 hover:border-white/40 transition-all duration-300">Escríbenos</button>
     </div>
   </div>
 
