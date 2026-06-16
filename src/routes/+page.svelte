@@ -9,6 +9,7 @@
   import Stats from '$lib/components/Stats.svelte';
   import Gallery from '$lib/components/Gallery.svelte';
   import About from '$lib/components/About.svelte';
+  import PartnersMarquee from '$lib/components/PartnersMarquee.svelte';
   import Testimonials from '$lib/components/Testimonials.svelte';
   import Location from '$lib/components/Location.svelte';
   import FinalCTA from '$lib/components/FinalCTA.svelte';
@@ -39,6 +40,7 @@
 <Stats />
 <Gallery />
 <About onOpenModal={openModal} />
+<PartnersMarquee />
 <Testimonials />
 <Location />
 <FinalCTA onOpenModal={openModal} />
