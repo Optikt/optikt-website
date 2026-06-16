@@ -27,12 +27,12 @@ export const collections: Collection[] = [
     ],
   },
   {
-    badge: '02 - Gafas de Sol',
+    badge: '02 - Lentes de Sol',
     title: 'Protección con Personalidad',
     description:
       'Lentes polarizados, espejados y fotocromáticos. Cada par combina protección UV 400 con el diseño que te define bajo el sol.',
     imageSrc: 'https://picsum.photos/seed/sunglasses-beach-style/800/600.jpg',
-    imageAlt: 'Gafas de Sol',
+    imageAlt: 'Lentes de Sol',
     thumbnails: [
       { src: 'https://picsum.photos/seed/sun-aviator-opt/300/200.jpg', alt: 'Aviador' },
       { src: 'https://picsum.photos/seed/sun-wayfarer-opt/300/200.jpg', alt: 'Wayfarer' },
