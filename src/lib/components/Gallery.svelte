@@ -1,7 +1,34 @@
 <script lang="ts">
   import Instagram from '$lib/components/social-media/Instagram.svelte';
   import { fadeIn } from '$lib/utils/animations';
+
+  interface GalleryCard {
+    src: string;
+    alt: string;
+    label: string;
+    tall: boolean;
+  }
+
+  const cards: GalleryCard[] = [
+    { src: 'https://picsum.photos/seed/look1-woman-cat-eye/400/500.jpg', alt: 'Look Cat Eye', label: 'Cat Eye · Mujer', tall: true },
+    { src: 'https://picsum.photos/seed/look5-sunglasses-beach/400/350.jpg', alt: 'Look Sol Playa', label: 'Sol · Playa', tall: false },
+    { src: 'https://picsum.photos/seed/look2-man-aviator/400/350.jpg', alt: 'Look Aviador', label: 'Aviador · Hombre', tall: false },
+    { src: 'https://picsum.photos/seed/look6-round-vintage/400/500.jpg', alt: 'Look Vintage', label: 'Redondo · Vintage', tall: true },
+    { src: 'https://picsum.photos/seed/look3-oversized-glam/400/500.jpg', alt: 'Look Oversized', label: 'Oversized · Glam', tall: true },
+    { src: 'https://picsum.photos/seed/look7-sport-active/400/350.jpg', alt: 'Look Deportivo', label: 'Sport · Activo', tall: false },
+    { src: 'https://picsum.photos/seed/look4-geometric-modern/400/350.jpg', alt: 'Look Geométrico', label: 'Geométrico · Moderno', tall: false },
+    { src: 'https://picsum.photos/seed/look8-transparent-frame/400/500.jpg', alt: 'Look Transparente', label: 'Clear · Minimal', tall: true },
+  ];
 </script>
+
+{#snippet galleryCard(c: GalleryCard)}
+  <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
+    <img src={c.src} alt={c.alt} class="w-full {c.tall ? 'h-64' : 'h-48'} object-cover transition-all duration-500" />
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+      <span class="text-white text-xs font-semibold tracking-wider uppercase">{c.label}</span>
+    </div>
+  </div>
+{/snippet}
 
 <section id="galeria" class="py-24 md:py-32 bg-stone-50">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
@@ -13,63 +40,20 @@
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <div class="space-y-4">
-        <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-          <img src="https://picsum.photos/seed/look1-woman-cat-eye/400/500.jpg" alt="Look Cat Eye" class="w-full h-64 object-cover transition-all duration-500" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Cat Eye · Mujer</span>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-          <img src="https://picsum.photos/seed/look5-sunglasses-beach/400/350.jpg" alt="Look Sol Playa" class="w-full h-48 object-cover transition-all duration-500" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Sol · Playa</span>
-          </div>
-        </div>
+        {@render galleryCard(cards[0])}
+        {@render galleryCard(cards[1])}
       </div>
-
       <div class="space-y-4 pt-8">
-        <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-          <img src="https://picsum.photos/seed/look2-man-aviator/400/350.jpg" alt="Look Aviador" class="w-full h-48 object-cover transition-all duration-500" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Aviador · Hombre</span>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-          <img src="https://picsum.photos/seed/look6-round-vintage/400/500.jpg" alt="Look Vintage" class="w-full h-64 object-cover transition-all duration-500" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Redondo · Vintage</span>
-          </div>
-        </div>
+        {@render galleryCard(cards[2])}
+        {@render galleryCard(cards[3])}
       </div>
-
       <div class="space-y-4">
-        <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-          <img src="https://picsum.photos/seed/look3-oversized-glam/400/500.jpg" alt="Look Oversized" class="w-full h-64 object-cover transition-all duration-500" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Oversized · Glam</span>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-          <img src="https://picsum.photos/seed/look7-sport-active/400/350.jpg" alt="Look Deportivo" class="w-full h-48 object-cover transition-all duration-500" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Sport · Activo</span>
-          </div>
-        </div>
+        {@render galleryCard(cards[4])}
+        {@render galleryCard(cards[5])}
       </div>
-
       <div class="space-y-4 pt-8">
-        <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-          <img src="https://picsum.photos/seed/look4-geometric-modern/400/350.jpg" alt="Look Geométrico" class="w-full h-48 object-cover transition-all duration-500" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Geométrico · Moderno</span>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-          <img src="https://picsum.photos/seed/look8-transparent-frame/400/500.jpg" alt="Look Transparente" class="w-full h-64 object-cover transition-all duration-500" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Clear · Minimal</span>
-          </div>
-        </div>
+        {@render galleryCard(cards[6])}
+        {@render galleryCard(cards[7])}
       </div>
     </div>
 
