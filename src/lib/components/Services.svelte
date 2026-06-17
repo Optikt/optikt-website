@@ -1,7 +1,33 @@
 <script lang="ts">
   import { Eye, Glasses, ScanLine, HeartPulse, ShieldCheck } from '@lucide/svelte';
+  import type { Component } from 'svelte';
   import { fadeIn } from '$lib/utils/animations';
+
+  interface ServiceItem {
+    icon: Component;
+    title: string;
+    description: string;
+  }
+
+  const services: ServiceItem[] = [
+    { icon: Eye, title: 'Examen Visual Completo', description: 'Evaluación integral para tu salud visual y precisión.' },
+    { icon: Glasses, title: 'Adaptación Personalizada', description: 'Seleccionamos la montura perfecta según tu rostro y necesidades.' },
+    { icon: ScanLine, title: 'Lentes con Tecnología Digital', description: 'Progresivos, antirreflejo, fotocromáticos y blue-block.' },
+    { icon: HeartPulse, title: 'Seguimiento y Garantía', description: 'Acompañamiento post-venta.' },
+  ];
 </script>
+
+{#snippet serviceCard(s: ServiceItem)}
+  <div class="flex gap-5 p-5 rounded-xl bg-stone-50 transition-all duration-500 cursor-pointer border border-transparent hover:border-accent-yellow/20 hover:-translate-y-2 hover:shadow-xl">
+    <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-navy-600 text-accent-yellow flex items-center justify-center transition-all duration-300">
+      <svelte:component this={s.icon} class="w-5 h-5" />
+    </div>
+    <div>
+      <h4 class="font-semibold text-navy-600 text-lg">{s.title}</h4>
+      <p class="text-navy-300 text-sm mt-1 leading-relaxed">{s.description}</p>
+    </div>
+  </div>
+{/snippet}
 
 <section id="servicios" class="py-24 md:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
@@ -11,42 +37,9 @@
         <h2 class="text-4xl md:text-5xl font-bold text-navy-600 mt-4 tracking-tight leading-tight">Cuidado Profesional para tus Ojos</h2>
         <p class="text-navy-300 mt-6 leading-relaxed">En OPTIK-T combinamos tecnología de vanguardia con atención personalizada para garantizar la salud visual y el bienestar de cada paciente.</p>
         <div class="mt-10 space-y-6">
-          <div class="flex gap-5 p-5 rounded-xl bg-stone-50 transition-all duration-500 cursor-pointer border border-transparent hover:border-accent-yellow/20 hover:-translate-y-2 hover:shadow-xl">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-navy-600 text-accent-yellow flex items-center justify-center transition-all duration-300 group-hover:bg-accent-yellow group-hover:text-navy-600">
-              <Eye class="w-5 h-5" />
-            </div>
-            <div>
-              <h4 class="font-semibold text-navy-600 text-lg">Examen Visual Completo</h4>
-              <p class="text-navy-300 text-sm mt-1 leading-relaxed">Evaluación integral con equipos digitales de última generación.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 p-5 rounded-xl bg-stone-50 transition-all duration-500 cursor-pointer border border-transparent hover:border-accent-yellow/20 hover:-translate-y-2 hover:shadow-xl">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-navy-600 text-accent-yellow flex items-center justify-center transition-all duration-300">
-              <Glasses class="w-5 h-5" />
-            </div>
-            <div>
-              <h4 class="font-semibold text-navy-600 text-lg">Adaptación Personalizada</h4>
-              <p class="text-navy-300 text-sm mt-1 leading-relaxed">Seleccionamos la montura perfecta según tu rostro y necesidades.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 p-5 rounded-xl bg-stone-50 transition-all duration-500 cursor-pointer border border-transparent hover:border-accent-yellow/20 hover:-translate-y-2 hover:shadow-xl">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-navy-600 text-accent-yellow flex items-center justify-center transition-all duration-300">
-              <ScanLine class="w-5 h-5" />
-            </div>
-            <div>
-              <h4 class="font-semibold text-navy-600 text-lg">Lentes con Tecnología Digital</h4>
-              <p class="text-navy-300 text-sm mt-1 leading-relaxed">Progresivos, antirreflejo, fotocromáticos y blue-block.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 p-5 rounded-xl bg-stone-50 transition-all duration-500 cursor-pointer border border-transparent hover:border-accent-yellow/20 hover:-translate-y-2 hover:shadow-xl">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-navy-600 text-accent-yellow flex items-center justify-center transition-all duration-300">
-              <HeartPulse class="w-5 h-5" />
-            </div>
-            <div>
-              <h4 class="font-semibold text-navy-600 text-lg">Seguimiento y Garantía</h4>
-              <p class="text-navy-300 text-sm mt-1 leading-relaxed">Acompañamiento post-venta y ajustes gratuitos.</p>
-            </div>
-          </div>
+          {#each services as s}
+            {@render serviceCard(s)}
+          {/each}
         </div>
       </div>
 
