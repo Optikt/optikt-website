@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Camera } from '@lucide/svelte';
+  import Instagram from '$lib/components/social-media/Instagram.svelte';
   import { fadeIn } from '$lib/utils/animations';
 </script>
 
@@ -74,9 +74,9 @@
     </div>
 
     <div use:fadeIn={{}} class="text-center mt-12">
-      <a href="#" class="inline-flex items-center gap-3 bg-navy-600 text-white px-8 py-3.5 rounded-full font-semibold text-sm hover:bg-navy-500 transition-all duration-300">
-        <Camera class="w-5 h-5" />
-        Síguenos en @optik_t
+      <a href="https://www.instagram.com/optikt_/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-3 bg-navy-600 text-white px-8 py-3.5 rounded-full font-semibold text-sm hover:bg-navy-500 transition-all duration-300">
+        <Instagram class="w-5 h-5" />
+        Síguenos en @optikt_
       </a>
     </div>
   </div>
