@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Calendar, CircleCheck } from '@lucide/svelte';
+  import ImagotipoVertical from '$lib/components/branding/ImagotipoVertical.svelte';
   import { fadeIn } from '$lib/utils/animations';
 
   let { onOpenModal }: { onOpenModal: () => void } = $props();
@@ -31,16 +32,8 @@
       <div use:fadeIn={{ type: 'left' }} class="relative grid grid-cols-2 gap-4">
         <div class="space-y-4">
           {@render aboutImage('https://picsum.photos/seed/optik-boutique-interior/400/500.jpg', 'Interior', true)}
-          <div class="rounded-2xl overflow-hidden h-48 bg-accent-yellow flex items-center justify-center">
-            <div class="text-center px-6">
-              <svg width="60" height="25" viewBox="0 0 60 25" fill="none" class="mx-auto mb-2">
-                <circle cx="15" cy="13" r="10" stroke="#0F1B33" stroke-width="2" fill="none" />
-                <circle cx="45" cy="13" r="10" stroke="#0F1B33" stroke-width="2" fill="none" />
-                <path d="M25 13 Q30 8 35 13" stroke="#0F1B33" stroke-width="2" fill="none" />
-              </svg>
-              <div class="text-2xl font-bold text-navy-600">OPTIK-T</div>
-              <div class="text-navy-600/60 text-xs mt-1 tracking-widest uppercase">Since 2009</div>
-            </div>
+          <div class="rounded-2xl overflow-hidden h-48 bg-accent-yellow flex flex-col items-center justify-center">
+            <ImagotipoVertical primaryColor="#0F1B33" secondaryColor="#0F1B33" class="h-24 w-auto" />
           </div>
         </div>
         <div class="space-y-4 pt-8">
