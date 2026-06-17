@@ -29,6 +29,12 @@
   </div>
 {/snippet}
 
+{#snippet galleryImage(src: string, alt: string, tall: boolean)}
+  <div class="rounded-2xl overflow-hidden {tall ? 'h-52' : 'h-40'} lens-shine">
+    <img {src} {alt} class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+  </div>
+{/snippet}
+
 <section id="servicios" class="py-24 md:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -46,20 +52,12 @@
       <div use:fadeIn={{ type: 'right' }} class="relative">
         <div class="grid grid-cols-2 gap-4">
           <div class="space-y-4">
-            <div class="rounded-2xl overflow-hidden h-52 lens-shine">
-              <img src="https://picsum.photos/seed/optik-eye-exam-close/400/400.jpg" alt="Examen Visual" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-            </div>
-            <div class="rounded-2xl overflow-hidden h-40 lens-shine">
-              <img src="https://picsum.photos/seed/optik-lens-cutting-lab/400/300.jpg" alt="Laboratorio" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-            </div>
+            {@render galleryImage('https://picsum.photos/seed/optik-eye-exam-close/400/400.jpg', 'Examen Visual', true)}
+            {@render galleryImage('https://picsum.photos/seed/optik-lens-cutting-lab/400/300.jpg', 'Laboratorio', false)}
           </div>
           <div class="space-y-4 pt-8">
-            <div class="rounded-2xl overflow-hidden h-40 lens-shine">
-              <img src="https://picsum.photos/seed/optik-frame-fitting/400/300.jpg" alt="Adaptación" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-            </div>
-            <div class="rounded-2xl overflow-hidden h-52 lens-shine">
-              <img src="https://picsum.photos/seed/optik-phoropter-device/400/400.jpg" alt="Equipos" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-            </div>
+            {@render galleryImage('https://picsum.photos/seed/optik-frame-fitting/400/300.jpg', 'Adaptación', false)}
+            {@render galleryImage('https://picsum.photos/seed/optik-phoropter-device/400/400.jpg', 'Equipos', true)}
           </div>
         </div>
         <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-xl shadow-2xl p-5 border border-stone-100 flex items-center gap-4">
