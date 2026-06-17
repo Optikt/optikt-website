@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Calendar, CheckCircle } from '@lucide/svelte';
+  import { Calendar, CircleCheck } from '@lucide/svelte';
   import { fadeIn } from '$lib/utils/animations';
 
   let { onOpenModal }: { onOpenModal: () => void } = $props();
@@ -41,10 +41,10 @@
         <p class="text-navy-300 mt-6 leading-relaxed">En OPTIK-T creemos que ver bien es solo el comienzo. Nuestro espacio fue diseñado para que cada visita sea un momento de descubrimiento.</p>
         <p class="text-navy-300 mt-4 leading-relaxed">Nuestro equipo de optometristas y asesores de estilo trabajan juntos para ofrecerte una atención integral.</p>
         <div class="mt-8 grid grid-cols-2 gap-4">
-          <div class="flex items-center gap-3"><CheckCircle class="w-5 h-5 text-accent-yellow flex-shrink-0" /><span class="text-navy-600 text-sm font-medium">Equipos Digitales</span></div>
-          <div class="flex items-center gap-3"><CheckCircle class="w-5 h-5 text-accent-yellow flex-shrink-0" /><span class="text-navy-600 text-sm font-medium">Laboratorio Propio</span></div>
-          <div class="flex items-center gap-3"><CheckCircle class="w-5 h-5 text-accent-yellow flex-shrink-0" /><span class="text-navy-600 text-sm font-medium">Marcas Exclusivas</span></div>
-          <div class="flex items-center gap-3"><CheckCircle class="w-5 h-5 text-accent-yellow flex-shrink-0" /><span class="text-navy-600 text-sm font-medium">Garantía Total</span></div>
+          <div class="flex items-center gap-3"><CircleCheck class="w-5 h-5 text-accent-yellow flex-shrink-0" /><span class="text-navy-600 text-sm font-medium">Equipos Digitales</span></div>
+          <div class="flex items-center gap-3"><CircleCheck class="w-5 h-5 text-accent-yellow flex-shrink-0" /><span class="text-navy-600 text-sm font-medium">Laboratorio Propio</span></div>
+          <div class="flex items-center gap-3"><CircleCheck class="w-5 h-5 text-accent-yellow flex-shrink-0" /><span class="text-navy-600 text-sm font-medium">Marcas Exclusivas</span></div>
+          <div class="flex items-center gap-3"><CircleCheck class="w-5 h-5 text-accent-yellow flex-shrink-0" /><span class="text-navy-600 text-sm font-medium">Garantía Total</span></div>
         </div>
         <button onclick={onOpenModal} class="mt-8 bg-navy-600 text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-navy-500 transition-all duration-300 inline-flex items-center gap-2">
           <Calendar class="w-4 h-4" /> Conócenos en Persona
