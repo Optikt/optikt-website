@@ -65,8 +65,8 @@
             <ShieldCheck class="w-5 h-5 text-accent-yellow" />
           </div>
           <div>
-            <div class="font-bold text-navy-600 text-sm">Optometristas Certificados</div>
-            <div class="text-navy-300 text-xs">+15 años de experiencia</div>
+            <div class="font-bold text-navy-600 text-sm">Calidad Certificada</div>
+            <div class="text-navy-300 text-xs">Claridad y nitidez al 100%</div>
           </div>
         </div>
       </div>
