@@ -62,7 +62,9 @@
       </div>
     </div>
     <h1 use:fadeIn={{ delay: 0.15 }} class="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6">
-      Tu Visión,<br /><span class="text-shimmer">Nuestra Pasión</span>
+      <!-- Tu Visión,<br /><span class="text-shimmer">Nuestra Pasión</span> -->
+      Para tu Visión,<br /><span class="text-shimmer">la mejor Solución</span>
+
     </h1>
     <p use:fadeIn={{ delay: 0.3 }} class="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
       Descubre la colección de monturas y lentes que combinan estilo, comodidad y la mejor tecnología para tus ojos.
