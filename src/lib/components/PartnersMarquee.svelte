@@ -18,7 +18,7 @@
   <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     <div use:fadeIn={{}} class="text-center mb-14">
       <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Nuestros Aliados</span>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">Proveedores, Laboratorios y Marcas</h2>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">Laboratorios y Marcas</h2>
       <p class="text-white/40 mt-4 max-w-2xl mx-auto text-sm leading-relaxed">
         Detrás de cada montura y cada lente hay aliados estratégicos que comparten nuestro compromiso con la calidad y la innovación.
       </p>
