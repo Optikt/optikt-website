@@ -1,6 +1,7 @@
 <script lang="ts">
   import SocialIcons from './SocialIcons.svelte';
   import { ImagotipoHorizontal } from '$lib/components/branding';
+  import { business } from '$lib/data/business';
 </script>
 
 <footer class="bg-navy-600 pt-16 pb-8">
@@ -32,9 +33,9 @@
       <div>
         <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Contacto</h4>
         <ul class="space-y-3">
-          <li class="text-white/40 text-sm">+58 412 114 5790</li>
-          <li class="text-white/40 text-sm">optikt.vision@gmail.com</li>
-          <li class="text-white/40 text-sm">CC Plaza Mayor, Nivel 2</li>
+          <li class="text-white/40 text-sm">{business.phone}</li>
+          <li class="text-white/40 text-sm">{business.email}</li>
+          <li class="text-white/40 text-sm">{business.address}</li>
         </ul>
         <SocialIcons variant="text" />
       </div>

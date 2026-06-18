@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Sparkles, Calendar, MessageCircle } from '@lucide/svelte';
   import { fadeIn } from '$lib/utils/animations';
+  import { business } from '$lib/data/business';
 
   let { onOpenModal }: { onOpenModal: () => void } = $props();
 </script>
@@ -18,7 +19,7 @@
         <button onclick={onOpenModal} class="bg-accent-yellow text-navy-600 px-10 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-xl hover:shadow-accent-yellow/20 animate-pulse-glow inline-flex items-center gap-2">
           <Calendar class="w-5 h-5" /> Agendar Cita Ahora
         </button>
-        <a href="https://wa.me/584121145790" target="_blank" rel="noreferrer" class="border-2 border-navy-600/10 text-navy-600 px-10 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-navy-600 hover:text-white transition-all duration-300 inline-flex items-center gap-2">
+        <a href={business.socialLinks[2].href} target="_blank" rel="noreferrer" class="border-2 border-navy-600/10 text-navy-600 px-10 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-navy-600 hover:text-white transition-all duration-300 inline-flex items-center gap-2">
           <MessageCircle class="w-5 h-5" /> WhatsApp
         </a>
       </div>
