@@ -8,7 +8,7 @@
   let modalName = $state('');
   let modalText = $state('');
 
-  const TRUNCATE_AT = 140;
+  const TRUNCATE_AT = 120;
 
   function openFull(t: typeof testimonials[number]) {
     modalName = t.name;
