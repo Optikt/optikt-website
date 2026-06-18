@@ -5,8 +5,7 @@
 
   function getVenezuelaTime() {
     const now = new Date();
-    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-    const v = new Date(utc + locationData.timezoneOffset * 3600000);
+    const v = new Date(now.getTime() + locationData.timezoneOffset * 3600000);
     return { day: v.getUTCDay(), hours: v.getUTCHours(), minutes: v.getUTCMinutes() };
   }
 
