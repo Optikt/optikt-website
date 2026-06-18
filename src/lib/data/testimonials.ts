@@ -64,7 +64,6 @@ export const testimonials: Testimonial[] = [
     link: "https://maps.app.goo.gl/vN8tVCU6K4xt24Yt5",
     seed: "testimonial-man3",
   },
-  //
     {
     text: '"Excelente atención, lentes de nuevos modelos, pago accesible"',
     name: "Sofia Carvajal",
