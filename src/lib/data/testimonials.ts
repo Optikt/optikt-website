@@ -57,19 +57,18 @@ export const testimonials: Testimonial[] = [
     link: "https://maps.app.goo.gl/t8SnYwVbBgTv5zXB6",
     seed: "testimonial-woman5",
   },
-    {
+  {
     text: '"Excelente asesoría y servicio, muy buenos precios!"',
     name: "Ricardo Diaz",
     clientSince: "2026",
     link: "https://maps.app.goo.gl/vN8tVCU6K4xt24Yt5",
     seed: "testimonial-man3",
   },
-    {
+  {
     text: '"Excelente atención, lentes de nuevos modelos, pago accesible"',
     name: "Sofia Carvajal",
     clientSince: "2026",
     link: "https://maps.app.goo.gl/gNV6U3nMTYwvjQXWA",
     seed: "testimonial-woman5",
   },
-  
 ];
