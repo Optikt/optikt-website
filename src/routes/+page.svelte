@@ -14,36 +14,37 @@
   import Location from '$lib/components/Location.svelte';
   import FinalCTA from '$lib/components/FinalCTA.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import AppointmentModal from '$lib/components/AppointmentModal.svelte';
-  import Toast from '$lib/components/Toast.svelte';
+  import ContactModal from '$lib/components/ContactModal.svelte';
 
   let modalOpen = $state(false);
-  let toastShow = $state(false);
-  let toastTimer: ReturnType<typeof setTimeout> | undefined = $state(undefined);
+  let selectedProduct = $state<{ name: string } | null>(null);
 
-  function openModal() { modalOpen = true; document.body.style.overflow = 'hidden'; }
-  function closeModal() { modalOpen = false; document.body.style.overflow = ''; }
-  function showToast() {
-    toastShow = true;
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => { toastShow = false; }, 4000);
+  function openModal(product?: { name: string }) {
+    selectedProduct = product ?? null;
+    modalOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalOpen = false;
+    selectedProduct = null;
+    document.body.style.overflow = '';
   }
 </script>
 
-<Nav onOpenModal={openModal} />
-<Hero onOpenModal={openModal} />
+<Nav onOpenModal={() => openModal()} />
+<Hero onOpenModal={() => openModal()} />
 <BrandMarquee />
 <Collections />
 <LensTechnology />
-<FeaturedProducts />
+<FeaturedProducts onOpenModal={openModal} />
 <Services />
 <Stats />
 <Gallery />
-<About onOpenModal={openModal} />
+<About onOpenModal={() => openModal()} />
 <PartnersMarquee />
 <Testimonials />
 <Location />
-<FinalCTA onOpenModal={openModal} />
+<FinalCTA onOpenModal={() => openModal()} />
 <Footer />
-<AppointmentModal open={modalOpen} onClose={closeModal} onToast={showToast} />
-<Toast show={toastShow} />
+<ContactModal open={modalOpen} onClose={closeModal} product={selectedProduct} />

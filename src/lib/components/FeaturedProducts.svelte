@@ -2,6 +2,9 @@
   import { featuredProducts } from '$lib/data/featured';
   import type { FeaturedProduct } from '$lib/data/featured';
   import { fadeIn } from '$lib/utils/animations';
+  import { MessageCircle } from '@lucide/svelte';
+
+  let { onOpenModal }: { onOpenModal: (product?: { name: string }) => void } = $props();
 </script>
 
 {#snippet productCard(product: FeaturedProduct, i: number)}
@@ -11,6 +14,14 @@
       {#if product.badge}
         <div class="absolute top-6 left-6 {product.badgeClass} text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full">{product.badge}</div>
       {/if}
+      <div class="absolute inset-0 bg-navy-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center">
+        <button
+          onclick={() => onOpenModal({ name: product.name })}
+          class="bg-white text-navy-600 px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-accent-yellow hover:text-navy-600 transition-all duration-300 shadow-lg flex items-center gap-2 cursor-pointer"
+        >
+          <MessageCircle class="w-4 h-4" /> Consultar
+        </button>
+      </div>
     </div>
     <div class="mt-4 px-1">
       <h4 class="font-semibold text-navy-600">{product.name}</h4>
@@ -26,10 +37,6 @@
         <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Destacados</span>
         <h2 class="text-4xl md:text-5xl font-bold text-navy-600 mt-4 tracking-tight">Lo Más Nuevo</h2>
       </div>
-      <!-- TODO: Add support to redirect to specific products page -->
-      <!-- <a href="#" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-navy-500 text-sm font-semibold hover:text-accent-yellow transition-colors group">
-        Ver todos los productos <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-      </a> -->
     </div>
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
