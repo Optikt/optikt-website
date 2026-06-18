@@ -2,6 +2,8 @@
   import SocialIcons from './SocialIcons.svelte';
   import { ImagotipoHorizontal } from '$lib/components/branding';
   import { business } from '$lib/data/business';
+
+  const year = new Date().getFullYear();
 </script>
 
 <footer class="bg-navy-600 pt-16 pb-8">
@@ -40,7 +42,7 @@
       </div>
     </div>
     <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-white/20 text-xs">© 2025 OPTIK-T. Todos los derechos reservados.</p>
+      <p class="text-white/20 text-xs">© {year} OPTIK-T. Todos los derechos reservados.</p>
       <div class="flex gap-6">
         <a href="#" class="text-white/20 text-xs hover:text-white/50 transition-colors">Política de Privacidad</a>
         <a href="#" class="text-white/20 text-xs hover:text-white/50 transition-colors">Términos y Condiciones</a>
