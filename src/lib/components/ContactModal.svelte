@@ -33,7 +33,7 @@
     e.preventDefault();
     let msg = `Hola, soy ${nombre}. Quisiera ${motivo}.`;
     if (product) msg += `\nMe interesa el modelo: ${product.name}.`;
-    msg += `\n\${mensaje}`;
+    msg += `\n\n${mensaje}`;
     window.open(`${business.socialLinks[2].href}?text=${encodeURIComponent(msg)}`, '_blank');
     onClose();
   }
