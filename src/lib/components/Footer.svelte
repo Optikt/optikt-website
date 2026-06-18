@@ -9,8 +9,7 @@
     <div class="grid md:grid-cols-4 gap-12 mb-12">
       <div class="md:col-span-1">
         <ImagotipoHorizontal theme="light" class="h-9 w-auto mb-4" ariaLabel="OPTIK-T" />
-        <p class="text-white/40 text-sm leading-relaxed">Visión con estilo. Cuidado profesional para tus ojos desde 2009.</p>
-        <p class="text-white/20 text-xs mt-4">Diseñado por @dpino.visual</p>
+        <p class="text-white/40 text-sm leading-relaxed">Visión con estilo. Cuidado profesional para tus ojos.</p>
       </div>
       <div>
         <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Navegación</h4>
