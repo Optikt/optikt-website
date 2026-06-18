@@ -153,7 +153,7 @@
             </div>
           </div>
 
-          <a href={business.mapsSearchUrl} target="_blank" rel="noreferrer" class="bg-[#FFCC00] text-[#0F1B33] px-8 py-3.5 rounded-full font-bold hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-[#FFCC00]/10 flex items-center gap-2 justify-center w-full md:w-auto md:self-start">
+          <a href={business.mapsUrl} target="_blank" rel="noreferrer" class="bg-[#FFCC00] text-[#0F1B33] px-8 py-3.5 rounded-full font-bold hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-[#FFCC00]/10 flex items-center gap-2 justify-center w-full md:w-auto md:self-start">
             <MapPin class="w-5 h-5" />
             Cómo Llegar
           </a>
