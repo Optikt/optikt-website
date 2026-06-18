@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { ArrowRight } from '@lucide/svelte';
   import { featuredProducts } from '$lib/data/featured';
   import type { FeaturedProduct } from '$lib/data/featured';
   import { fadeIn } from '$lib/utils/animations';
