@@ -75,7 +75,7 @@
       : 'Cerrado';
   }
 
-  const mapsEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62851.65412273824!2d-63.2159275!3d9.7460715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c3a2da5a8e3e4a1%3A0x1234567890abcdef!2sMatur%C3%ADn%2C%20Monagas!5e0!3m2!1ses!2sve!4v1612345678901!5m2!1ses!2sve';
+  const mapsEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.2792715974574!2d-63.16737490000002!3d9.742394800000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c334160551d2aaf%3A0x7025245b4348f49b!2sOptik-T%20-%20%C3%93ptica!5e0!3m2!1ses-419!2sve!4v1781808743468!5m2!1ses-419!2sve';
 
   function observe(element: HTMLElement) {
     const observer = new IntersectionObserver(
