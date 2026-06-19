@@ -1,14 +1,13 @@
 export interface Thumbnail {
-  src: string;
-  alt: string;
+  imageKey: string;
+  alt?: string;
 }
 
 export interface Collection {
   badge: string;
   title: string;
   description: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageKey: string;
   thumbnails: Thumbnail[];
 }
 
@@ -18,12 +17,11 @@ export const collections: Collection[] = [
     title: 'Monturas que Definen tu Mirada',
     description:
       'Desde las clásicas hasta las más modernas monturas. Cada pieza es seleccionada por su calidad, comodidad y estilo.',
-    imageSrc: 'https://picsum.photos/seed/prescription-glasses-display/800/600.jpg',
-    imageAlt: 'Lentes Graduados',
+    imageKey: 'col-graduados',
     thumbnails: [
-      { src: 'https://picsum.photos/seed/frame-cat-eye-opt/300/200.jpg', alt: 'Cat Eye' },
-      { src: 'https://picsum.photos/seed/frame-round-opt/300/200.jpg', alt: 'Redondas' },
-      { src: 'https://picsum.photos/seed/frame-rectangular-opt/300/200.jpg', alt: 'Rectangulares' },
+      { imageKey: 'thumb-cat-eye' },
+      { imageKey: 'thumb-round' },
+      { imageKey: 'thumb-rectangular' },
     ],
   },
   {
@@ -31,12 +29,11 @@ export const collections: Collection[] = [
     title: 'Protección con Personalidad',
     description:
       'Lentes polarizados, espejados y fotocromáticos. Cada par combina protección UV con el diseño que te define bajo el sol.',
-    imageSrc: 'https://picsum.photos/seed/sunglasses-beach-style/800/600.jpg',
-    imageAlt: 'Lentes de Sol',
+    imageKey: 'col-sol',
     thumbnails: [
-      { src: 'https://picsum.photos/seed/sun-aviator-opt/300/200.jpg', alt: 'Aviador' },
-      { src: 'https://picsum.photos/seed/sun-wayfarer-opt/300/200.jpg', alt: 'Wayfarer' },
-      { src: 'https://picsum.photos/seed/sun-oversized-opt/300/200.jpg', alt: 'Oversized' },
+      { imageKey: 'thumb-aviator' },
+      { imageKey: 'thumb-wayfarer' },
+      { imageKey: 'thumb-oversized' },
     ],
   },
   {
@@ -44,12 +41,11 @@ export const collections: Collection[] = [
     title: 'Libertad Visual Total',
     description:
       'Lentes de contacto diarios, quincenales y mensuales. También opciones cosméticas y especializadas para astigmatismo y presbicia.',
-    imageSrc: 'https://picsum.photos/seed/contact-lens-eye-closeup/800/600.jpg',
-    imageAlt: 'Lentes de Contacto',
+    imageKey: 'col-contacto',
     thumbnails: [
-      { src: 'https://picsum.photos/seed/contact-daily-opt/300/200.jpg', alt: 'Diarios' },
-      { src: 'https://picsum.photos/seed/contact-monthly-opt/300/200.jpg', alt: 'Mensuales' },
-      { src: 'https://picsum.photos/seed/contact-color-opt/300/200.jpg', alt: 'Cosméticos' },
+      { imageKey: 'thumb-contact-daily' },
+      { imageKey: 'thumb-contact-monthly' },
+      { imageKey: 'thumb-contact-color' },
     ],
   },
 ];
