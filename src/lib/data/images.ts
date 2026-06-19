@@ -54,7 +54,7 @@ export const imagenes: ImagenesCatalog = {
     consultable: false,
   },
   'col-sol': {
-    pathUrl: 'https://picsum.photos/seed/sunglasses-beach-style/800/600.jpg',
+    pathUrl: '/images/colecciones/lentes-sol/1.jpg',
     alt: 'Lentes de Sol OPTIK-T en playa',
     nombre: 'Lentes de Sol',
     categoria: 'coleccion',
@@ -96,7 +96,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Montura estilo Rectangular', precio: '' },
   },
   'thumb-aviator': {
-    pathUrl: 'https://picsum.photos/seed/sun-aviator-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/lentes-sol/2.jpg',
     alt: 'Lentes de Sol Aviador',
     nombre: 'Aviador',
     categoria: 'montura',
@@ -104,7 +104,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Sol estilo Aviador', precio: '' },
   },
   'thumb-wayfarer': {
-    pathUrl: 'https://picsum.photos/seed/sun-wayfarer-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/lentes-sol/3.jpg',
     alt: 'Lentes de Sol Wayfarer',
     nombre: 'Wayfarer',
     categoria: 'montura',
@@ -112,7 +112,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Sol estilo Wayfarer', precio: '' },
   },
   'thumb-oversized': {
-    pathUrl: 'https://picsum.photos/seed/sun-oversized-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/lentes-sol/4.jpg',
     alt: 'Lentes de Sol Oversized',
     nombre: 'Oversized',
     categoria: 'montura',
