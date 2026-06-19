@@ -31,7 +31,7 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {#each techLensesData as lens, i}
-        <LensTechCard icon={techIcons[i]} title={lens.title} description={lens.description} imageSrc={lens.imageSrc} imageAlt={lens.imageAlt} index={i} />
+        <LensTechCard icon={techIcons[i]} title={lens.title} description={lens.description} imageKey={lens.imageKey} index={i} />
       {/each}
     </div>
 

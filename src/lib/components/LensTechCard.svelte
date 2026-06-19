@@ -1,22 +1,23 @@
 <script lang="ts">
   import { fadeIn } from '$lib/utils/animations';
+  import { imagenes } from '$lib/data/images';
   import type { Component } from 'svelte';
 
   let {
     icon: Icon,
     title,
     description,
-    imageSrc,
-    imageAlt,
+    imageKey,
     index = 0,
   }: {
     icon: Component;
     title: string;
     description: string;
-    imageSrc: string;
-    imageAlt: string;
+    imageKey: string;
     index?: number;
   } = $props();
+
+  let img = $derived(imagenes[imageKey]);
 </script>
 
 <div use:fadeIn={{ delay: index * 0.1 }} class="tech-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex flex-col transition-all duration-500 cursor-pointer hover:-translate-y-1.5 hover:border-accent-yellow/40">
@@ -26,6 +27,6 @@
   <h4 class="text-white font-semibold text-lg">{title}</h4>
   <p class="text-white/40 text-sm mt-2 leading-relaxed">{description}</p>
   <div class="rounded-lg overflow-hidden h-32 mt-auto pt-4">
-    <img src={imageSrc} alt={imageAlt} class="w-full h-full object-cover" />
+    <img src={img.pathUrl} alt={img.alt} class="w-full h-full object-cover" />
   </div>
 </div>
