@@ -24,19 +24,19 @@ export const imagenes: ImagenesCatalog = {
   // HERO
   // ============================================================
   'hero-principal': {
-    pathUrl: 'https://picsum.photos/seed/eyewear-display-luxury/1920/1080.jpg',
+    pathUrl: '/images/hero/5.jpg',
     alt: 'OPTIK-T Hero - exhibición de lentes de lujo',
     categoria: 'hero',
     consultable: false,
   },
   'hero-sunglasses-float': {
-    pathUrl: 'https://picsum.photos/seed/sunglasses-hero-float/400/250.jpg',
+    pathUrl: '/images/hero/6.jpg', // "new"
     alt: 'Lentes de Sol flotantes',
     categoria: 'hero',
     consultable: false,
   },
   'hero-frame-detail': {
-    pathUrl: 'https://picsum.photos/seed/frame-detail-hero/300/300.jpg',
+    pathUrl: '/images/hero/3.jpg',
     alt: 'Detalle de montura',
     categoria: 'hero',
     consultable: false,
