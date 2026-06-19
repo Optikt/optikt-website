@@ -61,7 +61,7 @@ export const imagenes: ImagenesCatalog = {
     consultable: false,
   },
   'col-contacto': {
-    pathUrl: 'https://picsum.photos/seed/contact-lens-eye-closeup/800/600.jpg',
+    pathUrl: '/images/colecciones/contacto/1.jpg',
     alt: 'Lentes de Contacto OPTIK-T',
     nombre: 'Lentes de Contacto',
     categoria: 'coleccion',
