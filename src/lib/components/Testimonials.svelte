@@ -2,6 +2,7 @@
   import { Star, ExternalLink } from '@lucide/svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { testimonials } from '$lib/data/testimonials';
+  import { imagenes } from '$lib/data/images';
   import Modal from './Modal.svelte';
 
   let modalOpen = $state(false);
@@ -52,7 +53,7 @@
             </button>
           {/if}
           <div class="flex items-center gap-3 mt-6">
-            <img src="https://picsum.photos/seed/{t.seed}/80/80.jpg" alt={t.name} class="w-10 h-10 rounded-full object-cover" />
+            <img src={imagenes[t.imageKey].pathUrl} alt={imagenes[t.imageKey].alt} class="w-10 h-10 rounded-full object-cover" />
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-1.5">
                 <span class="text-navy-600 text-sm font-semibold">{t.name}</span>
