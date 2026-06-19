@@ -348,7 +348,7 @@ export const imagenes: ImagenesCatalog = {
   // SERVICIOS
   // ============================================================
   'svc-examen-visual': {
-    pathUrl: 'https://picsum.photos/seed/optik-eye-exam-close/400/400.jpg',
+    pathUrl: '/images/servicios/1.jpg',
     alt: 'Examen visual en OPTIK-T',
     categoria: 'servicios',
     consultable: false,
@@ -360,7 +360,7 @@ export const imagenes: ImagenesCatalog = {
     consultable: false,
   },
   'svc-adaptacion': {
-    pathUrl: 'https://picsum.photos/seed/optik-frame-fitting/400/300.jpg',
+    pathUrl: '/images/servicios/3.webp',
     alt: 'Adaptación de montura en OPTIK-T',
     categoria: 'servicios',
     consultable: false,
