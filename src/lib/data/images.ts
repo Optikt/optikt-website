@@ -354,7 +354,8 @@ export const imagenes: ImagenesCatalog = {
     consultable: false,
   },
   'svc-laboratorio': {
-    pathUrl: 'https://picsum.photos/seed/optik-lens-cutting-lab/400/300.jpg',
+    // pathUrl: 'https://picsum.photos/seed/optik-lens-cutting-lab/400/300.jpg',
+    pathUrl: '/images/servicios/2.jpg',
     alt: 'Laboratorio de lentes OPTIK-T',
     categoria: 'servicios',
     consultable: false,
@@ -366,7 +367,8 @@ export const imagenes: ImagenesCatalog = {
     consultable: false,
   },
   'svc-equipos': {
-    pathUrl: 'https://picsum.photos/seed/optik-phoropter-device/400/400.jpg',
+    // pathUrl: 'https://picsum.photos/seed/optik-phoropter-device/400/400.jpg',
+    pathUrl: '/images/servicios/4.webp',
     alt: 'Equipos de diagnóstico OPTIK-T',
     categoria: 'servicios',
     consultable: false,
