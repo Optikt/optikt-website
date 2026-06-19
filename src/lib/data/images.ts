@@ -120,7 +120,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Sol estilo Oversized', precio: '' },
   },
   'thumb-contact-daily': {
-    pathUrl: 'https://picsum.photos/seed/contact-daily-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/contacto/2.jpg',
     alt: 'Lentes de Contacto Diarios',
     nombre: 'Diarios',
     categoria: 'montura',
@@ -128,7 +128,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Contacto de uso diario', precio: '' },
   },
   'thumb-contact-monthly': {
-    pathUrl: 'https://picsum.photos/seed/contact-monthly-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/contacto/3.jpg',
     alt: 'Lentes de Contacto Mensuales',
     nombre: 'Mensuales',
     categoria: 'montura',
@@ -136,7 +136,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Contacto de uso mensual', precio: '' },
   },
   'thumb-contact-color': {
-    pathUrl: 'https://picsum.photos/seed/contact-color-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/contacto/4.jpg',
     alt: 'Lentes de Contacto Cosméticos',
     nombre: 'Cosméticos',
     categoria: 'montura',
