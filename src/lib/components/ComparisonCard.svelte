@@ -1,7 +1,10 @@
 <script lang="ts">
   import type { ComparisonData } from '$lib/data/lenses';
+  import { imagenes } from '$lib/data/images';
 
   let { data }: { data: ComparisonData } = $props();
+
+  let img = $derived(imagenes[data.imageKey]);
 </script>
 
 <div class="text-center">
@@ -10,8 +13,8 @@
       class="w-40 h-40 rounded-full border-4 mx-auto flex items-center justify-center relative overflow-hidden {data.accented ? 'border-accent-yellow shadow-lg shadow-accent-yellow/20' : 'border-white/10'}"
     >
       <img
-        src={data.imageSrc}
-        alt={data.imageAlt}
+        src={img.pathUrl}
+        alt={img.alt}
         class="w-full h-full object-cover {data.blur ? 'opacity-50 blur-[1px]' : ''} {data.overlay && !data.accented ? 'opacity-60' : ''}"
       />
       {#if data.overlay}

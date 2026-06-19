@@ -1,6 +1,7 @@
 <script lang="ts">
   import { X, Send } from '@lucide/svelte';
   import { business } from '$lib/data/business';
+  import { getImagen, getConsultables } from '$lib/data/images';
 
   let {
     open,
@@ -9,13 +10,16 @@
   }: {
     open: boolean;
     onClose: () => void;
-    product?: { name: string } | null;
+    product?: { imageKey: string } | null;
   } = $props();
 
   let formEl: HTMLFormElement;
   let nombre = $state('');
   let motivo = $state('Asesoría');
   let mensaje = $state('');
+
+  let consultables = $derived(getConsultables());
+  let productEntry = $derived(product?.imageKey ? getImagen(product.imageKey) : null);
 
   $effect(() => {
     if (open) {
@@ -32,7 +36,12 @@
   function handleSubmit(e: Event) {
     e.preventDefault();
     let msg = `Hola, soy ${nombre}. Quisiera ${motivo}.`;
-    if (product) msg += `\nMe interesa el modelo: ${product.name}.`;
+    if (productEntry) {
+      const ref = productEntry.metadata?.ref ? ` (Ref: ${productEntry.metadata.ref})` : '';
+      msg += `\nMe interesa el modelo: ${productEntry.nombre ?? productEntry.alt}${ref}.`;
+    } else if (product) {
+      msg += `\nMe interesa el modelo consultado.`;
+    }
     msg += `\n\n${mensaje}`;
     window.open(`${business.socialLinks[2].href}?text=${encodeURIComponent(msg)}`, '_blank');
     onClose();
@@ -68,9 +77,12 @@
       </button>
     </div>
     <form bind:this={formEl} class="p-6 space-y-5" onsubmit={handleSubmit}>
-      {#if product}
+      {#if productEntry}
         <div class="bg-accent-yellow/10 rounded-lg px-4 py-3 text-sm text-navy-600 font-medium">
-          Consultando por: <span class="font-bold">{product.name}</span>
+          Consultando por: <span class="font-bold">{productEntry.nombre ?? productEntry.alt}</span>
+          {#if productEntry.metadata?.ref}
+            <span class="text-navy-400 ml-1">({productEntry.metadata.ref})</span>
+          {/if}
         </div>
       {/if}
       <div>

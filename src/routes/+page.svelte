@@ -17,9 +17,9 @@
   import ContactModal from '$lib/components/ContactModal.svelte';
 
   let modalOpen = $state(false);
-  let selectedProduct = $state<{ name: string } | null>(null);
+  let selectedProduct = $state<{ imageKey: string } | null>(null);
 
-  function openModal(product?: { name: string }) {
+  function openModal(product?: { imageKey: string }) {
     selectedProduct = product ?? null;
     modalOpen = true;
     document.body.style.overflow = 'hidden';

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Calendar, CircleCheck } from '@lucide/svelte';
   import ImagotipoVertical from '$lib/components/branding/ImagotipoVertical.svelte';
+  import { imagenes } from '$lib/data/images';
   import { fadeIn } from '$lib/utils/animations';
 
   let { onOpenModal }: { onOpenModal: () => void } = $props();
@@ -13,9 +14,10 @@
   ];
 </script>
 
-{#snippet aboutImage(src: string, alt: string, tall: boolean)}
+{#snippet aboutImage(imageKey: string, tall: boolean)}
+  {@const img = imagenes[imageKey]}
   <div class="rounded-2xl overflow-hidden {tall ? 'h-64' : 'h-48'} lens-shine">
-    <img {src} {alt} class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+    <img src={img.pathUrl} alt={img.alt} class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
   </div>
 {/snippet}
 
@@ -31,14 +33,14 @@
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div use:fadeIn={{ type: 'left' }} class="relative grid grid-cols-2 gap-4">
         <div class="space-y-4">
-          {@render aboutImage('https://picsum.photos/seed/optik-boutique-interior/400/500.jpg', 'Interior', true)}
+          {@render aboutImage('about-interior', true)}
           <div class="rounded-2xl overflow-hidden h-48 bg-accent-yellow flex flex-col items-center justify-center">
             <ImagotipoVertical primaryColor="#0F1B33" secondaryColor="#0F1B33" class="h-24 w-auto" />
           </div>
         </div>
         <div class="space-y-4 pt-8">
-          {@render aboutImage('https://picsum.photos/seed/optik-lens-workshop/400/350.jpg', 'Taller', false)}
-          {@render aboutImage('https://picsum.photos/seed/optik-happy-client-wearing/400/500.jpg', 'Cliente Feliz', true)}
+          {@render aboutImage('about-taller', false)}
+          {@render aboutImage('about-cliente-feliz', true)}
         </div>
       </div>
 

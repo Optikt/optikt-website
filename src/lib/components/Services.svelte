@@ -2,6 +2,7 @@
   import { Eye, Glasses, ScanLine, HeartPulse, ShieldCheck } from '@lucide/svelte';
   import type { Component } from 'svelte';
   import { fadeIn } from '$lib/utils/animations';
+  import { imagenes } from '$lib/data/images';
 
   interface ServiceItem {
     icon: Component;
@@ -29,9 +30,10 @@
   </div>
 {/snippet}
 
-{#snippet galleryImage(src: string, alt: string, tall: boolean)}
+{#snippet galleryImage(imageKey: string, tall: boolean)}
+  {@const img = imagenes[imageKey]}
   <div class="rounded-2xl overflow-hidden {tall ? 'h-52' : 'h-40'} lens-shine">
-    <img {src} {alt} class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+    <img src={img.pathUrl} alt={img.alt} class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
   </div>
 {/snippet}
 
@@ -52,12 +54,12 @@
       <div use:fadeIn={{ type: 'right' }} class="relative">
         <div class="grid grid-cols-2 gap-4">
           <div class="space-y-4">
-            {@render galleryImage('https://picsum.photos/seed/optik-eye-exam-close/400/400.jpg', 'Examen Visual', true)}
-            {@render galleryImage('https://picsum.photos/seed/optik-lens-cutting-lab/400/300.jpg', 'Laboratorio', false)}
+            {@render galleryImage('svc-examen-visual', true)}
+            {@render galleryImage('svc-laboratorio', false)}
           </div>
           <div class="space-y-4 pt-8">
-            {@render galleryImage('https://picsum.photos/seed/optik-frame-fitting/400/300.jpg', 'Adaptación', false)}
-            {@render galleryImage('https://picsum.photos/seed/optik-phoropter-device/400/400.jpg', 'Equipos', true)}
+            {@render galleryImage('svc-adaptacion', false)}
+            {@render galleryImage('svc-equipos', true)}
           </div>
         </div>
         <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-xl shadow-2xl p-5 border border-stone-100 flex items-center gap-4">

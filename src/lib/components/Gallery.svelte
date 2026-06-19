@@ -1,30 +1,31 @@
 <script lang="ts">
   import Instagram from '$lib/components/social-media/Instagram.svelte';
   import { fadeIn } from '$lib/utils/animations';
+  import { imagenes } from '$lib/data/images';
   import { business } from '$lib/data/business';
 
   interface GalleryCard {
-    src: string;
-    alt: string;
+    imageKey: string;
     label: string;
     tall: boolean;
   }
 
   const cards: GalleryCard[] = [
-    { src: 'https://picsum.photos/seed/look1-woman-cat-eye/400/500.jpg', alt: 'Look Cat Eye', label: 'Cat Eye · Mujer', tall: true },
-    { src: 'https://picsum.photos/seed/look5-sunglasses-beach/400/350.jpg', alt: 'Look Sol Playa', label: 'Sol · Playa', tall: false },
-    { src: 'https://picsum.photos/seed/look2-man-aviator/400/350.jpg', alt: 'Look Aviador', label: 'Aviador · Hombre', tall: false },
-    { src: 'https://picsum.photos/seed/look6-round-vintage/400/500.jpg', alt: 'Look Vintage', label: 'Redondo · Vintage', tall: true },
-    { src: 'https://picsum.photos/seed/look3-oversized-glam/400/500.jpg', alt: 'Look Oversized', label: 'Oversized · Glam', tall: true },
-    { src: 'https://picsum.photos/seed/look7-sport-active/400/350.jpg', alt: 'Look Deportivo', label: 'Sport · Activo', tall: false },
-    { src: 'https://picsum.photos/seed/look4-geometric-modern/400/350.jpg', alt: 'Look Geométrico', label: 'Geométrico · Moderno', tall: false },
-    { src: 'https://picsum.photos/seed/look8-transparent-frame/400/500.jpg', alt: 'Look Transparente', label: 'Clear · Minimal', tall: true },
+    { imageKey: 'gallery-cat-eye', label: 'Cat Eye · Mujer', tall: true },
+    { imageKey: 'gallery-sol-playa', label: 'Sol · Playa', tall: false },
+    { imageKey: 'gallery-aviador', label: 'Aviador · Hombre', tall: false },
+    { imageKey: 'gallery-vintage', label: 'Redondo · Vintage', tall: true },
+    { imageKey: 'gallery-oversized', label: 'Oversized · Glam', tall: true },
+    { imageKey: 'gallery-deportivo', label: 'Sport · Activo', tall: false },
+    { imageKey: 'gallery-geometrico', label: 'Geométrico · Moderno', tall: false },
+    { imageKey: 'gallery-transparente', label: 'Clear · Minimal', tall: true },
   ];
 </script>
 
 {#snippet galleryCard(c: GalleryCard)}
+  {@const img = imagenes[c.imageKey]}
   <div class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]">
-    <img src={c.src} alt={c.alt} class="w-full {c.tall ? 'h-64' : 'h-48'} object-cover transition-all duration-500" />
+    <img src={img.pathUrl} alt={img.alt} class="w-full {c.tall ? 'h-64' : 'h-48'} object-cover transition-all duration-500" />
     <div class="absolute inset-0 bg-gradient-to-t from-navy-600/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
       <span class="text-white text-xs font-semibold tracking-wider uppercase">{c.label}</span>
     </div>

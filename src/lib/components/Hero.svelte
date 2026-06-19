@@ -1,12 +1,13 @@
 <script lang="ts">
   import { fadeIn } from '$lib/utils/animations';
+  import { imagenes } from '$lib/data/images';
 
   let { onOpenModal }: { onOpenModal: () => void } = $props();
 </script>
 
 <section class="relative h-screen min-h-[700px] flex items-center justify-center bg-navy-600 overflow-hidden">
   <div class="absolute inset-0">
-    <img src="https://picsum.photos/seed/eyewear-display-luxury/1920/1080.jpg" alt="OPTIK-T Hero" class="w-full h-full object-cover opacity-25" />
+    <img src={imagenes['hero-principal'].pathUrl} alt={imagenes['hero-principal'].alt} class="w-full h-full object-cover opacity-25" />
     <div class="absolute inset-0 bg-gradient-to-b from-navy-600/80 via-navy-600/40 to-navy-600"></div>
   </div>
 
@@ -42,7 +43,7 @@
   <div class="absolute right-[5%] bottom-[15%] hidden lg:block animate-float">
     <div class="relative">
       <div class="w-48 h-32 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine rotate-3">
-        <img src="https://picsum.photos/seed/sunglasses-hero-float/400/250.jpg" alt="Lentes de Sol" class="w-full h-full object-cover" />
+        <img src={imagenes['hero-sunglasses-float'].pathUrl} alt={imagenes['hero-sunglasses-float'].alt} class="w-full h-full object-cover" />
       </div>
       <div class="absolute -bottom-2 -right-2 bg-accent-yellow text-navy-600 text-[10px] font-bold px-3 py-1 rounded-full">Nuevo</div>
     </div>
@@ -50,7 +51,7 @@
 
   <div class="absolute left-[3%] top-[25%] hidden lg:block animate-float-delay2">
     <div class="w-40 h-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine -rotate-6">
-      <img src="https://picsum.photos/seed/frame-detail-hero/300/300.jpg" alt="Montura Detalle" class="w-full h-full object-cover" />
+        <img src={imagenes['hero-frame-detail'].pathUrl} alt={imagenes['hero-frame-detail'].alt} class="w-full h-full object-cover" />
     </div>
   </div>
 
