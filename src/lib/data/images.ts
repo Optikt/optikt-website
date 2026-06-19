@@ -46,7 +46,8 @@ export const imagenes: ImagenesCatalog = {
   // COLECCIONES
   // ============================================================
   'col-graduados': {
-    pathUrl: 'https://picsum.photos/seed/prescription-glasses-display/800/600.jpg',
+    pathUrl: '/images/colecciones/2.jpg',
+    // pathUrl: 'https://picsum.photos/seed/prescription-glasses-display/800/600.jpg',
     alt: 'Lentes Graduados OPTIK-T',
     nombre: 'Lentes Graduados',
     categoria: 'coleccion',
@@ -71,7 +72,7 @@ export const imagenes: ImagenesCatalog = {
   // MONTURAS (miniaturas de colecciones)
   // ============================================================
   'thumb-cat-eye': {
-    pathUrl: 'https://picsum.photos/seed/frame-cat-eye-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/3.jpg',
     alt: 'Montura Cat Eye',
     nombre: 'Cat Eye',
     categoria: 'montura',
@@ -79,7 +80,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Montura estilo Cat Eye', precio: '' },
   },
   'thumb-round': {
-    pathUrl: 'https://picsum.photos/seed/frame-round-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/4.jpg',
     alt: 'Montura Redonda',
     nombre: 'Redondas',
     categoria: 'montura',
@@ -87,7 +88,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Montura estilo Redondo', precio: '' },
   },
   'thumb-rectangular': {
-    pathUrl: 'https://picsum.photos/seed/frame-rectangular-opt/300/200.jpg',
+    pathUrl: '/images/colecciones/5.jpg',
     alt: 'Montura Rectangular',
     nombre: 'Rectangulares',
     categoria: 'montura',
