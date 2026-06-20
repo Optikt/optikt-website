@@ -7,6 +7,7 @@
   let { data, reversed = false }: { data: Collection; reversed?: boolean } = $props();
 
   let img = $derived(imagenes[data.imageKey]);
+  let isSunglasses = $derived(data.badge === '02 - Lentes de Sol');
 </script>
 
 <div use:fadeIn={{}}>
@@ -15,7 +16,7 @@
       <img
         src={img.pathUrl}
         alt={img.alt}
-        class="w-full h-80 lg:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
+        class="w-full {isSunglasses ? 'h-auto' : 'h-80 lg:h-[450px] object-cover'} group-hover:scale-105 transition-transform duration-700"
       />
       <div class="absolute inset-0 bg-gradient-to-{reversed ? 'l' : 'r'} from-navy-600/50 to-transparent"></div>
       <div class="absolute bottom-6 {reversed ? 'right-6' : 'left-6'}">
