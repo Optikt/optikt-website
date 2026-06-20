@@ -216,7 +216,7 @@ export const imagenes: ImagenesCatalog = {
   // LENTES
   // ============================================================
   'lente-fotocromatico': {
-    pathUrl: 'https://picsum.photos/seed/photochromic-lens-tech/400/250.jpg',
+    pathUrl: '/images/tech-lentes/fotocromatico.jpg',
     alt: 'Tecnología de lente fotocromático',
     nombre: 'Fotocromáticos',
     categoria: 'lente',
@@ -224,7 +224,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { ref: 'L-FC-001', descripcion: 'Lentes fotocromáticos con tecnología OPTIK-T', precio: '' },
   },
   'lente-blue-block': {
-    pathUrl: 'https://picsum.photos/seed/blueblock-lens-screen/400/250.jpg',
+    pathUrl: '/images/tech-lentes/blue-block.jpg',
     alt: 'Tecnología de lente Blue Block para pantallas',
     nombre: 'Blue Block',
     categoria: 'lente',
@@ -232,7 +232,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { ref: 'L-BB-002', descripcion: 'Lentes Blue Block que filtran luz azul', precio: '' },
   },
   'lente-antirreflejo': {
-    pathUrl: 'https://picsum.photos/seed/antireflective-coating/400/250.jpg',
+    pathUrl: '/images/tech-lentes/antirreflejo.jpg',
     alt: 'Tecnología de lente antirreflejo multicapa',
     nombre: 'Antirreflejo',
     categoria: 'lente',
@@ -240,7 +240,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { ref: 'L-AR-003', descripcion: 'Lentes con capa antirreflejo', precio: '' },
   },
   'lente-progresivos': {
-    pathUrl: 'https://picsum.photos/seed/progressive-lens-diagram/400/250.jpg',
+    pathUrl: '/images/tech-lentes/progresivos.jpg',
     alt: 'Tecnología de lentes progresivos',
     nombre: 'Progresivos',
     categoria: 'lente',
