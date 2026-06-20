@@ -338,7 +338,7 @@ export const imagenes: ImagenesCatalog = {
     consultable: false,
   },
   'about-cliente-feliz': {
-    pathUrl: 'https://picsum.photos/seed/optik-happy-client-wearing/400/500.jpg',
+    pathUrl: '/images/about/3.webp',
     alt: 'Cliente feliz usando montura OPTIK-T',
     categoria: 'about',
     consultable: false,
