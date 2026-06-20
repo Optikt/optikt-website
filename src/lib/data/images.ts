@@ -326,13 +326,13 @@ export const imagenes: ImagenesCatalog = {
   // ABOUT
   // ============================================================
   'about-interior': {
-    pathUrl: 'https://picsum.photos/seed/optik-boutique-interior/400/500.jpg',
+    pathUrl: '/images/about/1.webp',
     alt: 'Interior de la boutique OPTIK-T',
     categoria: 'about',
     consultable: false,
   },
   'about-taller': {
-    pathUrl: 'https://picsum.photos/seed/optik-lens-workshop/400/350.jpg',
+    pathUrl: '/images/about/2.webp',
     alt: 'Taller de lentes OPTIK-T',
     categoria: 'about',
     consultable: false,
