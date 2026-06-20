@@ -24,19 +24,19 @@ export const imagenes: ImagenesCatalog = {
   // HERO
   // ============================================================
   'hero-principal': {
-    pathUrl: '/images/hero/5.jpg',
+    pathUrl: '/images/hero/5.webp',
     alt: 'OPTIK-T Hero - exhibición de lentes de lujo',
     categoria: 'hero',
     consultable: false,
   },
   'hero-sunglasses-float': {
-    pathUrl: '/images/hero/6.jpg', // "new"
+    pathUrl: '/images/hero/6.webp', // "new"
     alt: 'Lentes de Sol flotantes',
     categoria: 'hero',
     consultable: false,
   },
   'hero-frame-detail': {
-    pathUrl: '/images/hero/3.jpg',
+    pathUrl: '/images/hero/3.webp',
     alt: 'Detalle de montura',
     categoria: 'hero',
     consultable: false,
@@ -46,7 +46,7 @@ export const imagenes: ImagenesCatalog = {
   // COLECCIONES
   // ============================================================
   'col-graduados': {
-    pathUrl: '/images/colecciones/graduados/2.jpg',
+    pathUrl: '/images/colecciones/graduados/2.webp',
     // pathUrl: 'https://picsum.photos/seed/prescription-glasses-display/800/600.jpg',
     alt: 'Lentes Graduados OPTIK-T',
     nombre: 'Lentes Graduados',
@@ -54,14 +54,14 @@ export const imagenes: ImagenesCatalog = {
     consultable: false,
   },
   'col-sol': {
-    pathUrl: '/images/colecciones/lentes-sol/1.jpg',
+    pathUrl: '/images/colecciones/lentes-sol/1.webp',
     alt: 'Lentes de Sol OPTIK-T en playa',
     nombre: 'Lentes de Sol',
     categoria: 'coleccion',
     consultable: false,
   },
   'col-contacto': {
-    pathUrl: '/images/colecciones/contacto/1.jpg',
+    pathUrl: '/images/colecciones/contacto/1.webp',
     alt: 'Lentes de Contacto OPTIK-T',
     nombre: 'Lentes de Contacto',
     categoria: 'coleccion',
@@ -72,7 +72,7 @@ export const imagenes: ImagenesCatalog = {
   // MONTURAS (miniaturas de colecciones)
   // ============================================================
   'thumb-cat-eye': {
-    pathUrl: '/images/colecciones/graduados/3.jpg',
+    pathUrl: '/images/colecciones/graduados/3.webp',
     alt: 'Montura Cat Eye',
     nombre: 'Cat Eye',
     categoria: 'montura',
@@ -80,7 +80,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Montura estilo Cat Eye', precio: '' },
   },
   'thumb-round': {
-    pathUrl: '/images/colecciones/graduados/4.jpg',
+    pathUrl: '/images/colecciones/graduados/4.webp',
     alt: 'Montura Redonda',
     nombre: 'Redondas',
     categoria: 'montura',
@@ -88,7 +88,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Montura estilo Redondo', precio: '' },
   },
   'thumb-rectangular': {
-    pathUrl: '/images/colecciones/graduados/5.jpg',
+    pathUrl: '/images/colecciones/graduados/5.webp',
     alt: 'Montura Rectangular',
     nombre: 'Rectangulares',
     categoria: 'montura',
@@ -96,7 +96,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Montura estilo Rectangular', precio: '' },
   },
   'thumb-aviator': {
-    pathUrl: '/images/colecciones/lentes-sol/2.jpg',
+    pathUrl: '/images/colecciones/lentes-sol/2.webp',
     alt: 'Lentes de Sol Aviador',
     nombre: 'Aviador',
     categoria: 'montura',
@@ -104,7 +104,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Sol estilo Aviador', precio: '' },
   },
   'thumb-wayfarer': {
-    pathUrl: '/images/colecciones/lentes-sol/3.jpg',
+    pathUrl: '/images/colecciones/lentes-sol/3.webp',
     alt: 'Lentes de Sol Wayfarer',
     nombre: 'Wayfarer',
     categoria: 'montura',
@@ -112,7 +112,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Sol estilo Wayfarer', precio: '' },
   },
   'thumb-oversized': {
-    pathUrl: '/images/colecciones/lentes-sol/4.jpg',
+    pathUrl: '/images/colecciones/lentes-sol/4.webp',
     alt: 'Lentes de Sol Oversized',
     nombre: 'Oversized',
     categoria: 'montura',
@@ -120,7 +120,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Sol estilo Oversized', precio: '' },
   },
   'thumb-contact-daily': {
-    pathUrl: '/images/colecciones/contacto/2.jpg',
+    pathUrl: '/images/colecciones/contacto/2.webp',
     alt: 'Lentes de Contacto Diarios',
     nombre: 'Diarios',
     categoria: 'montura',
@@ -128,7 +128,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Contacto de uso diario', precio: '' },
   },
   'thumb-contact-monthly': {
-    pathUrl: '/images/colecciones/contacto/3.jpg',
+    pathUrl: '/images/colecciones/contacto/3.webp',
     alt: 'Lentes de Contacto Mensuales',
     nombre: 'Mensuales',
     categoria: 'montura',
@@ -136,7 +136,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { descripcion: 'Lentes de Contacto de uso mensual', precio: '' },
   },
   'thumb-contact-color': {
-    pathUrl: '/images/colecciones/contacto/4.jpg',
+    pathUrl: '/images/colecciones/contacto/4.webp',
     alt: 'Lentes de Contacto Cosméticos',
     nombre: 'Cosméticos',
     categoria: 'montura',
@@ -216,7 +216,7 @@ export const imagenes: ImagenesCatalog = {
   // LENTES
   // ============================================================
   'lente-fotocromatico': {
-    pathUrl: '/images/tech-lentes/fotocromatico.jpg',
+    pathUrl: '/images/tech-lentes/fotocromatico.webp',
     alt: 'Tecnología de lente fotocromático',
     nombre: 'Fotocromáticos',
     categoria: 'lente',
@@ -224,7 +224,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { ref: 'L-FC-001', descripcion: 'Lentes fotocromáticos con tecnología OPTIK-T', precio: '' },
   },
   'lente-blue-block': {
-    pathUrl: '/images/tech-lentes/blue-block.jpg',
+    pathUrl: '/images/tech-lentes/blue-block.webp',
     alt: 'Tecnología de lente Blue Block para pantallas',
     nombre: 'Blue Block',
     categoria: 'lente',
@@ -232,7 +232,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { ref: 'L-BB-002', descripcion: 'Lentes Blue Block que filtran luz azul', precio: '' },
   },
   'lente-antirreflejo': {
-    pathUrl: '/images/tech-lentes/antirreflejo.jpg',
+    pathUrl: '/images/tech-lentes/antirreflejo.webp',
     alt: 'Tecnología de lente antirreflejo multicapa',
     nombre: 'Antirreflejo',
     categoria: 'lente',
@@ -240,7 +240,7 @@ export const imagenes: ImagenesCatalog = {
     metadata: { ref: 'L-AR-003', descripcion: 'Lentes con capa antirreflejo', precio: '' },
   },
   'lente-progresivos': {
-    pathUrl: '/images/tech-lentes/progresivos.jpg',
+    pathUrl: '/images/tech-lentes/progresivos.webp',
     alt: 'Tecnología de lentes progresivos',
     nombre: 'Progresivos',
     categoria: 'lente',
@@ -274,49 +274,49 @@ export const imagenes: ImagenesCatalog = {
   // GALERÍA
   // ============================================================
   'gallery-cat-eye': {
-    pathUrl: '/images/gallery/1.jpg',
+    pathUrl: '/images/gallery/1.webp',
     alt: 'Look Cat Eye - mujer',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-sol-playa': {
-    pathUrl: '/images/gallery/2.jpg',
+    pathUrl: '/images/gallery/2.webp',
     alt: 'Look Sol Playa',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-aviador': {
-    pathUrl: '/images/gallery/3.jpg',
+    pathUrl: '/images/gallery/3.webp',
     alt: 'Look Aviador - hombre',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-vintage': {
-    pathUrl: '/images/gallery/4.jpg',
+    pathUrl: '/images/gallery/4.webp',
     alt: 'Look Vintage redondo',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-oversized': {
-    pathUrl: '/images/gallery/5.jpg',
+    pathUrl: '/images/gallery/5.webp',
     alt: 'Look Oversized Glam',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-deportivo': {
-    pathUrl: '/images/gallery/6.jpg',
+    pathUrl: '/images/gallery/6.webp',
     alt: 'Look Deportivo Activo',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-geometrico': {
-    pathUrl: '/images/gallery/7.jpg',
+    pathUrl: '/images/gallery/7.webp',
     alt: 'Look Geométrico Moderno',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-transparente': {
-    pathUrl: '/images/gallery/8.jpg',
+    pathUrl: '/images/gallery/8.webp',
     alt: 'Look Transparente Minimal',
     categoria: 'gallery',
     consultable: false,
@@ -348,14 +348,14 @@ export const imagenes: ImagenesCatalog = {
   // SERVICIOS
   // ============================================================
   'svc-examen-visual': {
-    pathUrl: '/images/servicios/1.jpg',
+    pathUrl: '/images/servicios/1.webp',
     alt: 'Examen visual en OPTIK-T',
     categoria: 'servicios',
     consultable: false,
   },
   'svc-laboratorio': {
     // pathUrl: 'https://picsum.photos/seed/optik-lens-cutting-lab/400/300.jpg',
-    pathUrl: '/images/servicios/2.jpg',
+    pathUrl: '/images/servicios/2.webp',
     alt: 'Laboratorio de lentes OPTIK-T',
     categoria: 'servicios',
     consultable: false,
