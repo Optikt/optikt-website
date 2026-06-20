@@ -274,49 +274,49 @@ export const imagenes: ImagenesCatalog = {
   // GALERÍA
   // ============================================================
   'gallery-cat-eye': {
-    pathUrl: 'https://picsum.photos/seed/look1-woman-cat-eye/400/500.jpg',
+    pathUrl: '/images/gallery/1.jpg',
     alt: 'Look Cat Eye - mujer',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-sol-playa': {
-    pathUrl: 'https://picsum.photos/seed/look5-sunglasses-beach/400/350.jpg',
+    pathUrl: '/images/gallery/2.jpg',
     alt: 'Look Sol Playa',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-aviador': {
-    pathUrl: 'https://picsum.photos/seed/look2-man-aviator/400/350.jpg',
+    pathUrl: '/images/gallery/3.jpg',
     alt: 'Look Aviador - hombre',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-vintage': {
-    pathUrl: 'https://picsum.photos/seed/look6-round-vintage/400/500.jpg',
+    pathUrl: '/images/gallery/4.jpg',
     alt: 'Look Vintage redondo',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-oversized': {
-    pathUrl: 'https://picsum.photos/seed/look3-oversized-glam/400/500.jpg',
+    pathUrl: '/images/gallery/5.jpg',
     alt: 'Look Oversized Glam',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-deportivo': {
-    pathUrl: 'https://picsum.photos/seed/look7-sport-active/400/350.jpg',
+    pathUrl: '/images/gallery/6.jpg',
     alt: 'Look Deportivo Activo',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-geometrico': {
-    pathUrl: 'https://picsum.photos/seed/look4-geometric-modern/400/350.jpg',
+    pathUrl: '/images/gallery/7.jpg',
     alt: 'Look Geométrico Moderno',
     categoria: 'gallery',
     consultable: false,
   },
   'gallery-transparente': {
-    pathUrl: 'https://picsum.photos/seed/look8-transparent-frame/400/500.jpg',
+    pathUrl: '/images/gallery/8.jpg',
     alt: 'Look Transparente Minimal',
     categoria: 'gallery',
     consultable: false,
