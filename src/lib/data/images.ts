@@ -1,4 +1,4 @@
-export type ImagenCategoria =
+type ImagenCategoria =
   | 'coleccion'
   | 'montura'
   | 'lente'
@@ -456,8 +456,4 @@ export function getImagen(key: string): ImagenEntry | undefined {
 
 export function getConsultables(): ImagenEntry[] {
   return Object.values(imagenes).filter((img) => img.consultable);
-}
-
-export function getConsultableBySlug(slug: string): ImagenEntry | undefined {
-  return Object.values(imagenes).find((img) => img.consultable && img.slug === slug);
 }

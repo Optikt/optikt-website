@@ -1,7 +1,7 @@
-import { Building2, Cog, FlaskConical, Microscope } from '@lucide/svelte';
+import { Cog, FlaskConical, Microscope } from '@lucide/svelte';
 import type { Component } from 'svelte';
 
-export interface Partner {
+interface Partner {
   name: string;
 }
 

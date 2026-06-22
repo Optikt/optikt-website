@@ -1,4 +1,4 @@
-export interface Thumbnail {
+interface Thumbnail {
   imageKey: string;
   alt?: string;
 }

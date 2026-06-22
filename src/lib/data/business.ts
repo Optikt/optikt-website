@@ -6,7 +6,7 @@ export interface HoursRange {
   close: string;
 }
 
-export interface SocialLink {
+interface SocialLink {
   href: string;
   label: string;
   path: string;
