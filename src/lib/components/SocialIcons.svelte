@@ -7,7 +7,7 @@
   const base = $derived(
     variant === 'circles'
       ? 'w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300'
-      : 'transition-colors'
+      : 'transition-colors',
   );
 
   const circleClasses =

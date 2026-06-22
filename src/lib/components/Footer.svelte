@@ -49,24 +49,16 @@
         <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Servicios</h4>
         <ul class="space-y-3">
           <li>
-            <span class="text-white/40 text-sm"
-              >Examen Visual</span
-            >
+            <span class="text-white/40 text-sm">Examen Visual</span>
           </li>
           <li>
-            <span class="text-white/40 text-sm"
-              >Adaptación de Monturas</span
-            >
+            <span class="text-white/40 text-sm">Adaptación de Monturas</span>
           </li>
           <li>
-            <span class="text-white/40 text-sm"
-              >Lentes de Contacto</span
-            >
+            <span class="text-white/40 text-sm">Lentes de Contacto</span>
           </li>
           <li>
-            <span class="text-white/40 text-sm"
-              >Lentes Digitales</span
-            >
+            <span class="text-white/40 text-sm">Lentes Digitales</span>
           </li>
         </ul>
       </div>
@@ -85,12 +77,8 @@
     >
       <p class="text-white/20 text-xs">© {year} OPTIK-T. Todos los derechos reservados.</p>
       <div class="flex gap-6">
-        <span class="text-white/20 text-xs"
-          >Política de Privacidad</span
-        >
-        <span class="text-white/20 text-xs"
-          >Términos y Condiciones</span
-        >
+        <span class="text-white/20 text-xs">Política de Privacidad</span>
+        <span class="text-white/20 text-xs">Términos y Condiciones</span>
       </div>
     </div>
   </div>
