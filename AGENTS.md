@@ -8,6 +8,7 @@ SvelteKit 5 site for OPTIKT, an eyewear brand. Spanish-language static site with
 - **Build:** Vite 7, pnpm 10, `@sveltejs/adapter-auto`
 - **Styling:** Tailwind CSS 4 (CSS-first config, no `tailwind.config.js`), via `@tailwindcss/vite`
 - **UI:** bits-ui, embla-carousel-svelte, lucide icons, tailwind-variants, tw-animate-css
+- **Animations:** lottie-web 5, `$lib/components/OccasionFx.svelte`
 - **Forms:** sveltekit-superforms 2 + `zod/v4` (use `zod4()` adapter)
 - **Env vars:** `ADMIN_PASSWORD` from `$env/dynamic/private`, dev default in `.env`
 
@@ -62,6 +63,75 @@ export const actions = {
   },
 };
 ```
+
+## Occasion Animations
+
+Seasonal/event-based animations via Lottie (JSON) with SVG CSS fallback. Config in `$lib/data/occasions.ts`.
+
+### How to enable
+
+In `src/lib/data/occasions.ts`, set `active` to an occasion id:
+
+```ts
+export const occasions: OccasionData = {
+  active: 'mundial-2026', // ← change this to enable, null to disable
+  // ...
+};
+```
+
+### How to add a new occasion
+
+1. Find a free Lottie JSON on [LottieFiles](https://lottiefiles.com/free-animations)
+2. Download the `.json` → save in `static/animations/<name>.json`
+3. Add entry in `occasions.ts` `occasions[]` array:
+
+```ts
+{
+  id: 'mi-ocasion',
+  name: 'Mi Ocasión',
+  src: '/animations/mi-ocasion.json',   // path to .json in static/
+  position: 'corner-br',                 // corner-br|corner-bl|corner-tr|corner-tl|fullscreen|floating
+  size: 100,                             // width in px (height auto)
+  // Optional:
+  speed: 1,                              // playback speed
+  loop: true,
+  autoplay: true,
+}
+```
+
+### Lottie JSON hotlinking
+
+LottieFiles blocks direct CDN access — you must download the `.json` file. Use `svg` fallback in config to preview without downloading.
+
+### Sound (optional)
+
+Add `sound` to an occasion config — a short .mp3 played once after first user interaction:
+
+```ts
+sound: { src: '/sounds/whistle.mp3', volume: 0.3 },
+```
+
+Save `.mp3` in `static/sounds/`. Only plays after click/touch (autoplay policy).
+
+### SVG fallback
+
+If `src` is unset or file missing, the component renders `svg` inline with CSS float+rotate animation:
+
+```ts
+{
+  id: 'mundial-2026',
+  src: '/animations/mundial-2026.json',  // Lottie JSON
+  svg: `<svg>...</svg>`,                  // fallback when JSON unavailable
+}
+```
+
+### Events
+
+| Event | Effect |
+|-------|--------|
+| Mundial 2026 | Soccer ball floating bottom-right (Lottie JSON or SVG fallback) |
+| Navidad | Fullscreen snow (TBD) |
+| Playa | Sombrilla + sol bottom-left (TBD) |
 
 ## Notes
 

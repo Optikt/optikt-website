@@ -2,10 +2,13 @@
   import '../app.css';
   import { setContext } from 'svelte';
   import { business } from '$lib/data/business';
+  import OccasionFx from '$lib/components/OccasionFx.svelte';
   let { children } = $props();
 
   setContext('business', business);
 </script>
+
+<OccasionFx />
 
 <svelte:head>
   <title>OPTIK-T - Visión con Estilo</title>
