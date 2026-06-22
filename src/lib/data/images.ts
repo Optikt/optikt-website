@@ -453,7 +453,3 @@ export const imagenes: ImagenesCatalog = {
 export function getImagen(key: string): ImagenEntry | undefined {
   return imagenes[key];
 }
-
-export function getConsultables(): ImagenEntry[] {
-  return Object.values(imagenes).filter((img) => img.consultable);
-}
