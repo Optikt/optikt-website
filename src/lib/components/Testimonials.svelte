@@ -11,7 +11,7 @@
 
   const TRUNCATE_AT = 120;
 
-  function openFull(t: typeof testimonials[number]) {
+  function openFull(t: (typeof testimonials)[number]) {
     modalName = t.name;
     modalText = t.text;
     modalOpen = true;
@@ -25,8 +25,11 @@
 <section class="py-24 bg-stone-50">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div use:fadeIn={{}} class="text-center mb-16">
-      <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Testimonios</span>
-      <h2 class="text-4xl md:text-5xl font-bold text-navy-600 mt-4 tracking-tight">Lo que Dicen Nuestros Pacientes</h2>
+      <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Testimonios</span
+      >
+      <h2 class="text-4xl md:text-5xl font-bold text-navy-600 mt-4 tracking-tight">
+        Lo que Dicen Nuestros Pacientes
+      </h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
       {#each testimonials as t, i}
@@ -53,7 +56,11 @@
             </button>
           {/if}
           <div class="flex items-center gap-3 mt-6">
-            <img src={imagenes[t.imageKey].pathUrl} alt={imagenes[t.imageKey].alt} class="w-10 h-10 rounded-full object-cover" />
+            <img
+              src={imagenes[t.imageKey].pathUrl}
+              alt={imagenes[t.imageKey].alt}
+              class="w-10 h-10 rounded-full object-cover"
+            />
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-1.5">
                 <span class="text-navy-600 text-sm font-semibold">{t.name}</span>

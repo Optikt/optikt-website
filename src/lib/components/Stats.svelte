@@ -5,14 +5,16 @@
     { target: 15, label: 'Años de Experiencia' },
     { target: 12000, label: 'Pacientes Atendidos' },
     { target: 50, label: 'Marcas Premium' },
-    { target: 98, label: '% Satisfacción' }
+    { target: 98, label: '% Satisfacción' },
   ];
 </script>
 
 <section class="py-20 bg-navy-600 relative overflow-hidden">
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-accent-yellow rounded-full blur-[120px]"></div>
-    <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-accent-blue rounded-full blur-[100px]"></div>
+    <div
+      class="absolute bottom-0 right-1/4 w-64 h-64 bg-accent-blue rounded-full blur-[100px]"
+    ></div>
   </div>
   <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -23,7 +25,9 @@
             data-target={stat.target}
             data-suffix={stat.label === '% Satisfacción' ? '%' : '+'}
             use:animateCounter
-          >0</div>
+          >
+            0
+          </div>
           <div class="text-white/50 text-sm mt-2 font-medium tracking-wide">{stat.label}</div>
         </div>
       {/each}

@@ -1,7 +1,14 @@
 export type ImagenCategoria =
-  | 'coleccion' | 'montura' | 'lente'
-  | 'testimonial' | 'gallery' | 'about' | 'hero'
-  | 'servicios' | 'branding' | 'decorative';
+  | 'coleccion'
+  | 'montura'
+  | 'lente'
+  | 'testimonial'
+  | 'gallery'
+  | 'about'
+  | 'hero'
+  | 'servicios'
+  | 'branding'
+  | 'decorative';
 
 export interface ImagenEntry {
   pathUrl: string;
@@ -221,7 +228,11 @@ export const imagenes: ImagenesCatalog = {
     nombre: 'Fotocromáticos',
     categoria: 'lente',
     consultable: true,
-    metadata: { ref: 'L-FC-001', descripcion: 'Lentes fotocromáticos con tecnología OPTIK-T', precio: '' },
+    metadata: {
+      ref: 'L-FC-001',
+      descripcion: 'Lentes fotocromáticos con tecnología OPTIK-T',
+      precio: '',
+    },
   },
   'lente-blue-block': {
     pathUrl: '/images/tech-lentes/blue-block.webp',
@@ -229,7 +240,11 @@ export const imagenes: ImagenesCatalog = {
     nombre: 'Blue Block',
     categoria: 'lente',
     consultable: true,
-    metadata: { ref: 'L-BB-002', descripcion: 'Lentes Blue Block que filtran luz azul', precio: '' },
+    metadata: {
+      ref: 'L-BB-002',
+      descripcion: 'Lentes Blue Block que filtran luz azul',
+      precio: '',
+    },
   },
   'lente-antirreflejo': {
     pathUrl: '/images/tech-lentes/antirreflejo.webp',
@@ -245,7 +260,11 @@ export const imagenes: ImagenesCatalog = {
     nombre: 'Progresivos',
     categoria: 'lente',
     consultable: true,
-    metadata: { ref: 'L-PR-004', descripcion: 'Lentes progresivos visión cercana, media y lejana', precio: '' },
+    metadata: {
+      ref: 'L-PR-004',
+      descripcion: 'Lentes progresivos visión cercana, media y lejana',
+      precio: '',
+    },
   },
 
   'comp-sin-tratamiento': {
@@ -440,7 +459,5 @@ export function getConsultables(): ImagenEntry[] {
 }
 
 export function getConsultableBySlug(slug: string): ImagenEntry | undefined {
-  return Object.values(imagenes).find(
-    (img) => img.consultable && img.slug === slug
-  );
+  return Object.values(imagenes).find((img) => img.consultable && img.slug === slug);
 }

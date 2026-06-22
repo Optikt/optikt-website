@@ -15,7 +15,11 @@
 </script>
 
 {#if open}
-  <div class="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+  >
     <div
       class="fixed inset-0 bg-black/50 transition-opacity duration-200"
       role="button"

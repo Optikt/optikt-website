@@ -1,50 +1,50 @@
 <script lang="ts">
-	import type { LogoProps } from './palette';
-	import { resolveBrandPalette } from './palette';
+  import type { LogoProps } from './palette';
+  import { resolveBrandPalette } from './palette';
 
-	let {
-		theme = 'brand',
-		primaryColor,
-		secondaryColor,
-		class: className = '',
-		width,
-		height,
-		title,
-		ariaLabel
-	}: LogoProps = $props();
+  let {
+    theme = 'brand',
+    primaryColor,
+    secondaryColor,
+    class: className = '',
+    width,
+    height,
+    title,
+    ariaLabel,
+  }: LogoProps = $props();
 
-	const palette = $derived(resolveBrandPalette(theme, primaryColor, secondaryColor));
-	const accessibleLabel = $derived(ariaLabel ?? title);
-	const isDecorative = $derived(!accessibleLabel);
+  const palette = $derived(resolveBrandPalette(theme, primaryColor, secondaryColor));
+  const accessibleLabel = $derived(ariaLabel ?? title);
+  const isDecorative = $derived(!accessibleLabel);
 </script>
 
 <svg
-	version="1.1"
-	xmlns="http://www.w3.org/2000/svg"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	viewBox="0 0 828 442"
-	x="0px"
-	y="0px"
-	{width}
-	{height}
-	class={className}
-	fill="none"
-	role={isDecorative ? undefined : 'img'}
-	aria-label={accessibleLabel}
-	aria-hidden={isDecorative}
-	preserveAspectRatio="xMidYMid meet"
-	enable-background="new 0 0 828 442"
-	xml:space="preserve"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 828 442"
+  x="0px"
+  y="0px"
+  {width}
+  {height}
+  class={className}
+  fill="none"
+  role={isDecorative ? undefined : 'img'}
+  aria-label={accessibleLabel}
+  aria-hidden={isDecorative}
+  preserveAspectRatio="xMidYMid meet"
+  enable-background="new 0 0 828 442"
+  xml:space="preserve"
 >
-	{#if title}
-		<title>{title}</title>
-	{/if}
+  {#if title}
+    <title>{title}</title>
+  {/if}
 
-	<path
-		fill={palette.primary}
-		opacity="1.000000"
-		stroke="none"
-		d="M410.835571,66.000412 
+  <path
+    fill={palette.primary}
+    opacity="1.000000"
+    stroke="none"
+    d="M410.835571,66.000412 
 	C410.890381,49.183765 411.064636,32.366241 410.941223,15.550904 
 	C410.891846,8.823988 413.485657,4.178082 419.873840,1.325348 
 	C423.361298,1.000000 426.722565,1.000000 430.541931,1.000000 
@@ -77,12 +77,12 @@
 	C410.048218,123.457558 410.647278,111.192711 410.974304,97.999641 
 	C410.930328,86.714073 410.882965,76.357239 410.835571,66.000412 
 z"
-	/>
-	<path
-		fill={palette.secondary}
-		opacity="1.000000"
-		stroke="none"
-		d="
+  />
+  <path
+    fill={palette.secondary}
+    opacity="1.000000"
+    stroke="none"
+    d="
 M0.999996,360.468658 
 	C2.321719,357.026489 3.953476,354.149414 4.913222,351.063354 
 	C9.924506,334.949463 20.810747,323.978363 35.173920,315.982452 
@@ -106,12 +106,12 @@ M116.063866,358.503448
 	C95.036171,408.903229 103.150795,406.025299 109.453125,399.977051 
 	C119.808289,390.039398 123.148170,374.002228 116.063866,358.503448 
 z"
-	/>
-	<path
-		fill={palette.secondary}
-		opacity="1.000000"
-		stroke="none"
-		d="
+  />
+  <path
+    fill={palette.secondary}
+    opacity="1.000000"
+    stroke="none"
+    d="
 M829.000000,341.531342 
 	C812.530396,342.000000 796.060852,342.000000 779.174438,342.000000 
 	C779.174438,374.961395 779.174438,407.686737 779.174438,440.705017 
@@ -122,12 +122,12 @@ M829.000000,341.531342
 	C736.894836,309.000000 782.478760,309.000000 828.531372,309.000000 
 	C829.000000,319.687561 829.000000,330.375122 829.000000,341.531342 
 z"
-	/>
-	<path
-		fill={palette.secondary}
-		opacity="1.000000"
-		stroke="none"
-		d="
+  />
+  <path
+    fill={palette.secondary}
+    opacity="1.000000"
+    stroke="none"
+    d="
 M410.410767,66.000244 
 	C410.882965,76.357239 410.930328,86.714073 410.906799,97.535355 
 	C397.956268,99.685448 386.839630,105.319176 377.009399,113.537102 
@@ -155,12 +155,12 @@ M410.410767,66.000244
 	C358.127716,82.606285 375.579742,73.657593 395.104919,68.479538 
 	C399.944122,67.196182 405.019287,66.802635 410.410767,66.000244 
 z"
-	/>
-	<path
-		fill={palette.secondary}
-		opacity="1.000000"
-		stroke="none"
-		d="
+  />
+  <path
+    fill={palette.secondary}
+    opacity="1.000000"
+    stroke="none"
+    d="
 M555.000000,319.029449 
 	C555.000000,342.268799 555.000000,365.013611 555.000000,389.324615 
 	C562.191284,380.351410 568.475708,372.636658 574.620850,364.812469 
@@ -183,12 +183,12 @@ M555.000000,319.029449
 	C530.277344,309.308594 542.344727,309.308594 555.000000,309.308594 
 	C555.000000,312.323853 555.000000,315.429382 555.000000,319.029449 
 z"
-	/>
-	<path
-		fill={palette.secondary}
-		opacity="1.000000"
-		stroke="none"
-		d="
+  />
+  <path
+    fill={palette.secondary}
+    opacity="1.000000"
+    stroke="none"
+    d="
 M301.998657,346.390991 
 	C301.683899,355.473511 302.789246,364.082611 299.196594,372.540375 
 	C293.036285,387.042938 281.738770,394.764069 267.081818,397.834961 
@@ -209,12 +209,12 @@ M238.492462,339.000000
 	C264.581482,345.998901 257.572662,338.558868 248.484375,338.978271 
 	C245.491623,339.116364 242.487106,339.000000 238.492462,339.000000 
 z"
-	/>
-	<path
-		fill={palette.secondary}
-		opacity="1.000000"
-		stroke="none"
-		d="
+  />
+  <path
+    fill={palette.secondary}
+    opacity="1.000000"
+    stroke="none"
+    d="
 M356.000000,368.000000 
 	C356.000000,359.195587 356.000000,350.891174 356.000000,342.167664 
 	C339.368744,342.167664 322.972198,342.167664 306.289886,342.167664 
@@ -226,12 +226,12 @@ M356.000000,368.000000
 	C380.698456,440.705719 368.636505,440.705719 356.000000,440.705719 
 	C356.000000,416.662231 356.000000,392.581116 356.000000,368.000000 
 z"
-	/>
-	<path
-		fill={palette.secondary}
-		opacity="1.000000"
-		stroke="none"
-		d="
+  />
+  <path
+    fill={palette.secondary}
+    opacity="1.000000"
+    stroke="none"
+    d="
 M457.000000,372.000000 
 	C457.000000,350.867096 457.000000,330.234222 457.000000,309.301086 
 	C469.288910,309.301086 481.352325,309.301086 493.709076,309.301086 
@@ -239,12 +239,12 @@ M457.000000,372.000000
 	C481.711304,440.698822 469.647888,440.698822 457.000000,440.698822 
 	C457.000000,418.002380 457.000000,395.251190 457.000000,372.000000 
 z"
-	/>
-	<path
-		fill={palette.secondary}
-		opacity="1.000000"
-		stroke="none"
-		d="
+  />
+  <path
+    fill={palette.secondary}
+    opacity="1.000000"
+    stroke="none"
+    d="
 M697.854370,365.000000 
 	C700.959045,364.611359 702.154480,365.334320 702.074646,368.383362 
 	C701.857178,376.690857 701.999817,385.007721 701.999817,393.660156 
@@ -252,5 +252,5 @@ M697.854370,365.000000
 	C655.340820,384.464294 655.340820,375.067932 655.340820,365.000000 
 	C669.226013,365.000000 683.298035,365.000000 697.854370,365.000000 
 z"
-	/>
+  />
 </svg>

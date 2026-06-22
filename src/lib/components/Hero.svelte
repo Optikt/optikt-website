@@ -5,10 +5,18 @@
   let { onOpenModal }: { onOpenModal: () => void } = $props();
 </script>
 
-<section class="relative h-screen min-h-[700px] flex items-center justify-center bg-navy-600 overflow-hidden">
+<section
+  class="relative h-screen min-h-[700px] flex items-center justify-center bg-navy-600 overflow-hidden"
+>
   <div class="absolute inset-0">
-    <img src={imagenes['hero-principal'].pathUrl} alt={imagenes['hero-principal'].alt} class="w-full h-full object-cover opacity-25" />
-    <div class="absolute inset-0 bg-gradient-to-b from-navy-600/80 via-navy-600/40 to-navy-600"></div>
+    <img
+      src={imagenes['hero-principal'].pathUrl}
+      alt={imagenes['hero-principal'].alt}
+      class="w-full h-full object-cover opacity-25"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-navy-600/80 via-navy-600/40 to-navy-600"
+    ></div>
   </div>
 
   <div class="absolute top-20 right-20 w-72 h-72 bg-accent-yellow/5 rounded-full blur-3xl"></div>
@@ -32,47 +40,100 @@
     </svg>
   </div>
 
-  <div class="absolute top-1/2 right-[3%] -translate-y-1/2 opacity-5 animate-spin-slow hidden xl:block">
+  <div
+    class="absolute top-1/2 right-[3%] -translate-y-1/2 opacity-5 animate-spin-slow hidden xl:block"
+  >
     <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
-      <circle cx="150" cy="150" r="140" stroke="#FFCC00" stroke-width="0.5" stroke-dasharray="8 12" />
-      <circle cx="150" cy="150" r="120" stroke="#FFCC00" stroke-width="0.5" stroke-dasharray="4 8" />
+      <circle
+        cx="150"
+        cy="150"
+        r="140"
+        stroke="#FFCC00"
+        stroke-width="0.5"
+        stroke-dasharray="8 12"
+      />
+      <circle
+        cx="150"
+        cy="150"
+        r="120"
+        stroke="#FFCC00"
+        stroke-width="0.5"
+        stroke-dasharray="4 8"
+      />
       <circle cx="150" cy="150" r="100" stroke="#FFCC00" stroke-width="0.5" />
     </svg>
   </div>
 
   <div class="absolute right-[5%] bottom-[15%] hidden lg:block animate-float">
     <div class="relative">
-      <div class="w-48 h-32 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine rotate-3">
-        <img src={imagenes['hero-sunglasses-float'].pathUrl} alt={imagenes['hero-sunglasses-float'].alt} class="w-full h-full object-cover" />
+      <div
+        class="w-48 h-32 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine rotate-3"
+      >
+        <img
+          src={imagenes['hero-sunglasses-float'].pathUrl}
+          alt={imagenes['hero-sunglasses-float'].alt}
+          class="w-full h-full object-cover"
+        />
       </div>
-      <div class="absolute -bottom-2 -right-2 bg-accent-yellow text-navy-600 text-[10px] font-bold px-3 py-1 rounded-full">Nuevo</div>
+      <div
+        class="absolute -bottom-2 -right-2 bg-accent-yellow text-navy-600 text-[10px] font-bold px-3 py-1 rounded-full"
+      >
+        Nuevo
+      </div>
     </div>
   </div>
 
   <div class="absolute left-[3%] top-[25%] hidden lg:block animate-float-delay2">
-    <div class="w-40 h-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine -rotate-6">
-        <img src={imagenes['hero-frame-detail'].pathUrl} alt={imagenes['hero-frame-detail'].alt} class="w-full h-full object-cover" />
+    <div
+      class="w-40 h-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine -rotate-6"
+    >
+      <img
+        src={imagenes['hero-frame-detail'].pathUrl}
+        alt={imagenes['hero-frame-detail'].alt}
+        class="w-full h-full object-cover"
+      />
     </div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
     <div use:fadeIn={{}}>
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2 mb-8">
+      <div
+        class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2 mb-8"
+      >
         <div class="w-2 h-2 bg-accent-yellow rounded-full animate-pulse"></div>
-        <span class="text-white/80 text-xs font-semibold tracking-widest uppercase">Óptica Personalizda</span>
+        <span class="text-white/80 text-xs font-semibold tracking-widest uppercase"
+          >Óptica Personalizda</span
+        >
       </div>
     </div>
-    <h1 use:fadeIn={{ delay: 0.15 }} class="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+    <h1
+      use:fadeIn={{ delay: 0.15 }}
+      class="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6"
+    >
       <!-- Tu Visión,<br /><span class="text-shimmer">Nuestra Pasión</span> -->
       Para tu Visión,<br /><span class="text-shimmer">la mejor Solución</span>
-
     </h1>
-    <p use:fadeIn={{ delay: 0.3 }} class="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-      Descubre la colección de monturas y lentes que combinan estilo, comodidad y la mejor tecnología para tus ojos.
+    <p
+      use:fadeIn={{ delay: 0.3 }}
+      class="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+    >
+      Descubre la colección de monturas y lentes que combinan estilo, comodidad y la mejor
+      tecnología para tus ojos.
     </p>
-    <div use:fadeIn={{ delay: 0.45 }} class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="#colecciones" class="bg-accent-yellow text-navy-600 px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-xl hover:shadow-accent-yellow/20 animate-pulse-glow">Explorar Colecciones</a>
-      <button onclick={onOpenModal} class="border-2 border-white/20 text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-white/10 hover:border-white/40 transition-all duration-300">Escríbenos</button>
+    <div
+      use:fadeIn={{ delay: 0.45 }}
+      class="flex flex-col sm:flex-row items-center justify-center gap-4"
+    >
+      <a
+        href="#colecciones"
+        class="bg-accent-yellow text-navy-600 px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-xl hover:shadow-accent-yellow/20 animate-pulse-glow"
+        >Explorar Colecciones</a
+      >
+      <button
+        onclick={onOpenModal}
+        class="border-2 border-white/20 text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+        >Escríbenos</button
+      >
     </div>
   </div>
 

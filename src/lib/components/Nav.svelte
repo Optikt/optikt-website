@@ -8,7 +8,9 @@
   let menuOpen = $state(false);
 
   $effect(() => {
-    const onScroll = () => { scrolled = window.scrollY > 80; };
+    const onScroll = () => {
+      scrolled = window.scrollY > 80;
+    };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   });
@@ -39,12 +41,36 @@
       <ImagotipoHorizontal theme="light" class="h-10 w-auto" ariaLabel="OPTIK-T" />
     </a>
     <div class="hidden lg:flex items-center gap-10">
-      <a href="#colecciones" class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300">Colecciones</a>
-      <a href="#tecnologia" class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300">Tecnología</a>
-      <a href="#servicios" class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300">Servicios</a>
-      <a href="#galeria" class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300">Galería</a>
-      <a href="#comunidad" class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300">Comunidad</a>
-      <button onclick={handleModal} class="bg-accent-yellow text-navy-600 px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/25">Agenda tu Cita</button>
+      <a
+        href="#colecciones"
+        class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
+        >Colecciones</a
+      >
+      <a
+        href="#tecnologia"
+        class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
+        >Tecnología</a
+      >
+      <a
+        href="#servicios"
+        class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
+        >Servicios</a
+      >
+      <a
+        href="#galeria"
+        class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
+        >Galería</a
+      >
+      <a
+        href="#comunidad"
+        class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
+        >Comunidad</a
+      >
+      <button
+        onclick={handleModal}
+        class="bg-accent-yellow text-navy-600 px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/25"
+        >Agenda tu Cita</button
+      >
     </div>
     <button onclick={toggleMenu} class="lg:hidden text-white p-2" aria-label="Menú">
       <Menu class="w-6 h-6" />
@@ -62,13 +88,39 @@
     <X class="w-7 h-7" />
   </button>
   <div class="flex flex-col gap-6">
-    <a href="#colecciones" onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Colecciones</a>
-    <a href="#tecnologia" onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Tecnología</a>
-    <a href="#servicios" onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Servicios</a>
-    <a href="#galeria" onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Galería</a>
-    <a href="#comunidad" onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Comunidad</a>
+    <a
+      href="#colecciones"
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors"
+      >Colecciones</a
+    >
+    <a
+      href="#tecnologia"
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors"
+      >Tecnología</a
+    >
+    <a
+      href="#servicios"
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Servicios</a
+    >
+    <a
+      href="#galeria"
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Galería</a
+    >
+    <a
+      href="#comunidad"
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Comunidad</a
+    >
   </div>
   <div class="mt-auto">
-    <button onclick={handleModal} class="w-full bg-accent-yellow text-navy-600 py-3 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all">Agenda tu Cita</button>
+    <button
+      onclick={handleModal}
+      class="w-full bg-accent-yellow text-navy-600 py-3 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all"
+      >Agenda tu Cita</button
+    >
   </div>
 </div>

@@ -86,7 +86,7 @@ async function main() {
 
       console.log(
         `✓ ${relPath}  ${width}x${height} → ${maxWidth}px  ` +
-        `${(oldSize / 1024).toFixed(0)}KB → ${(newSize / 1024).toFixed(0)}KB  (-${pct}%)`
+          `${(oldSize / 1024).toFixed(0)}KB → ${(newSize / 1024).toFixed(0)}KB  (-${pct}%)`,
       );
       success++;
     } catch (err) {

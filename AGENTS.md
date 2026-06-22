@@ -30,18 +30,18 @@ pnpm check      # svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
 
 ## Routes
 
-| Path | Loads |
-|---|---|
-| `/` | `getFeaturedCollections()`, `getFeaturedLenses()`, services, testimonials, brandInfo |
-| `/colecciones` | `collections` |
-| `/colecciones/[slug]` | `getCollectionBySlug()` via `loadDetailBySlug()` |
-| `/cristales` | `lenses` |
-| `/cristales/[slug]` | `getLensBySlug()` via `loadDetailBySlug()` |
-| `/servicios` | `services` |
-| `/contacto` | `superValidate(zod4(contactFormSchema))` — validates name, email, phone?, message, service? |
-| `/nosotros` | static |
-| `/admin` | collections, lenses, services, testimonials, brandInfo; actions: `logout` |
-| `/admin/login` | actions: `default` checks password against env, sets cookie, redirects |
+| Path                  | Loads                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------------------- |
+| `/`                   | `getFeaturedCollections()`, `getFeaturedLenses()`, services, testimonials, brandInfo        |
+| `/colecciones`        | `collections`                                                                               |
+| `/colecciones/[slug]` | `getCollectionBySlug()` via `loadDetailBySlug()`                                            |
+| `/cristales`          | `lenses`                                                                                    |
+| `/cristales/[slug]`   | `getLensBySlug()` via `loadDetailBySlug()`                                                  |
+| `/servicios`          | `services`                                                                                  |
+| `/contacto`           | `superValidate(zod4(contactFormSchema))` — validates name, email, phone?, message, service? |
+| `/nosotros`           | static                                                                                      |
+| `/admin`              | collections, lenses, services, testimonials, brandInfo; actions: `logout`                   |
+| `/admin/login`        | actions: `default` checks password against env, sets cookie, redirects                      |
 
 ## Form pattern
 

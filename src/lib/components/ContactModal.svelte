@@ -58,7 +58,9 @@
   class:opacity-100={open}
   class:pointer-events-auto={open}
   onclick={handleBackdropClick}
-  onkeydown={(e) => { if (e.key === 'Escape') onClose(); }}
+  onkeydown={(e) => {
+    if (e.key === 'Escape') onClose();
+  }}
 >
   <div
     class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl transition-transform duration-300"
@@ -72,7 +74,10 @@
         <h3 class="text-xl font-bold text-navy-600">Contáctanos</h3>
         <p class="text-navy-300 text-sm mt-1">Te responderemos por WhatsApp</p>
       </div>
-      <button onclick={onClose} class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center text-navy-400 hover:bg-stone-100 transition-colors flex-shrink-0 cursor-pointer">
+      <button
+        onclick={onClose}
+        class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center text-navy-400 hover:bg-stone-100 transition-colors flex-shrink-0 cursor-pointer"
+      >
         <X class="w-5 h-5" />
       </button>
     </div>
@@ -86,7 +91,9 @@
         </div>
       {/if}
       <div>
-        <label for="contact-name" class="text-navy-600 text-sm font-semibold block mb-2">Nombre</label>
+        <label for="contact-name" class="text-navy-600 text-sm font-semibold block mb-2"
+          >Nombre</label
+        >
         <input
           id="contact-name"
           type="text"
@@ -97,7 +104,9 @@
         />
       </div>
       <div>
-        <label for="contact-motivo" class="text-navy-600 text-sm font-semibold block mb-2">Motivo</label>
+        <label for="contact-motivo" class="text-navy-600 text-sm font-semibold block mb-2"
+          >Motivo</label
+        >
         <select
           id="contact-motivo"
           required
@@ -111,7 +120,9 @@
         </select>
       </div>
       <div>
-        <label for="contact-mensaje" class="text-navy-600 text-sm font-semibold block mb-2">Mensaje</label>
+        <label for="contact-mensaje" class="text-navy-600 text-sm font-semibold block mb-2"
+          >Mensaje</label
+        >
         <textarea
           id="contact-mensaje"
           rows="4"
@@ -120,7 +131,10 @@
           class="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-3 text-navy-600 text-sm focus:outline-none focus:ring-2 focus:ring-accent-yellow focus:border-transparent transition-all placeholder:text-navy-200 resize-none"
         ></textarea>
       </div>
-      <button type="submit" class="w-full bg-accent-yellow text-navy-600 py-4 rounded-lg font-bold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/20 flex items-center justify-center gap-2 cursor-pointer">
+      <button
+        type="submit"
+        class="w-full bg-accent-yellow text-navy-600 py-4 rounded-lg font-bold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/20 flex items-center justify-center gap-2 cursor-pointer"
+      >
         <Send class="w-5 h-5" /> Enviar a WhatsApp
       </button>
     </form>

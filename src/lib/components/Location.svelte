@@ -25,9 +25,9 @@
   const currentMinutes = vTime.hours * 60 + vTime.minutes;
 
   function getTodayRange(): HoursRange | null {
-    return business.hours.find(
-      (r) => vTime.day >= r.weekdayStart && vTime.day <= r.weekdayEnd,
-    ) ?? null;
+    return (
+      business.hours.find((r) => vTime.day >= r.weekdayStart && vTime.day <= r.weekdayEnd) ?? null
+    );
   }
 
   function getNextOpenDay(): { range: HoursRange; dayLabel: string } | null {
@@ -86,7 +86,11 @@
       { threshold: 0.15, rootMargin: '0px 0px -50px 0px' },
     );
     observer.observe(element);
-    return { destroy() { observer.disconnect(); } };
+    return {
+      destroy() {
+        observer.disconnect();
+      },
+    };
   }
 </script>
 
@@ -96,40 +100,70 @@
     <div class="grid lg:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-2 items-center">
       <div use:observe class="fade-left">
         <span class="text-[#FFCC00] text-xs font-bold tracking-[.3em] uppercase">Visítanos</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight leading-tight">Nuestro Espacio,<br />Tu Comunidad</h2>
-        <p class="text-white/50 mt-6 leading-relaxed">Un lugar diseñado para que te sientas cómodo, inspirado y bien atendido en el corazón de Maturín.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight leading-tight">
+          Nuestro Espacio,<br />Tu Comunidad
+        </h2>
+        <p class="text-white/50 mt-6 leading-relaxed">
+          Un lugar diseñado para que te sientas cómodo, inspirado y bien atendido en el corazón de
+          Maturín.
+        </p>
 
         <div class="mt-10 space-y-6">
-          <a href={business.mapsUrl} target="_blank" rel="noreferrer" class="flex gap-4 items-start group cursor-pointer rounded-xl transition-colors duration-200 hover:bg-white/5 -mx-4 px-4 py-3">
-            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+          <a
+            href={business.mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            class="flex gap-4 items-start group cursor-pointer rounded-xl transition-colors duration-200 hover:bg-white/5 -mx-4 px-4 py-3"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0"
+            >
               <MapPin class="w-5 h-5 text-[#FFCC00]" />
             </div>
             <div>
               <h4 class="text-white font-semibold">Dirección</h4>
-              <p class="text-white/50 text-sm mt-1 group-hover:text-white/70 transition-colors duration-200">{business.address}</p>
+              <p
+                class="text-white/50 text-sm mt-1 group-hover:text-white/70 transition-colors duration-200"
+              >
+                {business.address}
+              </p>
             </div>
           </a>
 
           <div class="flex gap-4 items-start">
-            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+            <div
+              class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0"
+            >
               <Clock class="w-5 h-5 text-[#FFCC00]" />
             </div>
             <div>
               <h4 class="text-white font-semibold">Horario</h4>
               {#each business.hours as h}
-                <p class="text-white/50 text-sm mt-1">{h.label}: {formatTime(h.open)} - {formatTime(h.close)}</p>
+                <p class="text-white/50 text-sm mt-1">
+                  {h.label}: {formatTime(h.open)} - {formatTime(h.close)}
+                </p>
               {/each}
             </div>
           </div>
 
           <div class="flex gap-4 items-start">
-            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+            <div
+              class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0"
+            >
               <Phone class="w-5 h-5 text-[#FFCC00]" />
             </div>
             <div>
               <h4 class="text-white font-semibold">Contacto</h4>
-              <a href={`tel:${business.phone.replace(/[^+\d]/g, '')}`} class="text-white/50 text-sm mt-1 block hover:text-white/70 transition-colors duration-200">{business.phone}</a>
-              <a href={`mailto:${business.email}`} class="text-white/50 text-sm hover:text-white/70 transition-colors duration-200">{business.email}</a>
+              <a
+                href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
+                class="text-white/50 text-sm mt-1 block hover:text-white/70 transition-colors duration-200"
+                >{business.phone}</a
+              >
+              <a
+                href={`mailto:${business.email}`}
+                class="text-white/50 text-sm hover:text-white/70 transition-colors duration-200"
+                >{business.email}</a
+              >
             </div>
           </div>
         </div>
@@ -137,34 +171,53 @@
 
       <div use:observe class="fade-right">
         <div class="flex flex-col gap-6">
-          <div class="rounded-2xl overflow-hidden h-[400px] md:h-[450px] relative border border-white/10 shadow-2xl group cursor-pointer">
+          <div
+            class="rounded-2xl overflow-hidden h-[400px] md:h-[450px] relative border border-white/10 shadow-2xl group cursor-pointer"
+          >
             <iframe
-            src={business.mapsEmbedUrl}
-            class="map-dark-mode grayscale group-hover:grayscale-0 transition-all duration-700 absolute inset-0 w-full h-full border-0 pointer-events-none group-hover:pointer-events-auto"
+              src={business.mapsEmbedUrl}
+              class="map-dark-mode grayscale group-hover:grayscale-0 transition-all duration-700 absolute inset-0 w-full h-full border-0 pointer-events-none group-hover:pointer-events-auto"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Ubicación de OPTIK-T en Maturín"
             ></iframe>
             <div class="absolute bottom-6 left-6 right-6 z-10 pointer-events-none">
-              <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 shadow-lg flex items-center gap-3">
-                <div class="w-3 h-3 rounded-full animate-pulse {isOpen ? 'bg-green-400' : 'bg-red-400'} shadow-[0_0_8px_rgba(74,222,128,0.8)]"></div>
+              <div
+                class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 shadow-lg flex items-center gap-3"
+              >
+                <div
+                  class="w-3 h-3 rounded-full animate-pulse {isOpen
+                    ? 'bg-green-400'
+                    : 'bg-red-400'} shadow-[0_0_8px_rgba(74,222,128,0.8)]"
+                ></div>
                 <span class="text-white text-sm font-medium">{statusText}</span>
               </div>
             </div>
           </div>
 
-          <a href={business.mapsUrl} target="_blank" rel="noreferrer" class="bg-[#FFCC00] text-[#0F1B33] px-8 py-3.5 rounded-full font-bold hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-[#FFCC00]/10 flex items-center gap-2 justify-center w-full md:w-auto md:self-start">
+          <a
+            href={business.mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            class="bg-[#FFCC00] text-[#0F1B33] px-8 py-3.5 rounded-full font-bold hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-[#FFCC00]/10 flex items-center gap-2 justify-center w-full md:w-auto md:self-start"
+          >
             <MapPin class="w-5 h-5" />
             Cómo Llegar
           </a>
         </div>
       </div>
 
-       <div class="lg:col-start-1 lg:row-start-2">
+      <div class="lg:col-start-1 lg:row-start-2">
         <p class="text-white/50 text-xs font-bold tracking-widest uppercase my-4">Síguenos</p>
         <div class="flex gap-3">
           {#each business.socialLinks as { href, label, path }}
-            <a {href} target="_blank" rel="noreferrer" aria-label={label} class="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-[#FFCC00]/10 hover:text-[#FFCC00] hover:border-[#FFCC00]/50 transition-all">
+            <a
+              {href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              class="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-[#FFCC00]/10 hover:text-[#FFCC00] hover:border-[#FFCC00]/50 transition-all"
+            >
               <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                 <path d={path} />
               </svg>
@@ -180,7 +233,9 @@
   :global(.fade-left) {
     opacity: 0;
     transform: translateX(-40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
   }
   :global(.fade-left.visible) {
     opacity: 1;
@@ -189,7 +244,9 @@
   :global(.fade-right) {
     opacity: 0;
     transform: translateX(40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
   }
   :global(.fade-right.visible) {
     opacity: 1;

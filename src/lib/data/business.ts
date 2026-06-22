@@ -24,7 +24,8 @@ export interface BusinessData {
 }
 
 export const business: BusinessData = {
-  address: 'Maturín, Sector Las Avenidas, Cruce Av Luis del Valle García con Av. Fuerzas Armadas, Calle Villa Pool, Local 01',
+  address:
+    'Maturín, Sector Las Avenidas, Cruce Av Luis del Valle García con Av. Fuerzas Armadas, Calle Villa Pool, Local 01',
   phone: '+58 412 114 5790',
   email: 'optikt.vision@gmail.com',
   socialLinks: [
@@ -45,7 +46,8 @@ export const business: BusinessData = {
     },
   ],
   mapsUrl: 'https://maps.app.goo.gl/8erW5siAvY53jg9y5',
-  mapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.2792715974574!2d-63.16737490000002!3d9.742394800000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c334160551d2aaf%3A0x7025245b4348f49b!2sOptik-T%20-%20%C3%93ptica!5e0!3m2!1ses-419!2sve!4v1781808743468!5m2!1ses-419!2sve',
+  mapsEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.2792715974574!2d-63.16737490000002!3d9.742394800000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c334160551d2aaf%3A0x7025245b4348f49b!2sOptik-T%20-%20%C3%93ptica!5e0!3m2!1ses-419!2sve!4v1781808743468!5m2!1ses-419!2sve',
   timezoneOffset: -4,
   hours: [
     { label: 'Lunes a Viernes', weekdayStart: 1, weekdayEnd: 5, open: '08:30', close: '17:00' },

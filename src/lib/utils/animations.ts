@@ -1,13 +1,13 @@
 export function fadeIn(
   node: HTMLElement,
-  options: { delay?: number; type?: 'up' | 'left' | 'right' } = {}
+  options: { delay?: number; type?: 'up' | 'left' | 'right' } = {},
 ) {
   const { delay = 0, type = 'up' } = options;
 
   const classMap = {
     up: 'fade-up',
     left: 'fade-left',
-    right: 'fade-right'
+    right: 'fade-right',
   };
 
   node.classList.add(classMap[type]);
@@ -21,7 +21,7 @@ export function fadeIn(
         observer.disconnect();
       }
     },
-    { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    { threshold: 0.15, rootMargin: '0px 0px -50px 0px' },
   );
 
   observer.observe(node);
@@ -29,7 +29,7 @@ export function fadeIn(
   return {
     destroy() {
       observer.disconnect();
-    }
+    },
   };
 }
 
