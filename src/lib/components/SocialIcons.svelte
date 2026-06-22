@@ -4,16 +4,17 @@
 
   let { variant = 'circles' }: { variant?: 'circles' | 'text' } = $props();
 
-  const base =
+  const base = $derived(
     variant === 'circles'
       ? 'w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300'
-      : 'transition-colors';
+      : 'transition-colors'
+  );
 
   const circleClasses =
     'bg-white/5 border border-white/10 text-white/60 hover:bg-accent-yellow hover:text-navy-600 hover:border-accent-yellow';
   const textClasses = 'text-white/30 hover:text-accent-yellow';
 
-  const linkClass = `${base} ${variant === 'circles' ? circleClasses : textClasses}`;
+  const linkClass = $derived(`${base} ${variant === 'circles' ? circleClasses : textClasses}`);
 </script>
 
 <div class="flex gap-3" class:mt-6={variant === 'text'}>
