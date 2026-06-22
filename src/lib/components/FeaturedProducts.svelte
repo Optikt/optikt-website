@@ -58,13 +58,13 @@
     </div>
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-      {#each featuredProducts.slice(0, 4) as product, i}
+      {#each featuredProducts.slice(0, 4) as product, i (product.imageKey)}
         {@render productCard(product, i)}
       {/each}
     </div>
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-      {#each featuredProducts.slice(4) as product, i}
+      {#each featuredProducts.slice(4) as product, i (product.imageKey)}
         {@render productCard(product, i)}
       {/each}
     </div>

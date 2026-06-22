@@ -76,7 +76,7 @@
           la salud visual y el bienestar de cada paciente.
         </p>
         <div class="mt-10 space-y-6">
-          {#each services as s}
+          {#each services as s (s.title)}
             {@render serviceCard(s)}
           {/each}
         </div>

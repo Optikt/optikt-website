@@ -138,7 +138,7 @@
             </div>
             <div>
               <h4 class="text-white font-semibold">Horario</h4>
-              {#each business.hours as h}
+              {#each business.hours as h (h.label)}
                 <p class="text-white/50 text-sm mt-1">
                   {h.label}: {formatTime(h.open)} - {formatTime(h.close)}
                 </p>
@@ -210,7 +210,7 @@
       <div class="lg:col-start-1 lg:row-start-2">
         <p class="text-white/50 text-xs font-bold tracking-widest uppercase my-4">Síguenos</p>
         <div class="flex gap-3">
-          {#each business.socialLinks as { href, label, path }}
+          {#each business.socialLinks as { href, label, path } (label)}
             <a
               {href}
               target="_blank"

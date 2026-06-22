@@ -1,6 +1,5 @@
 <script lang="ts">
   import { fadeIn } from '$lib/utils/animations';
-  import ArrowLink from './ArrowLink.svelte';
   import type { Collection } from '$lib/data/collections';
   import { imagenes } from '$lib/data/images';
 
@@ -36,7 +35,7 @@
       <h3 class="text-3xl font-bold text-navy-600">{data.title}</h3>
       <p class="text-navy-300 mt-4 leading-relaxed">{data.description}</p>
       <div class="grid grid-cols-3 gap-3 mt-6">
-        {#each data.thumbnails as thumb}
+        {#each data.thumbnails as thumb (thumb.imageKey)}
           {@const thumbImg = imagenes[thumb.imageKey]}
           <div class="rounded-xl overflow-hidden h-24 lens-shine">
             <img

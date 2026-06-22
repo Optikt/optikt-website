@@ -64,7 +64,7 @@
           Nuestro equipo y asesores de estilo trabajan juntos para ofrecerte una atención integral.
         </p>
         <div class="mt-8 grid grid-cols-2 gap-4">
-          {#each features as f}
+          {#each features as f (f)}
             {@render featureItem(f)}
           {/each}
         </div>

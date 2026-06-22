@@ -27,7 +27,7 @@
     class="flex items-center whitespace-nowrap w-max animate-marquee motion-reduce:animate-none"
     style="gap: {gap * 0.25}rem; animation-duration: {duration}s"
   >
-    {#each Array(repeats) as _}
+    {#each Array(repeats) as _, i (i)}
       {@render children()}
     {/each}
   </div>

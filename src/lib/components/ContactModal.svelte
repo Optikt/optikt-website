@@ -1,7 +1,7 @@
 <script lang="ts">
   import { X, Send } from '@lucide/svelte';
   import { business } from '$lib/data/business';
-  import { getImagen, getConsultables } from '$lib/data/images';
+  import { getImagen } from '$lib/data/images';
 
   let {
     open,
@@ -18,7 +18,6 @@
   let motivo = $state('Asesoría');
   let mensaje = $state('');
 
-  let consultables = $derived(getConsultables());
   let productEntry = $derived(product?.imageKey ? getImagen(product.imageKey) : null);
 
   $effect(() => {

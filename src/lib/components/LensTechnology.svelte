@@ -38,7 +38,7 @@
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {#each techLensesData as lens, i}
+      {#each techLensesData as lens, i (lens.imageKey)}
         <LensTechCard
           icon={techIcons[i]}
           title={lens.title}
@@ -54,7 +54,7 @@
       class="mt-16 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12"
     >
       <div class="grid md:grid-cols-3 gap-8 items-center">
-        {#each comparisonData as item}
+        {#each comparisonData as item (item.title)}
           <ComparisonCard data={item} />
         {/each}
       </div>

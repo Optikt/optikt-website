@@ -32,7 +32,7 @@
     </div>
 
     <Marquee gap={16} repeats={3} duration={60} ariaLabel="Socios comerciales" class="py-8">
-      {#each items as item, i}
+      {#each items as item, _i (_i)}
         {#if item.type === 'category'}
           <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase"
             >{item.label}</span

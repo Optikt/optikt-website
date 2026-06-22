@@ -32,7 +32,7 @@
       </h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
-      {#each testimonials as t, i}
+      {#each testimonials as t, i (t.name)}
         {@const isLong = t.text.length > TRUNCATE_AT}
         {@const displayText = isLong ? t.text.slice(0, TRUNCATE_AT) + '…' : t.text}
         <div
@@ -40,7 +40,7 @@
           class="bg-white rounded-2xl p-8 border border-stone-100 hover:border-accent-yellow/20 transition-all duration-300 hover:shadow-lg"
         >
           <div class="flex gap-1 mb-4">
-            {#each Array(5) as _}
+            {#each Array(5) as _, s (s)}
               <Star class="w-4 h-4 text-accent-yellow fill-accent-yellow" />
             {/each}
           </div>
