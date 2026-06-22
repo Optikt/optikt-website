@@ -29,8 +29,8 @@
     }
   });
 
-  function handleBackdropClick(e: MouseEvent) {
-    if (e.target === e.currentTarget) onClose();
+  function handleClose() {
+    onClose();
   }
 
   function handleSubmit(e: Event) {
@@ -52,18 +52,22 @@
   role="dialog"
   aria-modal="true"
   tabindex="-1"
-  class="fixed inset-0 bg-navy-600/80 backdrop-blur-sm z-70 flex items-center justify-center p-4 transition-opacity duration-300"
+  class="fixed inset-0 z-70 flex items-center justify-center p-4 transition-opacity duration-300"
   class:opacity-0={!open}
   class:pointer-events-none={!open}
   class:opacity-100={open}
   class:pointer-events-auto={open}
-  onclick={handleBackdropClick}
   onkeydown={(e) => {
     if (e.key === 'Escape') onClose();
   }}
 >
+  <button
+    class="fixed inset-0 bg-navy-600/80 backdrop-blur-sm cursor-default"
+    onclick={handleClose}
+    aria-label="Cerrar"
+  ></button>
   <div
-    class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl transition-transform duration-300"
+    class="relative bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl transition-transform duration-300"
     class:scale-90={!open}
     class:translate-y-5={!open}
     class:scale-100={open}

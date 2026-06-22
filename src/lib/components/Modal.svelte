@@ -19,14 +19,13 @@
     class="fixed inset-0 z-50 flex items-center justify-center p-4"
     role="dialog"
     aria-modal="true"
+    onkeydown={(e) => e.key === 'Escape' && onClose()}
   >
-    <div
-      class="fixed inset-0 bg-black/50 transition-opacity duration-200"
-      role="button"
-      tabindex="0"
+    <button
+      class="fixed inset-0 bg-black/50 transition-opacity duration-200 cursor-default"
       onclick={onClose}
-      onkeydown={(e) => e.key === 'Escape' && onClose()}
-    ></div>
+      aria-label="Cerrar"
+    ></button>
     <div
       class="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[80vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200"
     >
