@@ -59,7 +59,13 @@
   </div>
 {/snippet}
 
-<Modal {open} {onClose} header={contactHeader} backdropClass="bg-navy-600/80 backdrop-blur-sm" class="z-70">
+<Modal
+  {open}
+  {onClose}
+  header={contactHeader}
+  backdropClass="bg-navy-600/80 backdrop-blur-sm"
+  class="z-70"
+>
   <form bind:this={formEl} class="p-6 space-y-5" onsubmit={handleSubmit}>
     {#if productEntry}
       <div class="bg-accent-yellow/10 rounded-lg px-4 py-3 text-sm text-navy-600 font-medium">
@@ -70,8 +76,7 @@
       </div>
     {/if}
     <div>
-      <label for="contact-name" class="text-navy-600 text-sm font-semibold block mb-2"
-        >Nombre</label
+      <label for="contact-name" class="text-navy-600 text-sm font-semibold block mb-2">Nombre</label
       >
       <input
         id="contact-name"
