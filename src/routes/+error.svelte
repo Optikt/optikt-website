@@ -4,12 +4,24 @@
   import { page } from '$app/stores';
   import { resolve } from '$app/paths';
 
-  const fallback = { title: 'Oops, algo salió mal', description: 'Ocurrió un error inesperado. Por favor, vuelve a intentarlo.' } as const;
+  const fallback = {
+    title: 'Oops, algo salió mal',
+    description: 'Ocurrió un error inesperado. Por favor, vuelve a intentarlo.',
+  } as const;
 
   const messages: Record<number, { title: string; description: string }> = {
-    400: { title: 'Solicitud Inválida', description: 'Algo salió mal con tu solicitud. Verifica los datos e intenta de nuevo.' },
-    404: { title: 'Página No Encontrada', description: 'Esta página no existe o fue movida. Revisa la URL o vuelve al inicio.' },
-    500: { title: 'Error del Servidor', description: 'Tuvimos un problema interno. Nuestro equipo ya fue notificado.' },
+    400: {
+      title: 'Solicitud Inválida',
+      description: 'Algo salió mal con tu solicitud. Verifica los datos e intenta de nuevo.',
+    },
+    404: {
+      title: 'Página No Encontrada',
+      description: 'Esta página no existe o fue movida. Revisa la URL o vuelve al inicio.',
+    },
+    500: {
+      title: 'Error del Servidor',
+      description: 'Tuvimos un problema interno. Nuestro equipo ya fue notificado.',
+    },
   };
 
   let title = $derived(messages[$page.status]?.title ?? fallback.title);
@@ -54,6 +66,8 @@
   </div>
 
   <footer class="py-6 text-center">
-    <p class="text-white/20 text-xs">&copy; {new Date().getFullYear()} OPTIK-T. Todos los derechos reservados.</p>
+    <p class="text-white/20 text-xs">
+      &copy; {new Date().getFullYear()} OPTIK-T. Todos los derechos reservados.
+    </p>
   </footer>
 </div>
