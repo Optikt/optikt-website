@@ -20,6 +20,10 @@
   function closeModal() {
     modalOpen = false;
   }
+
+  function createOpenFullHandler(t: (typeof testimonials)[number]) {
+    return () => openFull(t);
+  }
 </script>
 
 <section class="py-24 bg-stone-50">
@@ -49,7 +53,7 @@
           </p>
           {#if isLong}
             <button
-              onclick={() => openFull(t)}
+              onclick={createOpenFullHandler(t)}
               class="text-accent-yellow text-sm font-semibold mt-2 hover:underline transition-all cursor-pointer"
             >
               Leer más

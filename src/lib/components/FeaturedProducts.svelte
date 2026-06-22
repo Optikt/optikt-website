@@ -6,6 +6,10 @@
   import { MessageCircle } from '@lucide/svelte';
 
   let { onOpenModal }: { onOpenModal: (product?: { imageKey: string }) => void } = $props();
+
+  function createConsultHandler(p: FeaturedProduct) {
+    return () => onOpenModal({ imageKey: p.imageKey });
+  }
 </script>
 
 {#snippet productCard(product: FeaturedProduct, i: number)}
@@ -30,7 +34,7 @@
         class="absolute inset-0 bg-navy-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center"
       >
         <button
-          onclick={() => onOpenModal({ imageKey: product.imageKey })}
+          onclick={createConsultHandler(product)}
           class="bg-white text-navy-600 px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-accent-yellow hover:text-navy-600 transition-all duration-300 shadow-lg flex items-center gap-2 cursor-pointer"
         >
           <MessageCircle class="w-4 h-4" /> Consultar

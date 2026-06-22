@@ -32,8 +32,8 @@
   }
 </script>
 
-<Nav onOpenModal={() => openModal()} />
-<Hero onOpenModal={() => openModal()} />
+<Nav onOpenModal={openModal} />
+<Hero onOpenModal={openModal} />
 <BrandMarquee />
 <Collections />
 <LensTechnology />
@@ -41,10 +41,10 @@
 <Services />
 <Stats />
 <Gallery />
-<About onOpenModal={() => openModal()} />
+<About onOpenModal={openModal} />
 <PartnersMarquee />
 <Testimonials />
 <Location />
-<FinalCTA onOpenModal={() => openModal()} />
+<FinalCTA onOpenModal={openModal} />
 <Footer />
 <ContactModal open={modalOpen} onClose={closeModal} product={selectedProduct} />
