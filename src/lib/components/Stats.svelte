@@ -2,9 +2,9 @@
   import { fadeIn, animateCounter } from '$lib/utils/animations';
 
   let stats = [
-    { target: 15, label: 'Años de Experiencia' },
-    { target: 12000, label: 'Pacientes Atendidos' },
-    { target: 50, label: 'Marcas Premium' },
+    { target: '1 a 1', label: 'Asesoría Personalizada' },
+    { target: 400, label: 'Modelos Disponibles' },
+    { target: 100, label: '% Precisión Digital' },
     { target: 98, label: '% Satisfacción' },
   ];
 </script>
@@ -23,7 +23,7 @@
           <div
             class="text-4xl md:text-5xl font-bold text-accent-yellow counter"
             data-target={stat.target}
-            data-suffix={stat.label === '% Satisfacción' ? '%' : '+'}
+            data-suffix={stat.label.startsWith('%') ? '%' : '+'}
             use:animateCounter
           >
             0

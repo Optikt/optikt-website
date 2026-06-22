@@ -34,8 +34,15 @@ export function fadeIn(
 }
 
 export function animateCounter(node: HTMLElement) {
-  const target = parseInt(node.dataset.target || '0', 10);
+  const raw = node.dataset.target || '0';
   const suffix = node.dataset.suffix || '+';
+  const target = parseInt(raw, 10);
+
+  if (isNaN(Number(raw))) {
+    node.textContent = raw;
+    return;
+  }
+
   const start = performance.now();
 
   function update(now: number) {
