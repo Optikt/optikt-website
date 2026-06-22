@@ -1,0 +1,5 @@
+{
+  "ignore": {
+    "rules": ["no-duplicate-lib-in-chunks"]
+  }
+}
