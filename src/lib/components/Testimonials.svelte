@@ -68,7 +68,7 @@
                   <a
                     href={t.link}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer external"
                     class="text-navy-300 hover:text-accent-yellow transition-colors inline-flex cursor-pointer"
                     aria-label={t.linkLabel ?? 'Ver reseña externa'}
                   >

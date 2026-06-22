@@ -46,8 +46,6 @@
           </div>
         {/each}
       </div>
-      <!-- TODO: Add support to redirect to specific collection page -->
-      <!-- <ArrowLink /> -->
     </div>
   </div>
 </div>

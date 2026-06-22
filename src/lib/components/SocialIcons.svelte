@@ -20,7 +20,7 @@
   <a
     href={business.socialLinks[0].href}
     target="_blank"
-    rel="noreferrer"
+    rel="noreferrer external"
     aria-label="Instagram"
     class={linkClass}
   >
@@ -29,7 +29,7 @@
   <a
     href={business.socialLinks[1].href}
     target="_blank"
-    rel="noreferrer"
+    rel="noreferrer external"
     aria-label="Facebook"
     class={linkClass}
   >
@@ -41,7 +41,7 @@
     <a
       href={business.socialLinks[2].href}
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer external"
       aria-label="WhatsApp"
       class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 bg-white/5 border border-white/10 text-white/60 hover:bg-green-500 hover:text-white hover:border-green-500"
     >

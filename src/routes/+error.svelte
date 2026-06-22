@@ -2,6 +2,7 @@
   import { ArrowLeft, Frown } from '@lucide/svelte';
   import { ImagotipoHorizontal } from '$lib/components/branding';
   import { page } from '$app/stores';
+  import { resolve } from '$app/paths';
 
   const fallback = { title: 'Oops, algo salió mal', description: 'Ocurrió un error inesperado. Por favor, vuelve a intentarlo.' } as const;
 
@@ -22,7 +23,7 @@
 <div class="min-h-screen bg-navy-700 flex flex-col">
   <div class="flex-1 flex flex-col items-center justify-center px-6 py-20 text-center">
     <div class="mb-8">
-      <a href="/">
+      <a href={resolve('/')}>
         <ImagotipoHorizontal theme="light" class="h-12 w-auto" ariaLabel="OPTIK-T" />
       </a>
     </div>
@@ -44,7 +45,7 @@
     </p>
 
     <a
-      href="/"
+      href={resolve('/')}
       class="inline-flex items-center gap-2 bg-accent-yellow text-navy-600 px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/25"
     >
       <ArrowLeft class="w-4 h-4" />

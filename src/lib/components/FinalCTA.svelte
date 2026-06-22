@@ -34,7 +34,7 @@
         <a
           href={business.socialLinks[2].href}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer external"
           class="border-2 border-navy-600/10 text-navy-600 px-10 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-navy-600 hover:text-white transition-all duration-300 inline-flex items-center gap-2"
         >
           <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"

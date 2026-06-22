@@ -76,7 +76,7 @@
       <a
         href={business.socialLinks[0].href}
         target="_blank"
-        rel="noreferrer"
+        rel="noreferrer external"
         class="inline-flex items-center gap-3 bg-navy-600 text-white px-8 py-3.5 rounded-full font-semibold text-sm hover:bg-navy-500 transition-all duration-300"
       >
         <Instagram class="w-5 h-5" />

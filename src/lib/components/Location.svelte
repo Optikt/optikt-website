@@ -112,7 +112,7 @@
           <a
             href={business.mapsUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer external"
             class="flex gap-4 items-start group cursor-pointer rounded-xl transition-colors duration-200 hover:bg-white/5 -mx-4 px-4 py-3"
           >
             <div
@@ -198,7 +198,7 @@
           <a
             href={business.mapsUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer external"
             class="bg-[#FFCC00] text-[#0F1B33] px-8 py-3.5 rounded-full font-bold hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-[#FFCC00]/10 flex items-center gap-2 justify-center w-full md:w-auto md:self-start"
           >
             <MapPin class="w-5 h-5" />
@@ -214,7 +214,7 @@
             <a
               {href}
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer external"
               aria-label={label}
               class="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-[#FFCC00]/10 hover:text-[#FFCC00] hover:border-[#FFCC00]/50 transition-all"
             >
