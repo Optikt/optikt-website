@@ -37,7 +37,7 @@
   class:bg-transparent={!scrolled}
 >
   <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
-    <a href="#" class="flex items-center">
+    <a href="/" class="flex items-center">
       <ImagotipoHorizontal theme="light" class="h-10 w-auto" ariaLabel="OPTIK-T" />
     </a>
     <div class="hidden lg:flex items-center gap-10">

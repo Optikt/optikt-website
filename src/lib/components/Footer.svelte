@@ -49,23 +49,23 @@
         <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Servicios</h4>
         <ul class="space-y-3">
           <li>
-            <a href="#" class="text-white/40 text-sm hover:text-accent-yellow transition-colors"
-              >Examen Visual</a
+            <span class="text-white/40 text-sm"
+              >Examen Visual</span
             >
           </li>
           <li>
-            <a href="#" class="text-white/40 text-sm hover:text-accent-yellow transition-colors"
-              >Adaptación de Monturas</a
+            <span class="text-white/40 text-sm"
+              >Adaptación de Monturas</span
             >
           </li>
           <li>
-            <a href="#" class="text-white/40 text-sm hover:text-accent-yellow transition-colors"
-              >Lentes de Contacto</a
+            <span class="text-white/40 text-sm"
+              >Lentes de Contacto</span
             >
           </li>
           <li>
-            <a href="#" class="text-white/40 text-sm hover:text-accent-yellow transition-colors"
-              >Lentes Digitales</a
+            <span class="text-white/40 text-sm"
+              >Lentes Digitales</span
             >
           </li>
         </ul>
@@ -85,11 +85,11 @@
     >
       <p class="text-white/20 text-xs">© {year} OPTIK-T. Todos los derechos reservados.</p>
       <div class="flex gap-6">
-        <a href="#" class="text-white/20 text-xs hover:text-white/50 transition-colors"
-          >Política de Privacidad</a
+        <span class="text-white/20 text-xs"
+          >Política de Privacidad</span
         >
-        <a href="#" class="text-white/20 text-xs hover:text-white/50 transition-colors"
-          >Términos y Condiciones</a
+        <span class="text-white/20 text-xs"
+          >Términos y Condiciones</span
         >
       </div>
     </div>

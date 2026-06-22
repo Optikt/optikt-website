@@ -19,6 +19,7 @@
     class="fixed inset-0 z-50 flex items-center justify-center p-4"
     role="dialog"
     aria-modal="true"
+    tabindex="-1"
     onkeydown={(e) => e.key === 'Escape' && onClose()}
   >
     <button
