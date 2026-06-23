@@ -1,0 +1,5 @@
+# OPTIK-T
+User-agent: *
+Allow: /
+
+Sitemap: https://optikt.pages.dev/sitemap.xml
