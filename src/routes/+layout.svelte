@@ -23,35 +23,35 @@
   <meta property="og:image" content="https://optikt.pages.dev/images/hero/5.webp" />
   <meta property="og:locale" content="es_VE" />
   <script type="application/ld+json">
-    {JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      name: 'OPTIK-T',
-      image: 'https://optikt.pages.dev/images/hero/5.webp',
-      url: 'https://optikt.pages.dev',
-      telephone: business.phone,
-      email: business.email,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: business.address,
-        addressCountry: 'VE',
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "OPTIK-T",
+      "image": "https://optikt.pages.dev/images/hero/5.webp",
+      "url": "https://optikt.pages.dev",
+      "telephone": "+58 412 114 5790",
+      "email": "optikt.vision@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Maturín, Sector Las Avenidas, Cruce Av Luis del Valle García con Av. Fuerzas Armadas, Calle Villa Pool, Local 01",
+        "addressCountry": "VE"
       },
-      openingHoursSpecification: [
+      "openingHoursSpecification": [
         {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          opens: '08:30',
-          closes: '17:00',
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:30",
+          "closes": "17:00"
         },
         {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Saturday'],
-          opens: '09:00',
-          closes: '13:00',
-        },
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "09:00",
+          "closes": "13:00"
+        }
       ],
-      priceRange: '$$',
-    })}
+      "priceRange": "$$"
+    }
   </script>
 </svelte:head>
 
