@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Star, ExternalLink } from '@lucide/svelte';
+  import Img from '$lib/components/Img.svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { testimonials } from '$lib/data/testimonials';
   import { imagenes } from '$lib/data/images';
@@ -60,10 +61,11 @@
             </button>
           {/if}
           <div class="flex items-center gap-3 mt-6">
-            <img
-              src={imagenes[t.imageKey].pathUrl}
+            <Img
+              src={imagenes[t.imageKey].src}
               alt={imagenes[t.imageKey].alt}
               class="w-10 h-10 rounded-full object-cover"
+              loading="lazy"
             />
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-1.5">

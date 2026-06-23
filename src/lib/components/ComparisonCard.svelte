@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Img from '$lib/components/Img.svelte';
   import type { ComparisonData } from '$lib/data/lenses';
   import { imagenes } from '$lib/data/images';
 
@@ -14,12 +15,13 @@
         ? 'border-accent-yellow shadow-lg shadow-accent-yellow/20'
         : 'border-white/10'}"
     >
-      <img
-        src={img.pathUrl}
+      <Img
+        src={img.src}
         alt={img.alt}
         class="w-full h-full object-cover {data.blur
           ? 'opacity-50 blur-[1px]'
           : ''} {data.overlay && !data.accented ? 'opacity-60' : ''}"
+        loading="lazy"
       />
       {#if data.overlay}
         <div class="absolute inset-0 bg-navy-600/40"></div>
@@ -36,5 +38,5 @@
   <h5 class="text-sm font-semibold mt-4 {data.accented ? 'text-accent-yellow' : 'text-white/60'}">
     {data.title}
   </h5>
-  <p class="text-xs mt-1 {data.accented ? 'text-white/50' : 'text-white/30'}">{data.description}</p>
+  <p class="text-xs mt-1 {data.accented ? 'text-white/60' : 'text-white/50'}">{data.description}</p>
 </div>

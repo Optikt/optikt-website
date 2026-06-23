@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Eye, Glasses, ScanLine, HeartPulse, ShieldCheck } from '@lucide/svelte';
   import type { Component } from 'svelte';
+  import Img from '$lib/components/Img.svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { imagenes } from '$lib/data/images';
 
@@ -53,10 +54,11 @@
 {#snippet galleryImage(imageKey: string, tall: boolean)}
   {@const img = imagenes[imageKey]}
   <div class="rounded-2xl overflow-hidden {tall ? 'h-52' : 'h-40'} lens-shine">
-    <img
-      src={img.pathUrl}
+    <Img
+      src={img.src}
       alt={img.alt}
       class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+      loading="lazy"
     />
   </div>
 {/snippet}

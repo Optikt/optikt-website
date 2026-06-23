@@ -63,6 +63,7 @@
   {open}
   {onClose}
   header={contactHeader}
+  ariaLabel="Formulario de contacto"
   backdropClass="bg-navy-600/80 backdrop-blur-sm"
   class="z-70"
 >

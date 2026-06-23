@@ -32,7 +32,7 @@
       <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
         Innovación en Cada Lente
       </h2>
-      <p class="text-white/50 mt-4 max-w-xl mx-auto">
+      <p class="text-white/70 mt-4 max-w-xl mx-auto">
         Nuestros lentes incorporan la tecnología más avanzada para tu comodidad y protección visual.
       </p>
     </div>

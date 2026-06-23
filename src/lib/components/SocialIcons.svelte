@@ -12,7 +12,7 @@
 
   const circleClasses =
     'bg-white/5 border border-white/10 text-white/60 hover:bg-accent-yellow hover:text-navy-600 hover:border-accent-yellow';
-  const textClasses = 'text-white/30 hover:text-accent-yellow';
+  const textClasses = 'text-white/50 hover:text-accent-yellow';
 
   const linkClass = $derived(`${base} ${variant === 'circles' ? circleClasses : textClasses}`);
 </script>

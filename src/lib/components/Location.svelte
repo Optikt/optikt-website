@@ -103,7 +103,7 @@
         <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight leading-tight">
           Nuestro Espacio,<br />Tu Comunidad
         </h2>
-        <p class="text-white/50 mt-6 leading-relaxed">
+        <p class="text-white/70 mt-6 leading-relaxed">
           Un lugar diseñado para que te sientas cómodo, inspirado y bien atendido en el corazón de
           Maturín.
         </p>
@@ -123,7 +123,7 @@
             <div>
               <h4 class="text-white font-semibold">Dirección</h4>
               <p
-                class="text-white/50 text-sm mt-1 group-hover:text-white/70 transition-colors duration-200"
+                class="text-white/70 text-sm mt-1 group-hover:text-white/70 transition-colors duration-200"
               >
                 {business.address}
               </p>
@@ -139,7 +139,7 @@
             <div>
               <h4 class="text-white font-semibold">Horario</h4>
               {#each business.hours as h (h.label)}
-                <p class="text-white/50 text-sm mt-1">
+                <p class="text-white/70 text-sm mt-1">
                   {h.label}: {formatTime(h.open)} - {formatTime(h.close)}
                 </p>
               {/each}
@@ -156,12 +156,12 @@
               <h4 class="text-white font-semibold">Contacto</h4>
               <a
                 href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
-                class="text-white/50 text-sm mt-1 block hover:text-white/70 transition-colors duration-200"
+                class="text-white/70 text-sm mt-1 block hover:text-white/70 transition-colors duration-200"
                 >{business.phone}</a
               >
               <a
                 href={`mailto:${business.email}`}
-                class="text-white/50 text-sm hover:text-white/70 transition-colors duration-200"
+                class="text-white/70 text-sm hover:text-white/70 transition-colors duration-200"
                 >{business.email}</a
               >
             </div>
@@ -208,7 +208,7 @@
       </div>
 
       <div class="lg:col-start-1 lg:row-start-2">
-        <p class="text-white/50 text-xs font-bold tracking-widest uppercase my-4">Síguenos</p>
+        <p class="text-white/70 text-xs font-bold tracking-widest uppercase my-4">Síguenos</p>
         <div class="flex gap-3">
           {#each business.socialLinks as { href, label, path } (label)}
             <a
