@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { readdirSync, mkdirSync, renameSync, existsSync, copyFileSync, unlinkSync } from 'fs';
+import { readdirSync, mkdirSync, renameSync, existsSync } from 'fs';
 import { join, relative, parse, sep } from 'path';
 import { cwd } from 'process';
 
