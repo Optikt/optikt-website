@@ -9,10 +9,13 @@
   class="relative h-screen min-h-[700px] flex items-center justify-center bg-navy-600 overflow-hidden"
 >
   <div class="absolute inset-0">
-    <img
-      src={imagenes['hero-principal'].pathUrl}
+    <enhanced:img
+      src={imagenes['hero-principal'].src}
       alt={imagenes['hero-principal'].alt}
       class="w-full h-full object-cover opacity-25"
+      fetchpriority="high"
+      loading="eager"
+      decoding="sync"
     />
     <div
       class="absolute inset-0 bg-gradient-to-b from-navy-600/80 via-navy-600/40 to-navy-600"
@@ -69,10 +72,11 @@
       <div
         class="w-48 h-32 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine rotate-3"
       >
-        <img
-          src={imagenes['hero-sunglasses-float'].pathUrl}
+        <enhanced:img
+          src={imagenes['hero-sunglasses-float'].src}
           alt={imagenes['hero-sunglasses-float'].alt}
           class="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       <div
@@ -87,10 +91,11 @@
     <div
       class="w-40 h-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine -rotate-6"
     >
-      <img
-        src={imagenes['hero-frame-detail'].pathUrl}
+      <enhanced:img
+        src={imagenes['hero-frame-detail'].src}
         alt={imagenes['hero-frame-detail'].alt}
         class="w-full h-full object-cover"
+        loading="lazy"
       />
     </div>
   </div>
@@ -138,7 +143,7 @@
   </div>
 
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-    <span class="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
+    <span class="text-white/60 text-xs tracking-widest uppercase">Scroll</span>
     <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
       <div class="w-1 h-2.5 bg-accent-yellow rounded-full animate-bounce"></div>
     </div>

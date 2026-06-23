@@ -61,9 +61,10 @@
           {/if}
           <div class="flex items-center gap-3 mt-6">
             <img
-              src={imagenes[t.imageKey].pathUrl}
+              src={imagenes[t.imageKey].src as string}
               alt={imagenes[t.imageKey].alt}
               class="w-10 h-10 rounded-full object-cover"
+              loading="lazy"
             />
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-1.5">

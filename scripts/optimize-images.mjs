@@ -3,36 +3,45 @@ import { readdirSync, mkdirSync, renameSync, existsSync } from 'fs';
 import { join, relative, parse, sep } from 'path';
 import { cwd } from 'process';
 
-const ROOT = join(cwd(), 'static', 'images');
+const ROOT = join(cwd(), 'src', 'lib', 'images');
 const BACKUP = join(ROOT, '_originales');
 
 const MAX_WIDTH_BY_DIR = {
   hero: 1920,
-  colecciones: 1200,
-  gallery: 800,
-  servicios: 800,
+  colecciones: 600,
+  gallery: 600,
+  servicios: 600,
   'tech-lentes': 560,
+  about: 600,
+};
+
+const PER_FILE_MAX_WIDTH = {
+  'hero/6.webp': 400,
+  'hero/3.webp': 400,
 };
 
 function getMaxWidth(filePath) {
   const rel = relative(ROOT, filePath);
+  for (const [pattern, width] of Object.entries(PER_FILE_MAX_WIDTH)) {
+    if (rel === pattern) return width;
+  }
   const parts = rel.split(sep);
-  for (const dir of Object.keys(MAX_WIDTH_BY_DIR)) {
+  for (const [dir, width] of Object.entries(MAX_WIDTH_BY_DIR)) {
     if (parts.some((p) => p.startsWith(dir))) {
-      return MAX_WIDTH_BY_DIR[dir];
+      return width;
     }
   }
   return 1920;
 }
 
-function getJpgFiles(dir) {
+function getImageFiles(dir) {
   const entries = readdirSync(dir, { withFileTypes: true });
   const files = [];
   for (const entry of entries) {
     const fullPath = join(dir, entry.name);
     if (entry.isDirectory() && entry.name !== '_originales') {
-      files.push(...getJpgFiles(fullPath));
-    } else if (entry.isFile() && /\.jpe?g$/i.test(entry.name)) {
+      files.push(...getImageFiles(fullPath));
+    } else if (entry.isFile() && /\.(webp|jpe?g|png|avif)$/i.test(entry.name)) {
       files.push(fullPath);
     }
   }
@@ -49,43 +58,57 @@ async function main() {
     mkdirSync(BACKUP, { recursive: true });
   }
 
-  const files = getJpgFiles(ROOT);
-  console.log(`Found ${files.length} JPG files to process\n`);
+  const files = getImageFiles(ROOT);
+  console.log(`Found ${files.length} image files to process\n`);
 
   let success = 0;
+  let skipped = 0;
   let errors = 0;
 
   for (const file of files) {
     const { name, dir } = parse(file);
-    const webpPath = join(dir, `${name}.webp`);
     const maxWidth = getMaxWidth(file);
     const relPath = relative(ROOT, file);
 
     try {
       const metadata = await sharp(file).metadata();
       const width = metadata.width || 0;
-      const height = metadata.height || 0;
+      const format = metadata.format || 'webp';
+
+      if (width <= maxWidth) {
+        console.log(`- ${relPath}  ${width}px <= ${maxWidth}px, skipping`);
+        skipped++;
+        continue;
+      }
+
+      const tmpPath = join(dir, `_tmp_${name}.${format}`);
 
       const pipeline = sharp(file);
+      pipeline.resize({ width: maxWidth, withoutEnlargement: true });
 
-      if (width > maxWidth) {
-        pipeline.resize({ width: maxWidth, withoutEnlargement: true });
+      if (format === 'webp') {
+        await pipeline.webp({ quality: 85 }).toFile(tmpPath);
+      } else if (format === 'png') {
+        await pipeline.png({ quality: 85 }).toFile(tmpPath);
+      } else if (format === 'jpeg' || format === 'jpg') {
+        await pipeline.jpeg({ quality: 85 }).toFile(tmpPath);
+      } else if (format === 'avif') {
+        await pipeline.avif({ quality: 80 }).toFile(tmpPath);
       }
 
-      await pipeline.webp({ quality: 85 }).toFile(webpPath);
-
-      const backupDir = join(BACKUP, relative(ROOT, dir));
-      if (!existsSync(backupDir)) {
-        mkdirSync(backupDir, { recursive: true });
+      const backupSubDir = join(BACKUP, relative(ROOT, dir));
+      if (!existsSync(backupSubDir)) {
+        mkdirSync(backupSubDir, { recursive: true });
       }
-      renameSync(file, join(backupDir, `${name}.jpg`));
+      renameSync(file, join(backupSubDir, `${name}.${format}`));
+      renameSync(tmpPath, file);
 
-      const oldSize = (await sharp(join(backupDir, `${name}.jpg`)).metadata()).size || 0;
-      const newSize = (await sharp(webpPath).metadata()).size || 0;
+      const oldSize = (await sharp(join(backupSubDir, `${name}.${format}`)).metadata()).size || 0;
+      const newSize = (await sharp(file).metadata()).size || 0;
       const pct = oldSize ? ((1 - newSize / oldSize) * 100).toFixed(1) : '?';
 
       console.log(
-        `✓ ${relPath}  ${width}x${height} → ${maxWidth}px  ` +
+        `✓ ${relPath}  ${width}x${metadata.height} → ${maxWidth}px  ` +
           `${(oldSize / 1024).toFixed(0)}KB → ${(newSize / 1024).toFixed(0)}KB  (-${pct}%)`,
       );
       success++;
@@ -95,7 +118,9 @@ async function main() {
     }
   }
 
-  console.log(`\nDone. ${success} converted, ${errors} errors.`);
+  console.log(
+    `\nDone. ${success} resized, ${skipped} skipped, ${errors} errors. Backup in ${BACKUP}`,
+  );
 }
 
 main();

@@ -25,7 +25,7 @@
       <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
         Laboratorios y Marcas
       </h2>
-      <p class="text-white/40 mt-4 max-w-2xl mx-auto text-sm leading-relaxed">
+      <p class="text-white/60 mt-4 max-w-2xl mx-auto text-sm leading-relaxed">
         Detrás de cada montura y cada lente hay aliados estratégicos que comparten nuestro
         compromiso con la calidad y la innovación.
       </p>
@@ -38,7 +38,7 @@
             >{item.label}</span
           >
         {:else}
-          <span class="text-white/30 text-base md:text-lg font-semibold tracking-wide"
+          <span class="text-white/60 text-base md:text-lg font-semibold tracking-wide"
             >{item.name}</span
           >
         {/if}

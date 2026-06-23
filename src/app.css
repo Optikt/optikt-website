@@ -161,6 +161,24 @@ html {
   font-variant-numeric: tabular-nums;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: #ffcc00;
+  color: #0f1b33;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: none;
+}
+
 .lens-shine {
   position: relative;
   overflow: hidden;

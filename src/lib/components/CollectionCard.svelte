@@ -12,12 +12,13 @@
 <div use:fadeIn={{}}>
   <div class="grid lg:grid-cols-2 gap-8 items-center">
     <div class="relative rounded-2xl overflow-hidden group {reversed ? 'lg:order-2' : ''}">
-      <img
-        src={img.pathUrl}
+      <enhanced:img
+        src={img.src}
         alt={img.alt}
         class="w-full {isSunglasses
           ? 'h-auto'
           : 'h-80 lg:h-[450px] object-cover'} group-hover:scale-105 transition-transform duration-700"
+        loading="lazy"
       />
       <div
         class="absolute inset-0 bg-gradient-to-{reversed
@@ -38,10 +39,11 @@
         {#each data.thumbnails as thumb (thumb.imageKey)}
           {@const thumbImg = imagenes[thumb.imageKey]}
           <div class="rounded-xl overflow-hidden h-24 lens-shine">
-            <img
-              src={thumbImg.pathUrl}
+            <enhanced:img
+              src={thumbImg.src}
               alt={thumb.alt ?? thumbImg.alt}
               class="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
         {/each}

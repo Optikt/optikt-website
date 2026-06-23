@@ -9,6 +9,7 @@
     header,
     backdropClass = 'bg-black/50',
     class: className = '',
+    ariaLabel = '',
   }: {
     open?: boolean;
     title?: string;
@@ -17,7 +18,10 @@
     header?: import('svelte').Snippet;
     backdropClass?: string;
     class?: string;
+    ariaLabel?: string;
   } = $props();
+
+  let dialogLabel = $derived(ariaLabel || title || 'Diálogo');
 
   let dialogEl: HTMLDivElement;
 
@@ -36,6 +40,7 @@
   bind:this={dialogEl}
   role="dialog"
   aria-modal="true"
+  aria-label={dialogLabel}
   tabindex="-1"
   class="fixed inset-0 z-50 flex items-center justify-center p-4 transition-opacity duration-300 {className}"
   class:opacity-0={!open}

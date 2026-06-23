@@ -12,10 +12,11 @@
 {#snippet aboutImage(imageKey: string, tall: boolean)}
   {@const img = imagenes[imageKey]}
   <div class="rounded-2xl overflow-hidden {tall ? 'h-64' : 'h-48'} lens-shine">
-    <img
-      src={img.pathUrl}
+    <enhanced:img
+      src={img.src}
       alt={img.alt}
       class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+      loading="lazy"
     />
   </div>
 {/snippet}

@@ -29,9 +29,9 @@
   >
     <Icon class="w-6 h-6" />
   </div>
-  <h4 class="text-white font-semibold text-lg">{title}</h4>
-  <p class="text-white/40 text-sm mt-2 leading-relaxed">{description}</p>
+  <h3 class="text-white font-semibold text-lg">{title}</h3>
+  <p class="text-white/60 text-sm mt-2 leading-relaxed">{description}</p>
   <div class="rounded-lg overflow-hidden h-32 mt-auto pt-4">
-    <img src={img.pathUrl} alt={img.alt} class="w-full h-full object-cover" />
+    <enhanced:img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" />
   </div>
 </div>

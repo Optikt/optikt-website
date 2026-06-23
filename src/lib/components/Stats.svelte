@@ -28,7 +28,7 @@
           >
             0
           </div>
-          <div class="text-white/50 text-sm mt-2 font-medium tracking-wide">{stat.label}</div>
+          <div class="text-white/70 text-sm mt-2 font-medium tracking-wide">{stat.label}</div>
         </div>
       {/each}
     </div>

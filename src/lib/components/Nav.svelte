@@ -73,7 +73,13 @@
         >Agenda tu Cita</button
       >
     </div>
-    <button onclick={toggleMenu} class="lg:hidden text-white p-2" aria-label="Menú">
+    <button
+      onclick={toggleMenu}
+      class="lg:hidden text-white p-2"
+      aria-label="Menú"
+      aria-expanded={menuOpen}
+      aria-controls="mobile-menu"
+    >
       <Menu class="w-6 h-6" />
     </button>
   </div>
@@ -81,6 +87,7 @@
 
 <!-- Mobile Menu -->
 <div
+  id="mobile-menu"
   class="fixed top-0 right-0 w-80 h-full bg-navy-600 z-60 p-8 flex flex-col transition-transform duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
   class:translate-x-0={menuOpen}
   class:translate-x-full={!menuOpen}
