@@ -38,7 +38,7 @@
             >{item.label}</span
           >
         {:else}
-          <span class="text-white/50 text-base md:text-lg font-semibold tracking-wide"
+          <span class="text-white/60 text-base md:text-lg font-semibold tracking-wide"
             >{item.name}</span
           >
         {/if}

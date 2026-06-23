@@ -53,6 +53,7 @@
     <button
       onclick={onClose}
       class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center text-navy-400 hover:bg-stone-100 transition-colors flex-shrink-0 cursor-pointer"
+      aria-label="Cerrar"
     >
       <X class="w-5 h-5" />
     </button>

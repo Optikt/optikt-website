@@ -34,8 +34,8 @@
       </div>
     {/if}
   </div>
-  <h5 class="text-sm font-semibold mt-4 {data.accented ? 'text-accent-yellow' : 'text-white/60'}">
+  <h4 class="text-sm font-semibold mt-4 {data.accented ? 'text-accent-yellow' : 'text-white/60'}">
     {data.title}
-  </h5>
+  </h4>
   <p class="text-xs mt-1 {data.accented ? 'text-white/60' : 'text-white/50'}">{data.description}</p>
 </div>
