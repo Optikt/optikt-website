@@ -1,7 +1,6 @@
 <script lang="ts">
   import { featuredProducts } from '$lib/data/featured';
   import type { FeaturedProduct } from '$lib/data/featured';
-  import Img from '$lib/components/Img.svelte';
   import { imagenes } from '$lib/data/images';
   import { fadeIn } from '$lib/utils/animations';
   import { MessageCircle } from '@lucide/svelte';
@@ -19,8 +18,8 @@
     <div
       class="relative bg-white rounded-2xl p-4 overflow-hidden border border-stone-100 group-hover:border-accent-yellow/30 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-accent-yellow/5 lens-shine"
     >
-      <Img
-        src={img.src}
+      <img
+        src={img.src as string}
         alt={img.alt}
         class="w-full aspect-square object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
         loading="lazy"
@@ -44,7 +43,7 @@
       </div>
     </div>
     <div class="mt-4 px-1">
-      <h4 class="font-semibold text-navy-600">{product.name}</h4>
+      <h3 class="font-semibold text-navy-600">{product.name}</h3>
       <p class="text-navy-300 text-sm mt-1">{product.type}</p>
     </div>
   </div>

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Eye, Glasses, ScanLine, HeartPulse, ShieldCheck } from '@lucide/svelte';
   import type { Component } from 'svelte';
-  import Img from '$lib/components/Img.svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { imagenes } from '$lib/data/images';
 
@@ -45,7 +44,7 @@
       <svelte:component this={s.icon} class="w-5 h-5" />
     </div>
     <div>
-      <h4 class="font-semibold text-navy-600 text-lg">{s.title}</h4>
+      <h3 class="font-semibold text-navy-600 text-lg">{s.title}</h3>
       <p class="text-navy-300 text-sm mt-1 leading-relaxed">{s.description}</p>
     </div>
   </div>
@@ -54,7 +53,7 @@
 {#snippet galleryImage(imageKey: string, tall: boolean)}
   {@const img = imagenes[imageKey]}
   <div class="rounded-2xl overflow-hidden {tall ? 'h-52' : 'h-40'} lens-shine">
-    <Img
+    <enhanced:img
       src={img.src}
       alt={img.alt}
       class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Img from '$lib/components/Img.svelte';
   import type { ComparisonData } from '$lib/data/lenses';
   import { imagenes } from '$lib/data/images';
 
@@ -15,8 +14,8 @@
         ? 'border-accent-yellow shadow-lg shadow-accent-yellow/20'
         : 'border-white/10'}"
     >
-      <Img
-        src={img.src}
+      <img
+        src={img.src as string}
         alt={img.alt}
         class="w-full h-full object-cover {data.blur
           ? 'opacity-50 blur-[1px]'

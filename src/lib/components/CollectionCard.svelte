@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Img from '$lib/components/Img.svelte';
   import { fadeIn } from '$lib/utils/animations';
   import type { Collection } from '$lib/data/collections';
   import { imagenes } from '$lib/data/images';
@@ -13,7 +12,7 @@
 <div use:fadeIn={{}}>
   <div class="grid lg:grid-cols-2 gap-8 items-center">
     <div class="relative rounded-2xl overflow-hidden group {reversed ? 'lg:order-2' : ''}">
-      <Img
+      <enhanced:img
         src={img.src}
         alt={img.alt}
         class="w-full {isSunglasses
@@ -40,7 +39,7 @@
         {#each data.thumbnails as thumb (thumb.imageKey)}
           {@const thumbImg = imagenes[thumb.imageKey]}
           <div class="rounded-xl overflow-hidden h-24 lens-shine">
-            <Img
+            <enhanced:img
               src={thumbImg.src}
               alt={thumb.alt ?? thumbImg.alt}
               class="w-full h-full object-cover"

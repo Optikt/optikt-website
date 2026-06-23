@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Img from '$lib/components/Img.svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { imagenes } from '$lib/data/images';
 
@@ -10,11 +9,13 @@
   class="relative h-screen min-h-[700px] flex items-center justify-center bg-navy-600 overflow-hidden"
 >
   <div class="absolute inset-0">
-    <Img
+    <enhanced:img
       src={imagenes['hero-principal'].src}
       alt={imagenes['hero-principal'].alt}
       class="w-full h-full object-cover opacity-25"
       fetchpriority="high"
+      loading="eager"
+      decoding="sync"
     />
     <div
       class="absolute inset-0 bg-gradient-to-b from-navy-600/80 via-navy-600/40 to-navy-600"
@@ -71,7 +72,7 @@
       <div
         class="w-48 h-32 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine rotate-3"
       >
-        <Img
+        <enhanced:img
           src={imagenes['hero-sunglasses-float'].src}
           alt={imagenes['hero-sunglasses-float'].alt}
           class="w-full h-full object-cover"
@@ -90,7 +91,7 @@
     <div
       class="w-40 h-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 lens-shine -rotate-6"
     >
-      <Img
+      <enhanced:img
         src={imagenes['hero-frame-detail'].src}
         alt={imagenes['hero-frame-detail'].alt}
         class="w-full h-full object-cover"

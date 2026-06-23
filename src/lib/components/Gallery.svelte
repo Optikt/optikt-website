@@ -1,6 +1,5 @@
 <script lang="ts">
   import Instagram from '$lib/components/social-media/Instagram.svelte';
-  import Img from '$lib/components/Img.svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { imagenes } from '$lib/data/images';
   import { business } from '$lib/data/business';
@@ -28,7 +27,7 @@
   <div
     class="rounded-2xl overflow-hidden relative group cursor-pointer transition-all duration-500 hover:z-10 hover:scale-[1.03]"
   >
-    <Img
+    <enhanced:img
       src={img.src}
       alt={img.alt}
       class="w-full {c.tall ? 'h-64' : 'h-48'} object-cover transition-all duration-500"

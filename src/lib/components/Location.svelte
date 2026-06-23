@@ -121,7 +121,7 @@
               <MapPin class="w-5 h-5 text-[#FFCC00]" />
             </div>
             <div>
-              <h4 class="text-white font-semibold">Dirección</h4>
+              <h3 class="text-white font-semibold">Dirección</h3>
               <p
                 class="text-white/70 text-sm mt-1 group-hover:text-white/70 transition-colors duration-200"
               >
@@ -137,7 +137,7 @@
               <Clock class="w-5 h-5 text-[#FFCC00]" />
             </div>
             <div>
-              <h4 class="text-white font-semibold">Horario</h4>
+              <h3 class="text-white font-semibold">Horario</h3>
               {#each business.hours as h (h.label)}
                 <p class="text-white/70 text-sm mt-1">
                   {h.label}: {formatTime(h.open)} - {formatTime(h.close)}
@@ -153,7 +153,7 @@
               <Phone class="w-5 h-5 text-[#FFCC00]" />
             </div>
             <div>
-              <h4 class="text-white font-semibold">Contacto</h4>
+              <h3 class="text-white font-semibold">Contacto</h3>
               <a
                 href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
                 class="text-white/70 text-sm mt-1 block hover:text-white/70 transition-colors duration-200"

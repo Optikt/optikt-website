@@ -2,7 +2,6 @@
   import { Calendar, CircleCheck } from '@lucide/svelte';
   import ImagotipoVertical from '$lib/components/branding/ImagotipoVertical.svelte';
   import { imagenes } from '$lib/data/images';
-  import Img from '$lib/components/Img.svelte';
   import { fadeIn } from '$lib/utils/animations';
 
   let { onOpenModal }: { onOpenModal: () => void } = $props();
@@ -13,7 +12,7 @@
 {#snippet aboutImage(imageKey: string, tall: boolean)}
   {@const img = imagenes[imageKey]}
   <div class="rounded-2xl overflow-hidden {tall ? 'h-64' : 'h-48'} lens-shine">
-    <Img
+    <enhanced:img
       src={img.src}
       alt={img.alt}
       class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"

@@ -66,7 +66,7 @@
   </div>
 
   <footer class="py-6 text-center">
-    <p class="text-white/40 text-xs">
+    <p class="text-white/50 text-xs">
       &copy; {new Date().getFullYear()} OPTIK-T. Todos los derechos reservados.
     </p>
   </footer>

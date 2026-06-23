@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Img from '$lib/components/Img.svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { imagenes } from '$lib/data/images';
   import type { Component } from 'svelte';
@@ -30,9 +29,9 @@
   >
     <Icon class="w-6 h-6" />
   </div>
-  <h4 class="text-white font-semibold text-lg">{title}</h4>
+  <h3 class="text-white font-semibold text-lg">{title}</h3>
   <p class="text-white/60 text-sm mt-2 leading-relaxed">{description}</p>
   <div class="rounded-lg overflow-hidden h-32 mt-auto pt-4">
-    <Img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" />
+    <enhanced:img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" />
   </div>
 </div>

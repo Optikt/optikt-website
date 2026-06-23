@@ -16,7 +16,7 @@
         </p>
       </div>
       <div>
-        <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Navegación</h4>
+        <h3 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Navegación</h3>
         <ul class="space-y-3">
           <li>
             <a
@@ -46,7 +46,7 @@
         </ul>
       </div>
       <div>
-        <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Servicios</h4>
+        <h3 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Servicios</h3>
         <ul class="space-y-3">
           <li>
             <span class="text-white/60 text-sm">Examen Visual</span>
@@ -63,7 +63,7 @@
         </ul>
       </div>
       <div>
-        <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Contacto</h4>
+        <h3 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Contacto</h3>
         <ul class="space-y-3">
           <li class="text-white/60 text-sm">{business.phone}</li>
           <li class="text-white/60 text-sm">{business.email}</li>
@@ -75,10 +75,10 @@
     <div
       class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
     >
-      <p class="text-white/40 text-xs">© {year} OPTIK-T. Todos los derechos reservados.</p>
+      <p class="text-white/50 text-xs">© {year} OPTIK-T. Todos los derechos reservados.</p>
       <div class="flex gap-6">
-        <span class="text-white/40 text-xs">Política de Privacidad</span>
-        <span class="text-white/40 text-xs">Términos y Condiciones</span>
+        <span class="text-white/50 text-xs">Política de Privacidad</span>
+        <span class="text-white/50 text-xs">Términos y Condiciones</span>
       </div>
     </div>
   </div>

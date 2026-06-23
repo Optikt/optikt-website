@@ -1,45 +1,45 @@
 import type { Picture } from '@sveltejs/enhanced-img';
 
-import heroPrincipal from '$lib/images/hero/5.webp';
-import heroSunglassesFloat from '$lib/images/hero/6.webp';
-import heroFrameDetail from '$lib/images/hero/3.webp';
+import heroPrincipal from '$lib/images/hero/5.webp?enhanced';
+import heroSunglassesFloat from '$lib/images/hero/6.webp?enhanced';
+import heroFrameDetail from '$lib/images/hero/3.webp?enhanced';
 
-import colGraduados from '$lib/images/colecciones/graduados/2.webp';
-import colSol from '$lib/images/colecciones/lentes-sol/1.webp';
-import colContacto from '$lib/images/colecciones/contacto/1.webp';
+import colGraduados from '$lib/images/colecciones/graduados/2.webp?enhanced';
+import colSol from '$lib/images/colecciones/lentes-sol/1.webp?enhanced';
+import colContacto from '$lib/images/colecciones/contacto/1.webp?enhanced';
 
-import thumbCatEye from '$lib/images/colecciones/graduados/3.webp';
-import thumbRound from '$lib/images/colecciones/graduados/4.webp';
-import thumbRectangular from '$lib/images/colecciones/graduados/5.webp';
-import thumbAviator from '$lib/images/colecciones/lentes-sol/2.webp';
-import thumbWayfarer from '$lib/images/colecciones/lentes-sol/3.webp';
-import thumbOversized from '$lib/images/colecciones/lentes-sol/4.webp';
-import thumbContactDaily from '$lib/images/colecciones/contacto/2.webp';
-import thumbContactMonthly from '$lib/images/colecciones/contacto/3.webp';
-import thumbContactColor from '$lib/images/colecciones/contacto/4.webp';
+import thumbCatEye from '$lib/images/colecciones/graduados/3.webp?enhanced';
+import thumbRound from '$lib/images/colecciones/graduados/4.webp?enhanced';
+import thumbRectangular from '$lib/images/colecciones/graduados/5.webp?enhanced';
+import thumbAviator from '$lib/images/colecciones/lentes-sol/2.webp?enhanced';
+import thumbWayfarer from '$lib/images/colecciones/lentes-sol/3.webp?enhanced';
+import thumbOversized from '$lib/images/colecciones/lentes-sol/4.webp?enhanced';
+import thumbContactDaily from '$lib/images/colecciones/contacto/2.webp?enhanced';
+import thumbContactMonthly from '$lib/images/colecciones/contacto/3.webp?enhanced';
+import thumbContactColor from '$lib/images/colecciones/contacto/4.webp?enhanced';
 
-import lenteFotocromatico from '$lib/images/tech-lentes/fotocromatico.webp';
-import lenteBlueBlock from '$lib/images/tech-lentes/blue-block.webp';
-import lenteAntirreflejo from '$lib/images/tech-lentes/antirreflejo.webp';
-import lenteProgresivos from '$lib/images/tech-lentes/progresivos.webp';
+import lenteFotocromatico from '$lib/images/tech-lentes/fotocromatico.webp?enhanced';
+import lenteBlueBlock from '$lib/images/tech-lentes/blue-block.webp?enhanced';
+import lenteAntirreflejo from '$lib/images/tech-lentes/antirreflejo.webp?enhanced';
+import lenteProgresivos from '$lib/images/tech-lentes/progresivos.webp?enhanced';
 
-import galleryCatEye from '$lib/images/gallery/1.webp';
-import gallerySolPlaya from '$lib/images/gallery/2.webp';
-import galleryAviador from '$lib/images/gallery/3.webp';
-import galleryVintage from '$lib/images/gallery/4.webp';
-import galleryOversized from '$lib/images/gallery/5.webp';
-import galleryDeportivo from '$lib/images/gallery/6.webp';
-import galleryGeometrico from '$lib/images/gallery/7.webp';
-import galleryTransparente from '$lib/images/gallery/8.webp';
+import galleryCatEye from '$lib/images/gallery/1.webp?enhanced';
+import gallerySolPlaya from '$lib/images/gallery/2.webp?enhanced';
+import galleryAviador from '$lib/images/gallery/3.webp?enhanced';
+import galleryVintage from '$lib/images/gallery/4.webp?enhanced';
+import galleryOversized from '$lib/images/gallery/5.webp?enhanced';
+import galleryDeportivo from '$lib/images/gallery/6.webp?enhanced';
+import galleryGeometrico from '$lib/images/gallery/7.webp?enhanced';
+import galleryTransparente from '$lib/images/gallery/8.webp?enhanced';
 
-import aboutInterior from '$lib/images/about/1.webp';
-import aboutTaller from '$lib/images/about/2.webp';
-import aboutClienteFeliz from '$lib/images/about/3.webp';
+import aboutInterior from '$lib/images/about/1.webp?enhanced';
+import aboutTaller from '$lib/images/about/2.webp?enhanced';
+import aboutClienteFeliz from '$lib/images/about/3.webp?enhanced';
 
-import svcExamenVisual from '$lib/images/servicios/1.webp';
-import svcLaboratorio from '$lib/images/servicios/2.webp';
-import svcAdaptacion from '$lib/images/servicios/3.webp';
-import svcEquipos from '$lib/images/servicios/4.webp';
+import svcExamenVisual from '$lib/images/servicios/1.webp?enhanced';
+import svcLaboratorio from '$lib/images/servicios/2.webp?enhanced';
+import svcAdaptacion from '$lib/images/servicios/3.webp?enhanced';
+import svcEquipos from '$lib/images/servicios/4.webp?enhanced';
 
 type ImagenSrc = string | Picture;
 
