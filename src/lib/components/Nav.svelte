@@ -70,7 +70,7 @@
       <button
         onclick={handleModal}
         class="bg-accent-yellow text-navy-600 px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/25"
-        >Agenda tu Cita</button
+        >Contáctanos</button
       >
     </div>
     <button
@@ -128,7 +128,7 @@
     <button
       onclick={handleModal}
       class="w-full bg-accent-yellow text-navy-600 py-3 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all"
-      >Agenda tu Cita</button
+      >Contáctanos</button
     >
   </div>
 </div>

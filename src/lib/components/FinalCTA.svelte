@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Sparkles, Calendar } from '@lucide/svelte';
+  import { Sparkles, MessageCircle } from '@lucide/svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { business } from '$lib/data/business';
 
@@ -21,15 +21,15 @@
         Tu Próximo Par de Lentes<br />Te Está Esperando
       </h2>
       <p class="text-navy-300 mt-6 max-w-xl mx-auto leading-relaxed">
-        Agenda tu examen visual o visita nuestra tienda. Nuestro equipo está listo para ayudarte a
-        ver mejor y verte increíble.
+        Visita nuestra tienda o escríbenos. Nuestro equipo está listo para ayudarte a ver mejor y
+        verte increíble.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
         <button
           onclick={onOpenModal}
           class="bg-accent-yellow text-navy-600 px-10 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-xl hover:shadow-accent-yellow/20 animate-pulse-glow inline-flex items-center gap-2"
         >
-          <Calendar class="w-5 h-5" /> Agendar Cita Ahora
+          <MessageCircle class="w-5 h-5" /> Contáctanos
         </button>
         <a
           href={business.socialLinks[2].href}

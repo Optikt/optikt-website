@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Calendar, CircleCheck } from '@lucide/svelte';
+  import { MessageCircle, CircleCheck } from '@lucide/svelte';
   import ImagotipoVertical from '$lib/components/branding/ImagotipoVertical.svelte';
   import { imagenes } from '$lib/data/images';
   import { fadeIn } from '$lib/utils/animations';
@@ -73,7 +73,7 @@
           onclick={onOpenModal}
           class="mt-8 bg-navy-600 text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-navy-500 transition-all duration-300 inline-flex items-center gap-2"
         >
-          <Calendar class="w-4 h-4" /> Conócenos
+          <MessageCircle class="w-4 h-4" /> Conócenos
         </button>
       </div>
     </div>
