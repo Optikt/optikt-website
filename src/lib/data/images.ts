@@ -435,63 +435,6 @@ export const imagenes: ImagenesCatalog = {
     consultable: false,
   },
 
-  // ============================================================
-  // TESTIMONIALS — external picsum
-  // ============================================================
-  'test-rose-garcia': {
-    src: 'https://picsum.photos/seed/testimonial-woman1/80/80.jpg',
-    alt: 'Foto de perfil de Rose García',
-    categoria: 'testimonial',
-    consultable: false,
-  },
-  'test-jose-prieto': {
-    src: 'https://picsum.photos/seed/testimonial-man1/80/80.jpg',
-    alt: 'Foto de perfil de José Prieto',
-    categoria: 'testimonial',
-    consultable: false,
-  },
-  'test-jennifer-serrano': {
-    src: 'https://picsum.photos/seed/testimonial-woman2/80/80.jpg',
-    alt: 'Foto de perfil de Jennifer Serrano',
-    categoria: 'testimonial',
-    consultable: false,
-  },
-  'test-rosita-ricardo': {
-    src: 'https://picsum.photos/seed/testimonial-woman3/80/80.jpg',
-    alt: 'Foto de perfil de Rosita Ricardo',
-    categoria: 'testimonial',
-    consultable: false,
-  },
-  'test-felix-navarro': {
-    src: 'https://picsum.photos/seed/testimonial-man2/80/80.jpg',
-    alt: 'Foto de perfil de Felix Navarro',
-    categoria: 'testimonial',
-    consultable: false,
-  },
-  'test-yoli': {
-    src: 'https://picsum.photos/seed/testimonial-woman4/80/80.jpg',
-    alt: 'Foto de perfil de Yoli',
-    categoria: 'testimonial',
-    consultable: false,
-  },
-  'test-darielis-salazar': {
-    src: 'https://picsum.photos/seed/testimonial-woman5/80/80.jpg',
-    alt: 'Foto de perfil de Darielis Salazar',
-    categoria: 'testimonial',
-    consultable: false,
-  },
-  'test-ricardo-diaz': {
-    src: 'https://picsum.photos/seed/testimonial-man3/80/80.jpg',
-    alt: 'Foto de perfil de Ricardo Diaz',
-    categoria: 'testimonial',
-    consultable: false,
-  },
-  'test-sofia-carvajal': {
-    src: 'https://picsum.photos/seed/testimonial-woman5/80/80.jpg',
-    alt: 'Foto de perfil de Sofia Carvajal',
-    categoria: 'testimonial',
-    consultable: false,
-  },
 };
 
 export function getImagen(key: string): ImagenEntry | undefined {

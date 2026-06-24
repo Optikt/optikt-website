@@ -2,8 +2,8 @@
   import { Star, ExternalLink } from '@lucide/svelte';
   import { fadeIn } from '$lib/utils/animations';
   import { testimonials } from '$lib/data/testimonials';
-  import { imagenes } from '$lib/data/images';
   import Modal from './Modal.svelte';
+  import Avatar from './Avatar.svelte';
 
   let modalOpen = $state(false);
   let modalName = $state('');
@@ -60,12 +60,7 @@
             </button>
           {/if}
           <div class="flex items-center gap-3 mt-6">
-            <img
-              src={imagenes[t.imageKey].src as string}
-              alt={imagenes[t.imageKey].alt}
-              class="w-10 h-10 rounded-full object-cover"
-              loading="lazy"
-            />
+            <Avatar name={t.name} />
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-1.5">
                 <span class="text-navy-600 text-sm font-semibold">{t.name}</span>
