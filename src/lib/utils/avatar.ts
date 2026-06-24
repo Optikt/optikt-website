@@ -11,5 +11,9 @@ export function nameToInitials(name: string): string {
   const parts = name.split(' ').filter(Boolean);
   if (parts.length === 0) return '?';
   if (parts.length === 1) return parts[0][0].toUpperCase();
-  return parts.map(p => p[0]).join('').toUpperCase().slice(0, 2);
+  return parts
+    .map((p) => p[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
 }

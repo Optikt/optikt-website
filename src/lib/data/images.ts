@@ -434,7 +434,6 @@ export const imagenes: ImagenesCatalog = {
     categoria: 'servicios',
     consultable: false,
   },
-
 };
 
 export function getImagen(key: string): ImagenEntry | undefined {
