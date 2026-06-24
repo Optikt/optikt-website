@@ -41,6 +41,15 @@ import svcLaboratorio from '$lib/images/servicios/2.webp?enhanced';
 import svcAdaptacion from '$lib/images/servicios/3.webp?enhanced';
 import svcEquipos from '$lib/images/servicios/4.webp?enhanced';
 
+import ftrAsCaballero from '$lib/images/featured/as-acetato-caballero.webp';
+import ftrAsDama from '$lib/images/featured/as-acetato-dama.webp';
+import ftrCarolinaHerrera from '$lib/images/featured/carolina-herrera-metal.webp';
+import ftrFairuz from '$lib/images/featured/fairuz-acetato.webp';
+import ftrKairos from '$lib/images/featured/kairos-acetato.webp';
+import ftrKairos2 from '$lib/images/featured/kairos-acetato-2.webp';
+import ftrPalazzo from '$lib/images/featured/palazzo-acetato.webp';
+import ftrVenetto from '$lib/images/featured/veneto-metal.webp';
+
 type ImagenSrc = string | Picture;
 
 type ImagenCategoria =
@@ -196,71 +205,71 @@ export const imagenes: ImagenesCatalog = {
   },
 
   // ============================================================
-  // MONTURAS DESTACADAS (featured products) — external picsum
+  // MONTURAS DESTACADAS (featured products)
   // ============================================================
-  'montura-cat-eye-sofia': {
-    src: 'https://picsum.photos/seed/optik-cat-eye-tortoise/400/400.jpg',
-    alt: 'Montura Cat-Eye Sofía color carey',
-    nombre: 'Cat-Eye Sofía',
+  'american-specs-wd1323': {
+    src: ftrAsCaballero,
+    alt: 'Montura American Specs WD1323 C4 acetato caballero',
+    nombre: 'American Specs WD1323',
     categoria: 'montura',
     consultable: true,
-    metadata: { ref: 'M-CES-001', descripcion: 'Montura acetato Cat-Eye', precio: '' },
+    metadata: { ref: 'WD1323 C4', descripcion: 'Montura American Specs acetato', precio: '' },
   },
-  'montura-aviator-clasico': {
-    src: 'https://picsum.photos/seed/optik-aviator-gold/400/400.jpg',
-    alt: 'Lentes de Sol Aviador Clásico dorados',
-    nombre: 'Aviador Clásico',
+  'american-specs-wd1464': {
+    src: ftrAsDama,
+    alt: 'Montura American Specs WD1464 C1 acetato dama',
+    nombre: 'American Specs WD1464',
     categoria: 'montura',
     consultable: true,
-    metadata: { ref: 'M-AC-002', descripcion: 'Lentes de Sol Aviador', precio: '' },
+    metadata: { ref: 'WD1464 C1', descripcion: 'Montura American Specs acetato', precio: '' },
   },
-  'montura-redondo-titanio': {
-    src: 'https://picsum.photos/seed/optik-round-titanium/400/400.jpg',
-    alt: 'Montura Redondo Titanio',
-    nombre: 'Redondo Titanio',
+  'carolina-herrera-ch0040': {
+    src: ftrCarolinaHerrera,
+    alt: 'Montura Carolina Herrera CH0040 BKU 140 metal',
+    nombre: 'Carolina Herrera CH0040',
     categoria: 'montura',
     consultable: true,
-    metadata: { ref: 'M-RT-003', descripcion: 'Montura metal Redondo', precio: '' },
+    metadata: { ref: 'CH0040 BKU 140', descripcion: 'Montura Carolina Herrera metal', precio: '' },
   },
-  'montura-oversized-elegance': {
-    src: 'https://picsum.photos/seed/optik-oversized-black/400/400.jpg',
-    alt: 'Lentes de Sol Oversized Elegance negros',
-    nombre: 'Oversized Elegance',
+  'fairuz-jgx417036': {
+    src: ftrFairuz,
+    alt: 'Montura Fairuz JGX417036-03 acetato',
+    nombre: 'Fairuz JGX417036',
     categoria: 'montura',
     consultable: true,
-    metadata: { ref: 'M-OE-004', descripcion: 'Lentes de Sol Oversized', precio: '' },
+    metadata: { ref: 'JGX417036-03', descripcion: 'Montura Fairuz acetato', precio: '' },
   },
-  'montura-browline-retro': {
-    src: 'https://picsum.photos/seed/optik-browline-retro/400/400.jpg',
-    alt: 'Montura Browline Retro mixta',
-    nombre: 'Browline Retro',
+  'kairos-co1162-c1': {
+    src: ftrKairos,
+    alt: 'Montura Kairos CO1162 C1 acetato',
+    nombre: 'Kairos CO1162 C1',
     categoria: 'montura',
     consultable: true,
-    metadata: { ref: 'M-BR-005', descripcion: 'Montura mixta Browline', precio: '' },
+    metadata: { ref: 'CO1162 C1', descripcion: 'Montura Kairos acetato', precio: '' },
   },
-  'montura-sport-wrap': {
-    src: 'https://picsum.photos/seed/optik-sport-wrap/400/400.jpg',
-    alt: 'Lentes de Sol Deportivos Sport Wrap',
-    nombre: 'Sport Wrap',
+  'kairos-co1162-c2': {
+    src: ftrKairos2,
+    alt: 'Montura Kairos CO1162 C2 acetato',
+    nombre: 'Kairos CO1162 C2',
     categoria: 'montura',
     consultable: true,
-    metadata: { ref: 'M-SW-006', descripcion: 'Lentes de Sol deportivos', precio: '' },
+    metadata: { ref: 'CO1162 C2', descripcion: 'Montura Kairos acetato', precio: '' },
   },
-  'montura-geometric-hex': {
-    src: 'https://picsum.photos/seed/optik-geometric-hex/400/400.jpg',
-    alt: 'Montura Geometric Hex acetato',
-    nombre: 'Geometric Hex',
+  'palazzo-5255': {
+    src: ftrPalazzo,
+    alt: 'Montura Palazzo 5255 C6 acetato',
+    nombre: 'Palazzo 5255',
     categoria: 'montura',
     consultable: true,
-    metadata: { ref: 'M-GH-007', descripcion: 'Montura acetato geométrica', precio: '' },
+    metadata: { ref: '5255 C6', descripcion: 'Montura Palazzo acetato', precio: '' },
   },
-  'montura-rimless-minimal': {
-    src: 'https://picsum.photos/seed/optik-rimless-minimal/400/400.jpg',
-    alt: 'Montura Rimless Minimal titanio',
-    nombre: 'Rimless Minimal',
+  'venetto-vn725': {
+    src: ftrVenetto,
+    alt: 'Montura Venetto VN725 C1 metal',
+    nombre: 'Venetto VN725',
     categoria: 'montura',
     consultable: true,
-    metadata: { ref: 'M-RM-008', descripcion: 'Montura titanio Rimless', precio: '' },
+    metadata: { ref: 'VN725 C1', descripcion: 'Montura Venetto metal', precio: '' },
   },
 
   // ============================================================
