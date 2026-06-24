@@ -50,6 +50,10 @@ import ftrKairos2 from '$lib/images/featured/kairos-acetato-2.webp';
 import ftrPalazzo from '$lib/images/featured/palazzo-acetato.webp';
 import ftrVenetto from '$lib/images/featured/veneto-metal.webp';
 
+import compSinTratamiento from '$lib/images/tech-lentes/comp-sin-tratamiento.webp';
+import compConTratamiento from '$lib/images/tech-lentes/comp-con-tratamiento.webp';
+import compLentesComunes from '$lib/images/tech-lentes/comp-lentes-comunes.webp';
+
 type ImagenSrc = string | Picture;
 
 type ImagenCategoria =
@@ -321,21 +325,21 @@ export const imagenes: ImagenesCatalog = {
   },
 
   'comp-sin-tratamiento': {
-    src: 'https://picsum.photos/seed/lens-normal-view/300/300.jpg',
+    src: compSinTratamiento,
     alt: 'Visión sin tratamiento OPTIK-T - reflejos y fatiga visual',
     nombre: 'Sin Tratamiento',
     categoria: 'lente',
     consultable: false,
   },
   'comp-con-tratamiento': {
-    src: 'https://picsum.photos/seed/lens-clear-view/300/300.jpg',
+    src: compConTratamiento,
     alt: 'Visión con tratamiento OPTIK-T - nitidez y protección',
     nombre: 'Con Tratamiento OPTIK-T',
     categoria: 'lente',
     consultable: false,
   },
   'comp-lentes-comunes': {
-    src: 'https://picsum.photos/seed/lens-glare-view/300/300.jpg',
+    src: compLentesComunes,
     alt: 'Lentes comunes sin tratamiento - reflejos y baja nitidez',
     nombre: 'Lentes Comunes',
     categoria: 'lente',
