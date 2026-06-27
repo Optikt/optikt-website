@@ -15,19 +15,28 @@
   import FinalCTA from '$lib/components/FinalCTA.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import ContactModal from '$lib/components/ContactModal.svelte';
+  import type { HomePageData } from './+page.server.ts';
+
+  let { data }: { data: HomePageData } = $props();
 
   let modalOpen = $state(false);
-  let selectedProduct = $state<{ imageKey: string } | null>(null);
+  let consultProduct = $state<{ name: string; sku: string } | null>(null);
 
-  function openModal(product?: { imageKey: string }) {
-    selectedProduct = product ?? null;
+  function openModal() {
+    consultProduct = null;
+    modalOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openConsult(product: { name: string; sku: string }) {
+    consultProduct = product;
     modalOpen = true;
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     modalOpen = false;
-    selectedProduct = null;
+    consultProduct = null;
     document.body.style.overflow = '';
   }
 </script>
@@ -37,7 +46,7 @@
 <BrandMarquee />
 <Collections />
 <LensTechnology />
-<FeaturedProducts onOpenModal={openModal} />
+<FeaturedProducts products={data.featured} onConsult={openConsult} />
 <Services />
 <Stats />
 <Gallery />
@@ -47,4 +56,9 @@
 <Location />
 <FinalCTA onOpenModal={openModal} />
 <Footer />
-<ContactModal open={modalOpen} onClose={closeModal} product={selectedProduct} />
+<ContactModal
+  open={modalOpen}
+  onClose={closeModal}
+  productName={consultProduct?.name ?? ''}
+  productSku={consultProduct?.sku ?? ''}
+/>

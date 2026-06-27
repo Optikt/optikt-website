@@ -8,10 +8,14 @@
     open,
     onClose,
     product = null,
+    productName = '',
+    productSku = '',
   }: {
     open: boolean;
     onClose: () => void;
     product?: { imageKey: string } | null;
+    productName?: string;
+    productSku?: string;
   } = $props();
 
   let formEl: HTMLFormElement;
@@ -19,12 +23,13 @@
   let motivo = $state('Asesoría');
   let mensaje = $state('');
 
+  let hasProductInfo = $derived(!!productName || !!product?.imageKey);
   let productEntry = $derived(product?.imageKey ? getImagen(product.imageKey) : null);
 
   $effect(() => {
     if (open) {
       nombre = '';
-      motivo = product ? 'Consulta de producto' : 'Asesoría';
+      motivo = hasProductInfo ? 'Consulta de producto' : 'Asesoría';
       mensaje = '';
     }
   });
@@ -32,7 +37,10 @@
   function handleSubmit(e: Event) {
     e.preventDefault();
     let msg = `Hola, soy ${nombre}. Quisiera ${motivo}.`;
-    if (productEntry) {
+    if (productName) {
+      const ref = productSku ? ` (Ref: ${productSku})` : '';
+      msg += `\nMe interesa el modelo: ${productName}${ref}.`;
+    } else if (productEntry) {
       const ref = productEntry.metadata?.ref ? ` (Ref: ${productEntry.metadata.ref})` : '';
       msg += `\nMe interesa el modelo: ${productEntry.nombre ?? productEntry.alt}${ref}.`;
     } else if (product) {
@@ -69,7 +77,14 @@
   class="z-70"
 >
   <form bind:this={formEl} class="p-6 space-y-5" onsubmit={handleSubmit}>
-    {#if productEntry}
+    {#if productName}
+      <div class="bg-accent-yellow/10 rounded-lg px-4 py-3 text-sm text-navy-600 font-medium">
+        Consultando por: <span class="font-bold">{productName}</span>
+        {#if productSku}
+          <span class="text-navy-400 ml-1">({productSku})</span>
+        {/if}
+      </div>
+    {:else if productEntry}
       <div class="bg-accent-yellow/10 rounded-lg px-4 py-3 text-sm text-navy-600 font-medium">
         Consultando por: <span class="font-bold">{productEntry.nombre ?? productEntry.alt}</span>
         {#if productEntry.metadata?.ref}
