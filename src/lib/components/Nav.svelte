@@ -48,16 +48,16 @@
     </a>
     <div class="hidden lg:flex items-center gap-10">
       <a
-        href={resolve('/colecciones')}
-        class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
-      >
-        Colecciones
-      </a>
-      <a
         href={resolve('/#tecnologia')}
         class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
       >
         Tecnología
+      </a>
+      <a
+        href={isHome ? resolve('/#colecciones') : resolve('/colecciones')}
+        class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
+      >
+        Colecciones
       </a>
       <a
         href={resolve('/#servicios')}
@@ -106,7 +106,7 @@
     <X class="w-7 h-7" />
   </button>
   <div class="flex flex-col gap-6">
-    <a href={resolve('/colecciones')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Colecciones</a>
+    <a href={isHome ? resolve('/#colecciones') : resolve('/colecciones')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Colecciones</a>
     <a href={resolve('/#tecnologia')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Tecnología</a>
     <a href={resolve('/#servicios')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Servicios</a>
     <a href={resolve('/#galeria')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Galería</a>
