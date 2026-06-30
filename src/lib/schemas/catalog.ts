@@ -21,6 +21,10 @@ export const ProductSnapshotSchema = z.object({
   images: ProductImagesSchema,
   featured: z.boolean(),
   sort: z.number().int(),
+  badge: z.enum(['Nuevo', 'Popular']).nullable().optional(),
+  gender: z.enum(['Hombre', 'Mujer', 'Unisex']).nullable().optional(),
+  material: z.string().nullable().optional(),
+  gallery: z.array(ProductImagesSchema).optional(),
 });
 
 export const ProductListSchema = z.array(ProductSnapshotSchema);

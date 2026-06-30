@@ -1,22 +1,23 @@
 import type { ProductSnapshot } from '$lib/schemas/catalog';
 
-const img400 = (name: string) =>
-  `https://placehold.co/400x267/1e3a5f/ffffff?text=${encodeURIComponent(name)}`;
+const img = (name: string, w: number, h: number) =>
+  `https://placehold.co/${w}x${h}/1e3a5f/ffffff?text=${encodeURIComponent(name)}`;
 
-const img800 = (name: string) =>
-  `https://placehold.co/800x533/1e3a5f/ffffff?text=${encodeURIComponent(name)}`;
-
-const img1200 = (name: string) =>
-  `https://placehold.co/1200x800/1e3a5f/ffffff?text=${encodeURIComponent(name)}`;
-
-const images = (name: string) => ({
-  default: img800(name),
+const imgs = (name: string) => ({
+  default: img(name, 800, 600),
   srcset: [
-    { w: 400, url: img400(name) },
-    { w: 800, url: img800(name) },
-    { w: 1200, url: img1200(name) },
+    { w: 400, url: img(name, 400, 300) },
+    { w: 800, url: img(name, 800, 600) },
+    { w: 1200, url: img(name, 1200, 900) },
   ],
 });
+
+const gallery = (name: string) => [
+  imgs(`${name} Frente`),
+  imgs(`${name} Lateral`),
+  imgs(`${name} 3/4`),
+  imgs(`${name} Detalle`),
+];
 
 export const mockProducts: ProductSnapshot[] = [
   {
@@ -27,9 +28,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura de acetato con diseño clásico y moderno. Ideal para uso diario con estilo.',
     salePrice: 89.99,
     imageBaseKey: 'products/wd1323-c4',
-    images: images('American Specs WD1323'),
+    images: imgs('American Specs WD1323'),
     featured: true,
     sort: 1,
+    badge: 'Nuevo',
+    gender: 'Hombre',
+    material: 'Acetato',
+    gallery: gallery('WD1323'),
   },
   {
     sku: 'WD1464-C1',
@@ -39,9 +44,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura acetato dama con acabados elegantes y detalles únicos.',
     salePrice: 94.99,
     imageBaseKey: 'products/wd1464-c1',
-    images: images('American Specs WD1464'),
+    images: imgs('American Specs WD1464'),
     featured: true,
     sort: 2,
+    badge: null,
+    gender: 'Mujer',
+    material: 'Acetato',
+    gallery: gallery('WD1464'),
   },
   {
     sku: 'CH0040-BKU',
@@ -51,9 +60,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura metal con diseño sofisticado de la prestigiosa casa de moda.',
     salePrice: 199.99,
     imageBaseKey: 'products/ch0040-bku',
-    images: images('Carolina Herrera CH0040'),
+    images: imgs('Carolina Herrera CH0040'),
     featured: true,
     sort: 3,
+    badge: 'Popular',
+    gender: 'Mujer',
+    material: 'Metal',
+    gallery: gallery('CH0040'),
   },
   {
     sku: 'JGX417036-03',
@@ -63,9 +76,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura acetato con estilo contemporáneo y gran comodidad.',
     salePrice: 74.99,
     imageBaseKey: 'products/jgx417036-03',
-    images: images('Fairuz JGX417036'),
+    images: imgs('Fairuz JGX417036'),
     featured: true,
     sort: 4,
+    badge: null,
+    gender: 'Hombre',
+    material: 'Acetato',
+    gallery: gallery('JGX417036'),
   },
   {
     sku: 'CO1162-C1',
@@ -75,9 +92,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura acetato ligera y resistente, perfecta para uso prolongado.',
     salePrice: 79.99,
     imageBaseKey: 'products/co1162-c1',
-    images: images('Kairos CO1162 C1'),
+    images: imgs('Kairos CO1162 C1'),
     featured: true,
     sort: 5,
+    badge: null,
+    gender: 'Hombre',
+    material: 'Acetato',
+    gallery: gallery('CO1162C1'),
   },
   {
     sku: 'CO1162-C2',
@@ -87,9 +108,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Variante de color de la popular montura Kairos, mismo diseño excepcional.',
     salePrice: 79.99,
     imageBaseKey: 'products/co1162-c2',
-    images: images('Kairos CO1162 C2'),
+    images: imgs('Kairos CO1162 C2'),
     featured: true,
     sort: 6,
+    badge: null,
+    gender: 'Mujer',
+    material: 'Acetato',
+    gallery: gallery('CO1162C2'),
   },
   {
     sku: '5255-C6',
@@ -99,9 +124,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura acetato de perfil audaz para quienes buscan destacar.',
     salePrice: 84.99,
     imageBaseKey: 'products/5255-c6',
-    images: images('Palazzo 5255'),
+    images: imgs('Palazzo 5255'),
     featured: true,
     sort: 7,
+    badge: 'Nuevo',
+    gender: 'Hombre',
+    material: 'Acetato',
+    gallery: gallery('Palazzo5255'),
   },
   {
     sku: 'VN725-C1',
@@ -111,9 +140,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura metal con acabado premium y líneas minimalistas.',
     salePrice: 109.99,
     imageBaseKey: 'products/vn725-c1',
-    images: images('Venetto VN725'),
+    images: imgs('Venetto VN725'),
     featured: true,
     sort: 8,
+    badge: null,
+    gender: 'Hombre',
+    material: 'Metal',
+    gallery: gallery('VN725'),
   },
   {
     sku: 'AV2000-BK',
@@ -123,9 +156,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Lentes de sol aviador clásicos con protección UV400 y montura metal.',
     salePrice: 129.99,
     imageBaseKey: 'products/av2000-bk',
-    images: images('Aviator Classic 2000'),
+    images: imgs('Aviator Classic 2000'),
     featured: false,
     sort: 10,
+    badge: 'Popular',
+    gender: 'Unisex',
+    material: 'Metal',
+    gallery: gallery('Aviator2000'),
   },
   {
     sku: 'WF3100-TOR',
@@ -135,9 +172,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Lentes de sol wayfarer con lentes polarizadas y montura de acetato.',
     salePrice: 99.99,
     imageBaseKey: 'products/wf3100-tor',
-    images: images('Wayfarer 3100'),
+    images: imgs('Wayfarer 3100'),
     featured: false,
     sort: 11,
+    badge: null,
+    gender: 'Unisex',
+    material: 'Acetato',
+    gallery: gallery('Wayfarer3100'),
   },
   {
     sku: 'OV4500-LG',
@@ -147,9 +188,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Lentes de sol oversized con acabado brillante y protección total.',
     salePrice: 149.99,
     imageBaseKey: 'products/ov4500-lg',
-    images: images('Oversized Luxe 4500'),
+    images: imgs('Oversized Luxe 4500'),
     featured: false,
     sort: 12,
+    badge: null,
+    gender: 'Mujer',
+    material: 'Acetato',
+    gallery: gallery('OV4500'),
   },
   {
     sku: 'SP8000-MIR',
@@ -159,9 +204,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Lentes deportivos polarizados con montura envolvente y agarre antideslizante.',
     salePrice: 89.99,
     imageBaseKey: 'products/sp8000-mir',
-    images: images('Sport Pro 8000'),
+    images: imgs('Sport Pro 8000'),
     featured: true,
     sort: 9,
+    badge: null,
+    gender: 'Hombre',
+    material: 'Metal',
+    gallery: gallery('SP8000'),
   },
   {
     sku: 'CT-DAILY-30',
@@ -171,9 +220,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Lentes de contacto diarios de hidrogel silicona. Máxima comodidad para uso diario.',
     salePrice: 35.99,
     imageBaseKey: 'products/ct-daily-30',
-    images: images('Contact Diario 30'),
+    images: imgs('Contact Diario 30'),
     featured: false,
     sort: 20,
+    badge: null,
+    gender: 'Unisex',
+    material: null,
+    gallery: gallery('ContactDiario30'),
   },
   {
     sku: 'CT-MONTH-6',
@@ -183,9 +236,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Lentes de contacto de uso mensual con alta permeabilidad al oxígeno.',
     salePrice: 45.99,
     imageBaseKey: 'products/ct-month-6',
-    images: images('Contact Mensual 6'),
+    images: imgs('Contact Mensual 6'),
     featured: false,
     sort: 21,
+    badge: null,
+    gender: 'Unisex',
+    material: null,
+    gallery: gallery('ContactMensual6'),
   },
   {
     sku: 'CT-COLOR-AMBER',
@@ -195,9 +252,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Lentes de contacto cosméticos color ámbar para un cambio de look sutil.',
     salePrice: 55.99,
     imageBaseKey: 'products/ct-color-amber',
-    images: images('Contact Color Ámbar'),
+    images: imgs('Contact Color Ámbar'),
     featured: false,
     sort: 22,
+    badge: 'Nuevo',
+    gender: 'Unisex',
+    material: null,
+    gallery: gallery('ContactAmbar'),
   },
   {
     sku: 'RM2301-GLD',
@@ -207,9 +268,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura metal dorada con forma redonda clásica. Estilo vintage renovado.',
     salePrice: 119.99,
     imageBaseKey: 'products/rm2301-gld',
-    images: images('Retro Metal 2301'),
+    images: imgs('Retro Metal 2301'),
     featured: false,
     sort: 13,
+    badge: null,
+    gender: 'Unisex',
+    material: 'Metal',
+    gallery: gallery('RM2301'),
   },
   {
     sku: 'AC4700-TOR',
@@ -219,9 +284,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura acetato gruesa en carey. Personalidad y estilo inconfundibles.',
     salePrice: 94.99,
     imageBaseKey: 'products/ac4700-tor',
-    images: images('Acetato Torta 4700'),
+    images: imgs('Acetato Torta 4700'),
     featured: false,
     sort: 14,
+    badge: null,
+    gender: 'Hombre',
+    material: 'Acetato',
+    gallery: gallery('AC4700'),
   },
   {
     sku: 'WL1800-CAT',
@@ -231,9 +300,13 @@ export const mockProducts: ProductSnapshot[] = [
     description: 'Montura cat eye metal con detalles dorados. Elegancia femenina.',
     salePrice: 189.99,
     imageBaseKey: 'products/wl1800-cat',
-    images: images('Cat Eye 1800'),
+    images: imgs('Cat Eye 1800'),
     featured: false,
     sort: 15,
+    badge: 'Popular',
+    gender: 'Mujer',
+    material: 'Metal',
+    gallery: gallery('CatEye1800'),
   },
 ];
 

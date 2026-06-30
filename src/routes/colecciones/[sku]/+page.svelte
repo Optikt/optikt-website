@@ -1,31 +1,29 @@
 <script lang="ts">
   import { fadeIn } from '$lib/utils/animations';
-  import ContactModal from '$lib/components/ContactModal.svelte';
   import ProductCard from '$lib/components/catalog/ProductCard.svelte';
-  import { ArrowLeft, MessageCircle } from '@lucide/svelte';
+  import { MessageCircle, ChevronRight, Truck, ShieldCheck, RefreshCw } from '@lucide/svelte';
   import { resolve } from '$app/paths';
+  import { modalOpen, modalProductName, modalProductSku } from '$lib/stores/contact-modal';
   import type { ProductDetailData } from './+page.server.ts';
+
+  const typeLabels: Record<string, string> = {
+    Graduados: 'Monturas Graduadas',
+    Sol: 'Gafas de Sol',
+    Contacto: 'Lentes de Contacto',
+  };
 
   let { data }: { data: ProductDetailData } = $props();
   let { product, related } = $derived(data);
 
-  let modalOpen = $state(false);
-  let consultProduct = $state<{ name: string; sku: string } | null>(null);
+  let allImages = $derived(
+    product.gallery ? [product.images, ...product.gallery] : [product.images],
+  );
+  let selectedImageIndex = $state(0);
 
-  function openConsult(target?: { name: string; sku: string }) {
-    consultProduct = target ?? { name: product.name, sku: product.sku };
-    modalOpen = true;
-    document.body.style.overflow = 'hidden';
-  }
-
-  function handleConsult(_sku: string, p: { name: string; sku: string }) {
-    openConsult({ name: p.name, sku: p.sku });
-  }
-
-  function closeConsult() {
-    modalOpen = false;
-    consultProduct = null;
-    document.body.style.overflow = '';
+  function openConsult() {
+    modalProductName.set(product.name);
+    modalProductSku.set(product.sku);
+    modalOpen.set(true);
   }
 </script>
 
@@ -34,78 +32,126 @@
   <meta name="description" content={product.description} />
 </svelte:head>
 
-<section class="min-h-screen bg-white">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
+<section class="bg-navy-600 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-12 relative z-10">
+    <nav class="mb-4" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-white/50 flex-wrap">
+        <li><a href={resolve('/')} class="hover:text-accent-yellow transition-colors">Inicio</a></li>
+        <li><ChevronRight class="w-3 h-3 shrink-0" /></li>
+        <li><a href={resolve('/colecciones')} class="hover:text-accent-yellow transition-colors">Colecciones</a></li>
+        <li><ChevronRight class="w-3 h-3 shrink-0" /></li>
+        <li><span>{typeLabels[product.type] ?? product.type}</span></li>
+        <li><ChevronRight class="w-3 h-3 shrink-0" /></li>
+        <li class="text-white font-semibold truncate max-w-[200px]">{product.name}</li>
+      </ol>
+    </nav>
+    <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">{product.name}</h1>
+    <p class="text-white/40 text-sm mt-2">SKU: {product.sku}</p>
+  </div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 bg-accent-yellow/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute top-0 left-1/4 w-40 h-40 bg-white/[0.02] rounded-full blur-2xl pointer-events-none"></div>
+</section>
+
+<section class="bg-white">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-12">
     <a
       href={resolve('/colecciones')}
-      class="inline-flex items-center gap-2 text-navy-400 hover:text-accent-yellow transition-colors text-sm font-semibold mb-8"
+      class="inline-flex items-center gap-1.5 text-navy-400 hover:text-accent-yellow transition-colors text-sm font-medium mb-8"
     >
-      <ArrowLeft class="w-4 h-4" /> Volver al catálogo
+      <ChevronRight class="w-4 h-4 rotate-180" /> Volver al catálogo
     </a>
 
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-      <div use:fadeIn={{}} class="relative">
-        <div class="bg-stone-50 rounded-2xl overflow-hidden">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div use:fadeIn={{}} class="lg:sticky lg:top-28 space-y-4">
+        <div class="bg-white rounded-2xl border border-stone-100 p-8 shadow-lg lens-shine">
           <img
-            src={product.images.default}
+            src={allImages[selectedImageIndex].default}
             alt={product.name}
-            class="w-full aspect-square object-cover"
-            srcset={product.images.srcset.map(s => `${s.url} ${s.w}w`).join(', ')}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            class="w-full aspect-square object-cover rounded-xl"
+            srcset={allImages[selectedImageIndex].srcset.map(s => `${s.url} ${s.w}w`).join(', ')}
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
+        {#if allImages.length > 1}
+          <div class="grid grid-cols-4 gap-3">
+            {#each allImages as img, i (i)}
+              <button
+                onclick={() => selectedImageIndex = i}
+                class="rounded-xl overflow-hidden border-2 transition-all cursor-pointer {i === selectedImageIndex
+                  ? 'border-accent-yellow'
+                  : 'border-stone-100 hover:border-stone-300'}"
+              >
+                <img
+                  src={img.default}
+                  alt="{product.name} vista {i + 1}"
+                  class="w-full aspect-square object-cover"
+                  loading="lazy"
+                />
+              </button>
+            {/each}
+          </div>
+        {/if}
       </div>
 
-      <div use:fadeIn={{}}>
-        <p class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">{product.brand}</p>
-        <h1 class="text-4xl md:text-5xl font-bold text-navy-600 mt-3 tracking-tight">{product.name}</h1>
-        <p class="text-navy-300 text-sm mt-2">SKU: {product.sku} | {product.type}</p>
-
-        <div class="mt-8 text-3xl font-bold text-navy-600">
-          ${product.salePrice.toFixed(2)}
+      <div use:fadeIn={{}} class="space-y-8">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <span
+              class="inline-block bg-accent-yellow/10 text-navy-600 text-[10px] font-bold tracking-wider uppercase px-3 py-1.5 rounded-lg"
+            >
+              {typeLabels[product.type] ?? product.type}
+            </span>
+          </div>
+          <p class="text-accent-yellow font-bold text-3xl">${product.salePrice.toFixed(2)}</p>
+          <p class="text-navy-300 leading-relaxed">{product.description}</p>
         </div>
 
-        <p class="text-navy-300 mt-6 leading-relaxed">{product.description}</p>
+        <button
+          onclick={openConsult}
+          class="w-full bg-accent-yellow text-navy-600 py-4 rounded-lg font-bold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/20 flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <MessageCircle class="w-5 h-5" /> Consultar por WhatsApp
+        </button>
 
-        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-          <button
-            onclick={() => openConsult()}
-            class="flex-1 bg-accent-yellow text-navy-600 py-4 rounded-lg font-bold text-sm tracking-wide hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/20 flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <MessageCircle class="w-5 h-5" /> Consultar por WhatsApp
-          </button>
-          <a
-            href={resolve('/colecciones')}
-            class="flex-1 bg-navy-600 text-white py-4 rounded-lg font-bold text-sm tracking-wide hover:bg-navy-500 transition-all duration-300 flex items-center justify-center gap-2 text-center"
-          >
-            Seguir explorando
-          </a>
+        <div class="bg-stone-50 rounded-2xl p-6 grid grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2">
+              <Truck class="w-6 h-6 text-accent-yellow" />
+            </div>
+            <p class="text-xs text-navy-500 font-medium leading-tight">Envío Seguro</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2">
+              <ShieldCheck class="w-6 h-6 text-accent-yellow" />
+            </div>
+            <p class="text-xs text-navy-500 font-medium leading-tight">Garantía 1 Año</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2">
+              <RefreshCw class="w-6 h-6 text-accent-yellow" />
+            </div>
+            <p class="text-xs text-navy-500 font-medium leading-tight">Cambios Gratis</p>
+          </div>
         </div>
       </div>
     </div>
-
-    {#if related.length > 0}
-      <div class="mt-24">
-        <div use:fadeIn={{}} class="mb-10">
-          <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Relacionados</span>
-          <h2 class="text-3xl font-bold text-navy-600 mt-3 tracking-tight">
-            Productos Similares
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {#each related as rp (rp.sku)}
-            <ProductCard product={rp} index={related.indexOf(rp)} onConsult={handleConsult} />
-          {/each}
-        </div>
-      </div>
-    {/if}
   </div>
 </section>
 
-<ContactModal
-  open={modalOpen}
-  onClose={closeConsult}
-  productName={consultProduct?.name ?? ''}
-  productSku={consultProduct?.sku ?? ''}
-/>
+{#if related.length > 0}
+  <section class="bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+      <div use:fadeIn={{}} class="mb-10">
+        <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Relacionados</span>
+        <h2 class="text-3xl font-bold text-navy-600 mt-3 tracking-tight">
+          También te puede gustar
+        </h2>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {#each related as rp (rp.sku)}
+          <ProductCard product={rp} index={related.indexOf(rp)} />
+        {/each}
+      </div>
+    </div>
+  </section>
+{/if}
