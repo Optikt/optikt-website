@@ -4,7 +4,7 @@
   import CollectionCard from './CollectionCard.svelte';
 </script>
 
-<section id="colecciones" class="py-24 md:py-32 bg-white">
+<section class="py-24 md:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div use:fadeIn={{}} class="text-center mb-16">
       <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase"

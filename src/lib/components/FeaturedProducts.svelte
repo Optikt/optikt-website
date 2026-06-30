@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fadeIn } from '$lib/utils/animations';
   import { MessageCircle } from '@lucide/svelte';
+  import { resolve } from '$app/paths';
   import type { ProductSnapshot } from '$lib/schemas/catalog';
 
   let {
@@ -12,7 +13,7 @@
   } = $props();
 </script>
 
-<section class="py-24 bg-stone-50">
+<section id="colecciones" class="py-24 bg-stone-50">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div use:fadeIn={{}} class="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
       <div>
@@ -86,5 +87,13 @@
     {:else}
       <p class="text-navy-300 text-center">No hay productos destacados en este momento.</p>
     {/if}
+    <div class="text-center mt-12">
+      <a
+        href={resolve('/colecciones')}
+        class="inline-flex items-center gap-2 bg-navy-600 text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-accent-yellow hover:text-navy-600 transition-all duration-300"
+      >
+        Ver Colecciones
+      </a>
+    </div>
   </div>
 </section>
