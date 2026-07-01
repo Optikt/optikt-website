@@ -25,7 +25,8 @@ export const mockProducts: ProductSnapshot[] = [
     name: 'American Specs WD1323',
     brand: 'American Specs',
     type: 'Graduados',
-    description: 'Montura de acetato con diseño clásico y moderno. Ideal para uso diario con estilo.',
+    description:
+      'Montura de acetato con diseño clásico y moderno. Ideal para uso diario con estilo.',
     salePrice: 89.99,
     imageBaseKey: 'products/wd1323-c4',
     images: imgs('American Specs WD1323'),
@@ -217,7 +218,8 @@ export const mockProducts: ProductSnapshot[] = [
     name: 'Contact Diario 30',
     brand: 'OPTIK-T',
     type: 'Contacto',
-    description: 'Lentes de contacto diarios de hidrogel silicona. Máxima comodidad para uso diario.',
+    description:
+      'Lentes de contacto diarios de hidrogel silicona. Máxima comodidad para uso diario.',
     salePrice: 35.99,
     imageBaseKey: 'products/ct-daily-30',
     images: imgs('Contact Diario 30'),
@@ -310,4 +312,4 @@ export const mockProducts: ProductSnapshot[] = [
   },
 ];
 
-export const mockFeatured: ProductSnapshot[] = mockProducts.filter(p => p.featured);
+export const mockFeatured: ProductSnapshot[] = mockProducts.filter((p) => p.featured);

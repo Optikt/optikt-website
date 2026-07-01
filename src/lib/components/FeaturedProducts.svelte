@@ -25,7 +25,7 @@
           class="relative z-10 w-full aspect-square object-cover rounded-xl group-hover:scale-105 transition-all duration-500 opacity-0"
           loading="lazy"
           decoding="async"
-          srcset={product.images.srcset.map(s => `${s.url} ${s.w}w`).join(', ')}
+          srcset={product.images.srcset.map((s) => `${s.url} ${s.w}w`).join(', ')}
           sizes="(max-width: 768px) 50vw, 25vw"
           onload={(e: Event) => (e.target as HTMLImageElement)?.classList.remove('opacity-0')}
         />
@@ -42,7 +42,9 @@
       </div>
     </div>
     <div class="mt-4 px-1">
-      <p class="text-xs text-accent-yellow font-semibold tracking-wider uppercase">{product.brand}</p>
+      <p class="text-xs text-accent-yellow font-semibold tracking-wider uppercase">
+        {product.brand}
+      </p>
       <h3 class="font-semibold text-navy-600">{product.name}</h3>
       <p class="text-navy-300 text-sm mt-1">{product.type}</p>
     </div>
@@ -53,8 +55,12 @@
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div use:fadeIn={{}} class="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
       <div>
-        <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Destacados</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-navy-600 mt-4 tracking-tight">Lo Más Nuevo</h2>
+        <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase"
+          >Destacados</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold text-navy-600 mt-4 tracking-tight">
+          Lo Más Nuevo
+        </h2>
       </div>
     </div>
 

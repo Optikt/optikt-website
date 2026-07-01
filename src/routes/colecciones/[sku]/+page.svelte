@@ -51,9 +51,15 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-12 relative z-10">
       <nav class="mb-4" aria-label="Breadcrumb">
         <ol class="flex items-center gap-2 text-sm text-white/50 flex-wrap">
-          <li><a href={resolve('/')} class="hover:text-accent-yellow transition-colors">Inicio</a></li>
+          <li>
+            <a href={resolve('/')} class="hover:text-accent-yellow transition-colors">Inicio</a>
+          </li>
           <li><ChevronRight class="w-3 h-3 shrink-0" /></li>
-          <li><a href={resolve('/colecciones')} class="hover:text-accent-yellow transition-colors">Colecciones</a></li>
+          <li>
+            <a href={resolve('/colecciones')} class="hover:text-accent-yellow transition-colors"
+              >Colecciones</a
+            >
+          </li>
           <li><ChevronRight class="w-3 h-3 shrink-0" /></li>
           <li><span>{typeLabels[product.type] ?? product.type}</span></li>
           <li><ChevronRight class="w-3 h-3 shrink-0" /></li>
@@ -63,8 +69,12 @@
       <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">{product.name}</h1>
       <p class="text-white/40 text-sm mt-2">SKU: {product.sku}</p>
     </div>
-    <div class="absolute bottom-0 right-0 w-80 h-80 bg-accent-yellow/5 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-0 left-1/4 w-40 h-40 bg-white/[0.02] rounded-full blur-2xl pointer-events-none"></div>
+    <div
+      class="absolute bottom-0 right-0 w-80 h-80 bg-accent-yellow/5 rounded-full blur-3xl pointer-events-none"
+    ></div>
+    <div
+      class="absolute top-0 left-1/4 w-40 h-40 bg-white/[0.02] rounded-full blur-2xl pointer-events-none"
+    ></div>
   </section>
 
   <section class="bg-white">
@@ -84,7 +94,9 @@
                 src={allImages[selectedImageIndex].default}
                 alt={product.name}
                 class="relative z-10 w-full aspect-square object-cover rounded-xl transition-opacity duration-500 opacity-0"
-                srcset={allImages[selectedImageIndex].srcset.map(s => `${s.url} ${s.w}w`).join(', ')}
+                srcset={allImages[selectedImageIndex].srcset
+                  .map((s) => `${s.url} ${s.w}w`)
+                  .join(', ')}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 onload={(e: Event) => (e.target as HTMLImageElement)?.classList.remove('opacity-0')}
               />
@@ -94,8 +106,9 @@
             <div class="grid grid-cols-4 gap-3">
               {#each allImages as img, i (i)}
                 <button
-                  onclick={() => selectedImageIndex = i}
-                  class="rounded-xl overflow-hidden border-2 transition-all cursor-pointer {i === selectedImageIndex
+                  onclick={() => (selectedImageIndex = i)}
+                  class="rounded-xl overflow-hidden border-2 transition-all cursor-pointer {i ===
+                  selectedImageIndex
                     ? 'border-accent-yellow'
                     : 'border-stone-100 hover:border-stone-300'}"
                 >
@@ -105,7 +118,8 @@
                       alt="{product.name} vista {i + 1}"
                       class="relative z-10 w-full aspect-square object-cover transition-opacity duration-500 opacity-0"
                       loading="lazy"
-                      onload={(e: Event) => (e.target as HTMLImageElement)?.classList.remove('opacity-0')}
+                      onload={(e: Event) =>
+                        (e.target as HTMLImageElement)?.classList.remove('opacity-0')}
                     />
                   </div>
                 </button>
@@ -135,19 +149,25 @@
 
           <div class="bg-stone-50 rounded-2xl p-6 grid grid-cols-3 gap-6">
             <div class="text-center">
-              <div class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2">
+              <div
+                class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2"
+              >
                 <Truck class="w-6 h-6 text-accent-yellow" />
               </div>
               <p class="text-xs text-navy-500 font-medium leading-tight">Envío Seguro</p>
             </div>
             <div class="text-center">
-              <div class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2">
+              <div
+                class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2"
+              >
                 <Heart class="w-6 h-6 text-accent-yellow" />
               </div>
               <p class="text-xs text-navy-500 font-medium leading-tight">Atención Personalizada</p>
             </div>
             <div class="text-center">
-              <div class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2">
+              <div
+                class="w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center mx-auto mb-2"
+              >
                 <BadgeCheck class="w-6 h-6 text-accent-yellow" />
               </div>
               <p class="text-xs text-navy-500 font-medium leading-tight">Calidad Asegurada</p>
@@ -162,7 +182,9 @@
     <section class="bg-stone-50">
       <div class="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div use:fadeIn={{}} class="mb-10">
-          <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Relacionados</span>
+          <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase"
+            >Relacionados</span
+          >
           <h2 class="text-3xl font-bold text-navy-600 mt-3 tracking-tight">
             También te puede gustar
           </h2>

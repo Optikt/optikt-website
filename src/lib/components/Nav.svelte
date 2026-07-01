@@ -106,11 +106,33 @@
     <X class="w-7 h-7" />
   </button>
   <div class="flex flex-col gap-6">
-    <a href={isHome ? resolve('/#colecciones') : resolve('/colecciones')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Colecciones</a>
-    <a href={resolve('/#tecnologia')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Tecnología</a>
-    <a href={resolve('/#servicios')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Servicios</a>
-    <a href={resolve('/#galeria')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Galería</a>
-    <a href={resolve('/#comunidad')} onclick={closeMenu} class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Comunidad</a>
+    <a
+      href={isHome ? resolve('/#colecciones') : resolve('/colecciones')}
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors"
+      >Colecciones</a
+    >
+    <a
+      href={resolve('/#tecnologia')}
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors"
+      >Tecnología</a
+    >
+    <a
+      href={resolve('/#servicios')}
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Servicios</a
+    >
+    <a
+      href={resolve('/#galeria')}
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Galería</a
+    >
+    <a
+      href={resolve('/#comunidad')}
+      onclick={closeMenu}
+      class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Comunidad</a
+    >
   </div>
   <div class="mt-auto">
     <button

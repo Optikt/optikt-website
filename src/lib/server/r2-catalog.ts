@@ -22,10 +22,12 @@ export async function getProductDetail(
   sku: string,
   fetchFn: typeof fetch = fetch,
 ): Promise<ProductSnapshot | null> {
-  if (useMock()) return mockProducts.find(p => p.sku === sku) ?? null;
+  if (useMock()) return mockProducts.find((p) => p.sku === sku) ?? null;
 
   try {
-    const res = await fetchFn(`${PUBLIC_R2_CATALOG_BASE_URL}/products/${encodeURIComponent(sku)}.json`);
+    const res = await fetchFn(
+      `${PUBLIC_R2_CATALOG_BASE_URL}/products/${encodeURIComponent(sku)}.json`,
+    );
     if (!res.ok) return null;
     return res.json();
   } catch {
@@ -44,4 +46,3 @@ export async function getFeatured(fetchFn: typeof fetch = fetch): Promise<Produc
     return [];
   }
 }
-

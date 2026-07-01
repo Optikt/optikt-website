@@ -15,7 +15,11 @@ export const load = async ({ params, fetch }): Promise<ProductDetailData> => {
   if (PUBLIC_R2_CATALOG_BASE_URL) {
     const allProducts = await getProductList(fetch);
     if (allProducts.length === 0) {
-      return { product: null, related: [], catalogError: 'No pudimos cargar el catálogo en este momento.' };
+      return {
+        product: null,
+        related: [],
+        catalogError: 'No pudimos cargar el catálogo en este momento.',
+      };
     }
   }
 
@@ -28,9 +32,9 @@ export const load = async ({ params, fetch }): Promise<ProductDetailData> => {
   }
 
   const allProducts = await getProductList(fetch);
-  const related = allProducts.filter(
-    p => p.sku !== sku && (p.type === product.type || p.brand === product.brand),
-  ).slice(0, 4);
+  const related = allProducts
+    .filter((p) => p.sku !== sku && (p.type === product.type || p.brand === product.brand))
+    .slice(0, 4);
 
   return { product, related, catalogError: null };
 };

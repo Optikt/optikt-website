@@ -16,10 +16,14 @@
   let _productSku = $state('');
 
   $effect(() => {
-    const unsub1 = modalOpen.subscribe(v => _modalOpen = v);
-    const unsub2 = modalProductName.subscribe(v => _productName = v);
-    const unsub3 = modalProductSku.subscribe(v => _productSku = v);
-    return () => { unsub1(); unsub2(); unsub3(); };
+    const unsub1 = modalOpen.subscribe((v) => (_modalOpen = v));
+    const unsub2 = modalProductName.subscribe((v) => (_productName = v));
+    const unsub3 = modalProductSku.subscribe((v) => (_productSku = v));
+    return () => {
+      unsub1();
+      unsub2();
+      unsub3();
+    };
   });
 
   $effect(() => {
@@ -28,7 +32,9 @@
     } else {
       document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   });
 
   function closeModal() {

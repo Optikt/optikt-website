@@ -10,7 +10,11 @@
     Contacto: 'Lentes de Contacto',
   };
 
-  let { product, index = 0, onConsult }: {
+  let {
+    product,
+    index = 0,
+    onConsult,
+  }: {
     product: ProductSnapshot;
     index?: number;
     onConsult?: (sku: string, product: ProductSnapshot) => void;
@@ -25,7 +29,8 @@
     <div class="relative overflow-hidden">
       {#if product.badge}
         <div
-          class="absolute top-4 left-4 z-10 text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full {product.badge === 'Nuevo'
+          class="absolute top-4 left-4 z-10 text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full {product.badge ===
+          'Nuevo'
             ? 'bg-accent-yellow text-navy-600'
             : 'bg-navy-600 text-white'}"
         >
@@ -39,7 +44,7 @@
           class="relative z-10 w-full aspect-[4/3] object-cover group-hover:scale-105 transition-all duration-500 opacity-0"
           loading="lazy"
           decoding="async"
-          srcset={product.images.srcset.map(s => `${s.url} ${s.w}w`).join(', ')}
+          srcset={product.images.srcset.map((s) => `${s.url} ${s.w}w`).join(', ')}
           sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
           onload={(e: Event) => (e.target as HTMLImageElement)?.classList.remove('opacity-0')}
         />
