@@ -1,16 +1,18 @@
-import { PUBLIC_R2_CATALOG_BASE_URL } from '$env/static/public';
+import { env } from '$env/dynamic/public';
 import { mockProducts, mockFeatured } from '$lib/data/mock-catalog';
 import type { ProductSnapshot } from '$lib/schemas/catalog';
 
+const catalogBaseUrl = env.PUBLIC_R2_CATALOG_BASE_URL;
+
 function useMock(): boolean {
-  return !PUBLIC_R2_CATALOG_BASE_URL;
+  return !catalogBaseUrl;
 }
 
 export async function getProductList(fetchFn: typeof fetch = fetch): Promise<ProductSnapshot[]> {
   if (useMock()) return mockProducts;
 
   try {
-    const res = await fetchFn(`${PUBLIC_R2_CATALOG_BASE_URL}/products.json`);
+    const res = await fetchFn(`${catalogBaseUrl}/products.json`);
     if (!res.ok) return [];
     return res.json();
   } catch {
@@ -26,7 +28,7 @@ export async function getProductDetail(
 
   try {
     const res = await fetchFn(
-      `${PUBLIC_R2_CATALOG_BASE_URL}/products/${encodeURIComponent(sku)}.json`,
+      `${catalogBaseUrl}/products/${encodeURIComponent(sku)}.json`,
     );
     if (!res.ok) return null;
     return res.json();
@@ -39,7 +41,7 @@ export async function getFeatured(fetchFn: typeof fetch = fetch): Promise<Produc
   if (useMock()) return mockFeatured;
 
   try {
-    const res = await fetchFn(`${PUBLIC_R2_CATALOG_BASE_URL}/featured.json`);
+    const res = await fetchFn(`${catalogBaseUrl}/featured.json`);
     if (!res.ok) return [];
     return res.json();
   } catch {

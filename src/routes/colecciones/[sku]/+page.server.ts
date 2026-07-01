@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { PUBLIC_R2_CATALOG_BASE_URL } from '$env/static/public';
+import { env } from '$env/dynamic/public';
 import { getProductDetail, getProductList } from '$lib/server/r2-catalog';
 import type { ProductSnapshot } from '$lib/schemas/catalog';
 
@@ -12,7 +12,7 @@ export interface ProductDetailData {
 export const load = async ({ params, fetch }): Promise<ProductDetailData> => {
   const { sku } = params;
 
-  if (PUBLIC_R2_CATALOG_BASE_URL) {
+  if (env.PUBLIC_R2_CATALOG_BASE_URL) {
     const allProducts = await getProductList(fetch);
     if (allProducts.length === 0) {
       return {
