@@ -1,12 +1,15 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { Menu, X } from '@lucide/svelte';
   import { ImagotipoHorizontal } from '$lib/components/branding';
   import { resolve } from '$app/paths';
-
-  let { onOpenModal }: { onOpenModal: () => void } = $props();
+  import { modalOpen, modalProductName, modalProductSku } from '$lib/stores/contact-modal';
 
   let scrolled = $state(false);
   let menuOpen = $state(false);
+
+  let isHome = $derived($page.url.pathname === '/');
+  let navSolid = $derived(!isHome || scrolled);
 
   $effect(() => {
     const onScroll = () => {
@@ -28,14 +31,16 @@
 
   function handleModal() {
     closeMenu();
-    onOpenModal();
+    modalProductName.set('');
+    modalProductSku.set('');
+    modalOpen.set(true);
   }
 </script>
 
 <nav
   class="fixed top-0 left-0 w-full z-50 transition-all duration-500"
-  class:nav-scrolled={scrolled}
-  class:bg-transparent={!scrolled}
+  class:nav-scrolled={navSolid}
+  class:bg-transparent={!navSolid}
 >
   <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
     <a href={resolve('/')} class="flex items-center">
@@ -43,35 +48,41 @@
     </a>
     <div class="hidden lg:flex items-center gap-10">
       <a
-        href="#colecciones"
+        href={resolve('/#tecnologia')}
         class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
-        >Colecciones</a
       >
+        Tecnología
+      </a>
       <a
-        href="#tecnologia"
+        href={isHome ? resolve('/#colecciones') : resolve('/colecciones')}
         class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
-        >Tecnología</a
       >
+        Colecciones
+      </a>
       <a
-        href="#servicios"
+        href={resolve('/#servicios')}
         class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
-        >Servicios</a
       >
+        Servicios
+      </a>
       <a
-        href="#galeria"
+        href={resolve('/#galeria')}
         class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
-        >Galería</a
       >
+        Galería
+      </a>
       <a
-        href="#comunidad"
+        href={resolve('/#comunidad')}
         class="text-white/70 hover:text-accent-yellow text-sm font-medium tracking-wide transition-colors duration-300"
-        >Comunidad</a
       >
+        Comunidad
+      </a>
       <button
         onclick={handleModal}
         class="bg-accent-yellow text-navy-600 px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent-yellow/25"
-        >Contáctanos</button
       >
+        Contáctanos
+      </button>
     </div>
     <button
       onclick={toggleMenu}
@@ -85,7 +96,6 @@
   </div>
 </nav>
 
-<!-- Mobile Menu -->
 <div
   id="mobile-menu"
   class="fixed top-0 right-0 w-80 h-full bg-navy-600 z-60 p-8 flex flex-col transition-transform duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
@@ -97,29 +107,29 @@
   </button>
   <div class="flex flex-col gap-6">
     <a
-      href="#colecciones"
+      href={isHome ? resolve('/#colecciones') : resolve('/colecciones')}
       onclick={closeMenu}
       class="text-white text-2xl font-light hover:text-accent-yellow transition-colors"
       >Colecciones</a
     >
     <a
-      href="#tecnologia"
+      href={resolve('/#tecnologia')}
       onclick={closeMenu}
       class="text-white text-2xl font-light hover:text-accent-yellow transition-colors"
       >Tecnología</a
     >
     <a
-      href="#servicios"
+      href={resolve('/#servicios')}
       onclick={closeMenu}
       class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Servicios</a
     >
     <a
-      href="#galeria"
+      href={resolve('/#galeria')}
       onclick={closeMenu}
       class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Galería</a
     >
     <a
-      href="#comunidad"
+      href={resolve('/#comunidad')}
       onclick={closeMenu}
       class="text-white text-2xl font-light hover:text-accent-yellow transition-colors">Comunidad</a
     >
@@ -128,7 +138,8 @@
     <button
       onclick={handleModal}
       class="w-full bg-accent-yellow text-navy-600 py-3 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all"
-      >Contáctanos</button
     >
+      Contáctanos
+    </button>
   </div>
 </div>

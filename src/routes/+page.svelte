@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Nav from '$lib/components/Nav.svelte';
   import Hero from '$lib/components/Hero.svelte';
   import BrandMarquee from '$lib/components/BrandMarquee.svelte';
   import Collections from '$lib/components/Collections.svelte';
@@ -13,31 +12,29 @@
   import Testimonials from '$lib/components/Testimonials.svelte';
   import Location from '$lib/components/Location.svelte';
   import FinalCTA from '$lib/components/FinalCTA.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import ContactModal from '$lib/components/ContactModal.svelte';
+  import { modalOpen, modalProductName, modalProductSku } from '$lib/stores/contact-modal';
+  import type { HomePageData } from './+page.server.ts';
 
-  let modalOpen = $state(false);
-  let selectedProduct = $state<{ imageKey: string } | null>(null);
+  let { data }: { data: HomePageData } = $props();
 
-  function openModal(product?: { imageKey: string }) {
-    selectedProduct = product ?? null;
-    modalOpen = true;
-    document.body.style.overflow = 'hidden';
+  function openModal() {
+    modalProductName.set('');
+    modalProductSku.set('');
+    modalOpen.set(true);
   }
 
-  function closeModal() {
-    modalOpen = false;
-    selectedProduct = null;
-    document.body.style.overflow = '';
+  function openConsult(product: { name: string; sku: string }) {
+    modalProductName.set(product.name);
+    modalProductSku.set(product.sku);
+    modalOpen.set(true);
   }
 </script>
 
-<Nav onOpenModal={openModal} />
 <Hero onOpenModal={openModal} />
 <BrandMarquee />
 <Collections />
 <LensTechnology />
-<FeaturedProducts onOpenModal={openModal} />
+<FeaturedProducts products={data.featured} onConsult={openConsult} />
 <Services />
 <Stats />
 <Gallery />
@@ -46,5 +43,3 @@
 <Testimonials />
 <Location />
 <FinalCTA onOpenModal={openModal} />
-<Footer />
-<ContactModal open={modalOpen} onClose={closeModal} product={selectedProduct} />

@@ -29,7 +29,7 @@
 </script>
 
 <svelte:head>
-  <title>Error {$page.status} — OPTIK-T</title>
+  <title>Error {$page.status} - OPTIK-T</title>
 </svelte:head>
 
 <div class="min-h-screen bg-navy-700 flex flex-col">
