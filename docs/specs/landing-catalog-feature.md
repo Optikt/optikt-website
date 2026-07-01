@@ -20,28 +20,31 @@ Especificación de cómo la landing (optikt-website) consume los snapshots del c
 ## Contrato del snapshot (lo que la landing consume)
 
 ### `products.json` — Listado completo
+
 ```ts
 interface ProductSnapshot {
-  sku: string;           // e.g. "WD1323-C4"
-  name: string;          // e.g. "American Specs WD1323"
-  brand: string;         // e.g. "American Specs"
-  type: string;          // e.g. "Graduados", "Sol", "Contacto"
+  sku: string; // e.g. "WD1323-C4"
+  name: string; // e.g. "American Specs WD1323"
+  brand: string; // e.g. "American Specs"
+  type: string; // e.g. "Graduados", "Sol", "Contacto"
   description: string;
-  salePrice: number;     // precio de venta al público (número, sin moneda)
-  imageBaseKey: string;  // e.g. "products/uuid" — solo para referencia, no se usa directamente
+  salePrice: number; // precio de venta al público (número, sin moneda)
+  imageBaseKey: string; // e.g. "products/uuid" — solo para referencia, no se usa directamente
   images: {
-    default: string;     // URL completa a la variante 800w — e.g. "https://pub-<hash>.r2.dev/media/products/uuid-800w.webp"
-    srcset: Array<{ w: number; url: string }>;  // [{w:400,url:"..."},{w:800,...},{w:1200,...}]
+    default: string; // URL completa a la variante 800w — e.g. "https://pub-<hash>.r2.dev/media/products/uuid-800w.webp"
+    srcset: Array<{ w: number; url: string }>; // [{w:400,url:"..."},{w:800,...},{w:1200,...}]
   };
-  featured: boolean;     // true si está marcado como destacado
-  sort: number;          // orden global de publicación (ascendente)
+  featured: boolean; // true si está marcado como destacado
+  sort: number; // orden global de publicación (ascendente)
 }
 ```
 
 ### `featured.json` — Array de ProductSnapshot (solo los featured)
+
 Shape idéntico a ProductSnapshot pero filtrado a `featured: true`.
 
 ### `catalog/products/<sku>.json` — Detalle individual
+
 Shape idéntico a ProductSnapshot. Un archivo por SKU.
 
 ## Fetch client API
@@ -49,9 +52,12 @@ Shape idéntico a ProductSnapshot. Un archivo por SKU.
 Módulo `$lib/server/r2-catalog.ts` — funciones async que se llaman desde load functions (SSR):
 
 ```ts
-export async function getProductList(fetchFn: typeof fetch): Promise<ProductSnapshot[]>
-export async function getProductDetail(sku: string, fetchFn: typeof fetch): Promise<ProductSnapshot | null>
-export async function getFeatured(fetchFn: typeof fetch): Promise<ProductSnapshot[]>
+export async function getProductList(fetchFn: typeof fetch): Promise<ProductSnapshot[]>;
+export async function getProductDetail(
+  sku: string,
+  fetchFn: typeof fetch,
+): Promise<ProductSnapshot | null>;
+export async function getFeatured(fetchFn: typeof fetch): Promise<ProductSnapshot[]>;
 ```
 
 - `fetchFn` se inyecta desde el load function de SvelteKit (para usar `fetch` nativo de la plataforma).
@@ -62,17 +68,20 @@ export async function getFeatured(fetchFn: typeof fetch): Promise<ProductSnapsho
 ## Estrategia de render
 
 ### `/colecciones` (listado)
+
 - **SSR con load function**: `+page.ts` (universal load, no server-only) fetchea `products.json` de R2 en el request y devuelve la lista. La página renderiza SSR con todos los productos.
 - **Filtrado client-side**: type chips (Graduados/Sol/Contacto), brand select, búsqueda por nombre, paginación. Todo se maneja en el cliente sobre `data.products` (ya precargado en SSR).
 - **Por qué no client-only fetch**: queremos SSR SEO para el listado y que Google indexe las monturas. Además la primera paint muestra productos inmediatamente sin spinner.
 - **Optimización**: si el JSON es >1MB, se puede comprimir en R2 con gzip (los fetch nativos aceptan `Content-Encoding: gzip`). Cloudflare Workers + R2 lo manejan transparentemente.
 
 ### `/colecciones/[sku]` (detalle)
-- **SSR con load function**: `+page.ts` fetchea `catalog/products/<sku>.json` de R2. 
+
+- **SSR con load function**: `+page.ts` fetchea `catalog/products/<sku>.json` de R2.
 - **Render**: imágenes con `<img src={images.default} srcset="...w ..., ...w" sizes="(max-width: 768px) 100vw, 50vw">`.
 - **Not found**: si el SKU no existe en R2, el load devuelve `null` y la página muestra 404.
 
 ### Homepage (`/`)
+
 - **FeaturedProducts**: `+page.ts` fetch `featured.json`. Fallback a hardcoded si falla.
 - **Collections section**: agrupa `products.json` por `type` (Graduados/Sol/Contacto) y muestra cards del grupo con el primer producto de cada tipo como thumbnail. Fallback a hardcoded si falla.
 - El resto (hero, about, servicios, gallery, lens tech) sigue siendo editorial local.
@@ -81,16 +90,18 @@ export async function getFeatured(fetchFn: typeof fetch): Promise<ProductSnapsho
 
 - Se renderizan con `<img>` nativo (NO `enhanced:img`). Las URLs ya vienen procesadas desde R2.
 - Patrón de uso:
+
 ```svelte
 <img
   src={product.images.default}
   alt={product.name}
   loading="lazy"
   decoding="async"
-  srcset={product.images.srcset.map(s => `${s.url} ${s.w}w`).join(', ')}
+  srcset={product.images.srcset.map((s) => `${s.url} ${s.w}w`).join(', ')}
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 />
 ```
+
 - `enhanced:img` se mantiene exclusivamente para imágenes editoriales locales (hero, about, servicios, gallery, lens tech).
 
 ## Mock fixture
@@ -102,8 +113,8 @@ export async function getFeatured(fetchFn: typeof fetch): Promise<ProductSnapsho
 
 ## Env vars
 
-| Variable | Uso | Ejemplo |
-|---|---|---|
+| Variable                     | Uso                                        | Ejemplo                             |
+| ---------------------------- | ------------------------------------------ | ----------------------------------- |
 | `PUBLIC_R2_CATALOG_BASE_URL` | Base URL del bucket R2 (prefijo /catalog/) | `https://pub-<hash>.r2.dev/catalog` |
 
 Pública (PREFIX `PUBLIC_`) porque el URL del bucket R2 es público. En Cloudflare Pages se configura en el dashboard como Environment Variable. En `.env` para dev (vacío → usa mock).
@@ -111,6 +122,7 @@ Pública (PREFIX `PUBLIC_`) porque el URL del bucket R2 es público. En Cloudfla
 ## FYI: Lo que NO cambia
 
 Lo siguiente **sigue hardcoded local** con `enhanced:img`:
+
 - Hero images
 - Gallery (8 images)
 - About (3 images)
@@ -125,6 +137,7 @@ Lo siguiente **sigue hardcoded local** con `enhanced:img`:
 ## Limpieza post-migración
 
 Los siguientes archivos se pueden eliminar o simplificar cuando el catálogo R2 esté activo:
+
 - `src/lib/data/collections.ts` → eliminar (la data viene de products.json agrupado por type)
 - `src/lib/data/featured.ts` → eliminar (la data viene de featured.json)
 - `src/lib/images/featured/*.webp` → eliminar
