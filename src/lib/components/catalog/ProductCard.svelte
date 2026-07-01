@@ -37,7 +37,7 @@
           {product.badge}
         </div>
       {/if}
-      <div class="relative overflow-hidden rounded-xl bg-stone-200 animate-pulse">
+      <div class="relative overflow-hidden rounded-xl bg-stone-200">
         <img
           src={product.images.default}
           alt={product.name}

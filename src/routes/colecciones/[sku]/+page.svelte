@@ -89,7 +89,7 @@
       <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div use:fadeIn={{}} class="lg:sticky lg:top-28 space-y-4">
           <div class="bg-white rounded-2xl border border-stone-100 p-8 shadow-lg lens-shine">
-            <div class="relative overflow-hidden rounded-xl bg-stone-200 animate-pulse">
+            <div class="relative overflow-hidden rounded-xl bg-stone-200">
               <img
                 src={allImages[selectedImageIndex].default}
                 alt={product.name}
@@ -112,7 +112,7 @@
                     ? 'border-accent-yellow'
                     : 'border-stone-100 hover:border-stone-300'}"
                 >
-                  <div class="relative overflow-hidden rounded-xl bg-stone-200 animate-pulse">
+                  <div class="relative overflow-hidden rounded-xl bg-stone-200">
                     <img
                       src={img.default}
                       alt="{product.name} vista {i + 1}"

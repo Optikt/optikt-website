@@ -18,7 +18,7 @@
     <div
       class="relative bg-white rounded-2xl p-4 overflow-hidden border border-stone-100 group-hover:border-accent-yellow/30 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-accent-yellow/5 lens-shine"
     >
-      <div class="relative overflow-hidden rounded-xl bg-stone-200 animate-pulse">
+      <div class="relative overflow-hidden rounded-xl bg-stone-200">
         <img
           src={product.images.default}
           alt={product.name}
