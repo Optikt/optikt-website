@@ -27,9 +27,7 @@ export async function getProductDetail(
   if (useMock()) return mockProducts.find((p) => p.sku === sku) ?? null;
 
   try {
-    const res = await fetchFn(
-      `${catalogBaseUrl}/products/${encodeURIComponent(sku)}.json`,
-    );
+    const res = await fetchFn(`${catalogBaseUrl}/products/${encodeURIComponent(sku)}.json`);
     if (!res.ok) return null;
     return res.json();
   } catch {
