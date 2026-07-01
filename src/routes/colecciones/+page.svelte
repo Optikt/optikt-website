@@ -94,7 +94,7 @@
 
 <section class="bg-navy-600 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 relative z-10">
-    <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Tienda Online</span
+    <span class="text-accent-yellow text-xs font-bold tracking-[.3em] uppercase">Catálogo Online</span
     >
     <h1 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
       Nuestras Colecciones
