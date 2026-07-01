@@ -3,10 +3,11 @@
   import { fadeIn } from '$lib/utils/animations';
   import ProductCard from '$lib/components/catalog/ProductCard.svelte';
   import { SlidersHorizontal, ChevronLeft, ChevronRight, X, Filter } from '@lucide/svelte';
+  import { resolve } from '$app/paths';
   import type { ColeccionesData } from './+page.server.ts';
 
   let { data }: { data: ColeccionesData } = $props();
-  let products = $derived(data.products);
+  let { products, catalogError } = $derived(data);
 
   const typeLabels: Record<string, string> = {
     Graduados: 'Monturas Graduadas',
@@ -92,6 +93,18 @@
 
 <section class="bg-white">
   <div class="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    {#if catalogError}
+      <div class="text-center py-20">
+        <p class="text-navy-400 text-lg font-medium mb-2">Oops, algo salió mal</p>
+        <p class="text-navy-300">{catalogError}</p>
+        <a
+          href={resolve('/')}
+          class="mt-6 inline-block bg-accent-yellow text-navy-600 px-6 py-3 rounded-full text-sm font-semibold hover:bg-accent-yellow-hover transition-all duration-300"
+        >
+          Volver al inicio
+        </a>
+      </div>
+    {:else}
     <div class="flex lg:hidden items-center justify-between mb-6">
       <p class="text-navy-400 text-sm font-medium">{filtered.length} producto{filtered.length !== 1 ? 's' : ''}</p>
       <button
@@ -193,8 +206,6 @@
               class="text-sm text-navy-600 bg-transparent border-none focus:outline-none cursor-pointer font-medium"
             >
               <option value="featured">Destacados</option>
-              <option value="price-asc">Precio: menor a mayor</option>
-              <option value="price-desc">Precio: mayor a menor</option>
             </select>
           </div>
         </div>
@@ -255,5 +266,6 @@
         {/if}
       </div>
     </div>
+  {/if}
   </div>
 </section>

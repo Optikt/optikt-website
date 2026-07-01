@@ -32,20 +32,22 @@
           {product.badge}
         </div>
       {/if}
-      <img
-        src={product.images.default}
-        alt={product.name}
-        class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
-        loading="lazy"
-        decoding="async"
-        srcset={product.images.srcset.map(s => `${s.url} ${s.w}w`).join(', ')}
-        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-      />
+      <div class="relative overflow-hidden rounded-xl bg-stone-200 animate-pulse">
+        <img
+          src={product.images.default}
+          alt={product.name}
+          class="relative z-10 w-full aspect-[4/3] object-cover group-hover:scale-105 transition-all duration-500 opacity-0"
+          loading="lazy"
+          decoding="async"
+          srcset={product.images.srcset.map(s => `${s.url} ${s.w}w`).join(', ')}
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+          onload={(e: Event) => (e.target as HTMLImageElement)?.classList.remove('opacity-0')}
+        />
+      </div>
     </div>
     <div class="p-5">
       <h3 class="font-semibold text-navy-600">{product.name}</h3>
       <p class="text-navy-300 text-sm mt-1">{typeLabels[product.type] ?? product.type}</p>
-      <p class="text-accent-yellow font-bold text-xl mt-1">${product.salePrice.toFixed(2)}</p>
     </div>
   </a>
   {#if onConsult}

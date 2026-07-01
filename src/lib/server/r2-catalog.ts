@@ -11,10 +11,10 @@ export async function getProductList(fetchFn: typeof fetch = fetch): Promise<Pro
 
   try {
     const res = await fetchFn(`${PUBLIC_R2_CATALOG_BASE_URL}/products.json`);
-    if (!res.ok) return mockProducts;
+    if (!res.ok) return [];
     return res.json();
   } catch {
-    return mockProducts;
+    return [];
   }
 }
 
@@ -38,10 +38,10 @@ export async function getFeatured(fetchFn: typeof fetch = fetch): Promise<Produc
 
   try {
     const res = await fetchFn(`${PUBLIC_R2_CATALOG_BASE_URL}/featured.json`);
-    if (!res.ok) return mockFeatured;
+    if (!res.ok) return [];
     return res.json();
   } catch {
-    return mockFeatured;
+    return [];
   }
 }
 
